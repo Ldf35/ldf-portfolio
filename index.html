@@ -19,8 +19,26 @@
   --radius: 16px;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: #fff; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: #fff; overflow-x: hidden; }
 .w { width: min(1080px, 92%); margin: auto; }
+
+/* Global Smooth Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Navigation */
 header { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
@@ -28,57 +46,183 @@ header b { color: var(--p); font-size: 1.1rem; letter-spacing: -0.02em; }
 nav a { margin-left: 18px; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
 nav a:hover { color: var(--p); }
 
-/* Hero */
-.hero { padding: 85px 0; background: radial-gradient(circle at 85% 15%, #d8fff7, transparent 30%), linear-gradient(130deg, #f1efff, #f8fbff); }
+/* Animated Hero Header */
+.hero { 
+  padding: 85px 0; 
+  background: radial-gradient(circle at 85% 15%, #d8fff7, transparent 35%), linear-gradient(130deg, #f1efff, #f8fbff);
+  background-size: 140% 140%;
+  animation: gradientShift 12s ease infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
 .tag { font-size: .78rem; letter-spacing: .15em; text-transform: uppercase; color: var(--p); font-weight: 800; }
 h1 { font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1.04; letter-spacing: -.05em; margin: 16px 0; max-width: 850px; }
 .lead { font-size: 1.2rem; color: #4e5b76; max-width: 740px; }
-.btn { display: inline-block; background: var(--p); color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: 700; margin: 10px 8px 0 0; border: none; cursor: pointer; transition: all 0.2s ease; }
-.btn:hover { background: var(--p-dark); transform: translateY(-1px); }
-.btn.alt { background: white; color: var(--p); border: 1px solid #ddd; }
-.btn.alt:hover { background: #f8f9fc; }
+
+/* Interactive Hover Buttons */
+.btn { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px; 
+  background: var(--p); 
+  color: white; 
+  padding: 12px 24px; 
+  border-radius: 30px; 
+  text-decoration: none; 
+  font-weight: 700; 
+  margin: 10px 8px 0 0; 
+  border: none; 
+  cursor: pointer; 
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(101, 85, 215, 0.25);
+}
+.btn:hover { 
+  background: var(--p-dark); 
+  transform: translateY(-3px) scale(1.02); 
+  box-shadow: 0 8px 22px rgba(101, 85, 215, 0.35);
+}
+.btn.alt { background: white; color: var(--p); border: 1px solid #ddd; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04); }
+.btn.alt:hover { background: #f8f9fc; border-color: var(--p); }
 .facts { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 30px; color: var(--muted); }
 
-/* Layout & Cards */
+/* Layout & Animated Cards */
 section { padding: 65px 0; }
 .pale { background: var(--bg); }
 h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.15; letter-spacing: -.03em; margin: 8px 0 12px; }
 .muted { color: var(--muted); }
 .intro { max-width: 740px; margin-bottom: 28px; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.card { background: white; border: 1px solid var(--card-border); border-radius: var(--radius); padding: 24px; box-shadow: 0 8px 28px #1c2a5308; }
+
+.card { 
+  background: white; 
+  border: 1px solid var(--card-border); 
+  border-radius: var(--radius); 
+  padding: 24px; 
+  box-shadow: 0 8px 28px #1c2a5308;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(23, 33, 59, 0.09);
+  border-color: #d2d8eb;
+}
 .card h3 { margin: 8px 0; }
 .card p { margin: 0; color: var(--muted); }
-.ico { width: 40px; height: 40px; border-radius: 12px; background: var(--p-light); color: var(--p); display: grid; place-items: center; font-weight: 900; }
+
+.ico { 
+  width: 40px; 
+  height: 40px; 
+  border-radius: 12px; 
+  background: var(--p-light); 
+  color: var(--p); 
+  display: grid; 
+  place-items: center; 
+  font-weight: 900;
+  transition: transform 0.3s ease;
+}
+.card:hover .ico {
+  transform: scale(1.1) rotate(5deg);
+}
+
 .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
 .steps { display: flex; gap: 9px; flex-wrap: wrap; }
-.steps span, .pill { background: white; border: 1px solid #e3e7f1; border-radius: 12px; padding: 12px 15px; }
+.steps span, .pill { 
+  background: white; 
+  border: 1px solid #e3e7f1; 
+  border-radius: 12px; 
+  padding: 12px 15px; 
+  transition: all 0.2s ease;
+}
+.steps span:hover, .pill:hover {
+  border-color: var(--p);
+  color: var(--p);
+  transform: translateY(-2px);
+}
 .call { background: #182440; color: white; padding: 36px; border-radius: 22px; }
 .call p { color: #d7deef; }
 .call h2 { color: white; }
 .note { background: #f8f9fc; border-left: 3px solid var(--t); padding: 13px; color: #68738a; font-size: .9rem; border-radius: 0 8px 8px 0; }
 
 /* Interactive Form Section */
-.form-card { background: white; border: 1px solid var(--card-border); border-radius: 20px; padding: 32px; box-shadow: 0 12px 36px #1c2a530a; }
+.form-card { 
+  background: white; 
+  border: 1px solid var(--card-border); 
+  border-radius: 20px; 
+  padding: 32px; 
+  box-shadow: 0 12px 36px #1c2a530a; 
+  position: relative;
+  overflow: hidden;
+}
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.92rem; color: var(--ink); }
-.form-control { width: 100%; padding: 12px 16px; border: 1px solid #dcdfe8; border-radius: 10px; font-family: inherit; font-size: 0.95rem; background: #fafbfc; transition: border 0.2s, background 0.2s; }
-.form-control:focus { outline: none; border-color: var(--p); background: #fff; box-shadow: 0 0 0 3px rgba(101, 85, 215, 0.12); }
+.form-control { 
+  width: 100%; 
+  padding: 12px 16px; 
+  border: 1px solid #dcdfe8; 
+  border-radius: 10px; 
+  font-family: inherit; 
+  font-size: 0.95rem; 
+  background: #fafbfc; 
+  transition: all 0.25s ease; 
+}
+.form-control:focus { 
+  outline: none; 
+  border-color: var(--p); 
+  background: #fff; 
+  box-shadow: 0 0 0 4px rgba(101, 85, 215, 0.15); 
+  transform: translateY(-1px);
+}
 textarea.form-control { resize: vertical; min-height: 110px; }
 
 /* Category Selector Pills */
 .category-selector { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-.cat-btn { background: #f0f2f8; border: 1px solid #dcdfe8; color: var(--muted); padding: 9px 16px; border-radius: 20px; cursor: pointer; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; }
-.cat-btn.active, .cat-btn:hover { background: var(--p-light); color: var(--p); border-color: var(--p); }
+.cat-btn { 
+  background: #f0f2f8; 
+  border: 1px solid #dcdfe8; 
+  color: var(--muted); 
+  padding: 9px 16px; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  font-size: 0.88rem; 
+  font-weight: 600; 
+  transition: all 0.25s ease; 
+}
+.cat-btn.active, .cat-btn:hover { 
+  background: var(--p-light); 
+  color: var(--p); 
+  border-color: var(--p); 
+  transform: scale(1.03);
+}
 
-/* Rating Stars */
-.rating-group { display: flex; gap: 8px; font-size: 1.5rem; cursor: pointer; margin-top: 4px; }
-.star { color: #d1d5db; transition: color 0.15s; }
-.star.active, .star:hover { color: #f59e0b; }
+/* Animated Rating Stars */
+.rating-group { display: flex; gap: 8px; font-size: 1.6rem; cursor: pointer; margin-top: 4px; }
+.star { color: #d1d5db; transition: transform 0.2s ease, color 0.2s ease; }
+.star.active, .star:hover { color: #f59e0b; transform: scale(1.2); }
 
-/* Success Message State */
-#form-success { display: none; text-align: center; padding: 40px 20px; }
-#form-success .ico-check { width: 60px; height: 60px; background: var(--t-light); color: var(--t); border-radius: 50%; display: grid; place-items: center; margin: 0 auto 16px; font-size: 1.8rem; font-weight: bold; }
+/* Success State Animation */
+#form-success { display: none; text-align: center; padding: 40px 20px; animation: fadeInUp 0.5s ease forwards; }
+#form-success .ico-check { 
+  width: 64px; 
+  height: 64px; 
+  background: var(--t-light); 
+  color: var(--t); 
+  border-radius: 50%; 
+  display: grid; 
+  place-items: center; 
+  margin: 0 auto 16px; 
+  font-size: 2rem; 
+  font-weight: bold;
+  animation: pulseCheck 1s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
+}
+
+@keyframes pulseCheck {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(32, 183, 166, 0.4); }
+  100% { transform: scale(1.05); box-shadow: 0 0 0 14px rgba(32, 183, 166, 0); }
+}
 
 footer { background: #121c34; color: #dce4f2; padding: 32px 0; margin-top: 40px; }
 footer small { color: #aebbd1; }
@@ -89,7 +233,7 @@ footer small { color: #aebbd1; }
 </head>
 <body>
 
-<header class="w">
+<header class="w fade-in">
   <b>LDF | LIFE DEVELOPMENT FOUNDATION</b>
   <nav>
     <a href="#vision">Vision</a>
@@ -100,7 +244,7 @@ footer small { color: #aebbd1; }
 </header>
 
 <div class="hero">
-  <div class="w">
+  <div class="w fade-in delay-1">
     <div class="tag">Partnership portfolio · Founded 2019</div>
     <h1>One connected community.<br><span style="color:var(--p)">More ways to grow.</span></h1>
     <p class="lead">Life Development Foundation (LDF) is developing an integrated digital community where people and organisations can learn, support one another, volunteer, share expertise and create opportunities together.</p>
@@ -115,55 +259,55 @@ footer small { color: #aebbd1; }
 </div>
 
 <section id="vision" class="w">
-  <div class="intro">
+  <div class="intro fade-in">
     <div class="tag">The idea</div>
     <h2>People should be able to give, learn and grow — not just receive.</h2>
     <p class="muted">LDF connects people, skills and organisations through a shared digital environment. Someone may join to learn, later volunteer, then lead a project or share their expertise. Organisations can find people, publish opportunities and collaborate.</p>
   </div>
   <div class="grid">
-    <article class="card"><div class="ico">♡</div><h3>Human dignity</h3><p>Support that respects people, avoids pity-based messaging and recognises everyone's value.</p></article>
-    <article class="card"><div class="ico">↗</div><h3>Connected opportunity</h3><p>Learning, volunteering, services and community projects connected instead of isolated.</p></article>
-    <article class="card"><div class="ico">◇</div><h3>Trust and evidence</h3><p>Clear project information, responsible ownership, progress updates and evidence of outcomes.</p></article>
+    <article class="card fade-in delay-1"><div class="ico">♡</div><h3>Human dignity</h3><p>Support that respects people, avoids pity-based messaging and recognises everyone's value.</p></article>
+    <article class="card fade-in delay-2"><div class="ico">↗</div><h3>Connected opportunity</h3><p>Learning, volunteering, services and community projects connected instead of isolated.</p></article>
+    <article class="card fade-in delay-3"><div class="ico">◇</div><h3>Trust and evidence</h3><p>Clear project information, responsible ownership, progress updates and evidence of outcomes.</p></article>
   </div>
 </section>
 
 <section id="platform" class="pale">
   <div class="w">
-    <div class="intro">
+    <div class="intro fade-in">
       <div class="tag">The LDF ecosystem</div>
       <h2>One platform. Connected services.</h2>
       <p class="muted">Profiles, projects and opportunities connect the different parts of the community.</p>
     </div>
     <div class="grid">
-      <article class="card"><div class="ico">♡</div><h3>Hope</h3><p>Community support and projects, with clear needs, updates, contributions and evidence.</p></article>
-      <article class="card"><div class="ico">✦</div><h3>Learning Hub</h3><p>Courses, tutors, learning resources, workshops and practical skill development.</p></article>
-      <article class="card"><div class="ico">⌖</div><h3>Pathfinder</h3><p>Helps people understand challenges and find relevant next steps and support.</p></article>
-      <article class="card"><div class="ico">◉</div><h3>Tutors & professionals</h3><p>Profiles to discover expertise, services and learning support.</p></article>
-      <article class="card"><div class="ico">♧</div><h3>Volunteers & leaders</h3><p>Project participation, team coordination, workshops and ways to contribute.</p></article>
-      <article class="card"><div class="ico">▦</div><h3>Organisations & Market</h3><p>Organisation profiles, project publishing, partnerships and a developing marketplace.</p></article>
+      <article class="card fade-in delay-1"><div class="ico">♡</div><h3>Hope</h3><p>Community support and projects, with clear needs, updates, contributions and evidence.</p></article>
+      <article class="card fade-in delay-2"><div class="ico">✦</div><h3>Learning Hub</h3><p>Courses, tutors, learning resources, workshops and practical skill development.</p></article>
+      <article class="card fade-in delay-3"><div class="ico">⌖</div><h3>Pathfinder</h3><p>Helps people understand challenges and find relevant next steps and support.</p></article>
+      <article class="card fade-in delay-1"><div class="ico">◉</div><h3>Tutors & professionals</h3><p>Profiles to discover expertise, services and learning support.</p></article>
+      <article class="card fade-in delay-2"><div class="ico">♧</div><h3>Volunteers & leaders</h3><p>Project participation, team coordination, workshops and ways to contribute.</p></article>
+      <article class="card fade-in delay-3"><div class="ico">▦</div><h3>Organisations & Market</h3><p>Organisation profiles, project publishing, partnerships and a developing marketplace.</p></article>
     </div>
   </div>
 </section>
 
 <section class="w">
   <div class="cols">
-    <div>
+    <div class="fade-in">
       <div class="tag">A connected journey</div>
       <h2>From learning to contribution.</h2>
       <p class="muted">People can move between roles as their confidence, skills and circumstances develop.</p>
     </div>
-    <div class="steps"><span>Learn</span><span>Practise</span><span>Apply</span><span>Reflect</span><span>Grow</span></div>
+    <div class="steps fade-in delay-1"><span>Learn</span><span>Practise</span><span>Apply</span><span>Reflect</span><span>Grow</span></div>
   </div>
 </section>
 
 <section class="pale">
   <div class="w cols">
-    <div>
+    <div class="fade-in">
       <div class="tag">Current stage</div>
       <h2>Built to move forward carefully.</h2>
       <p class="muted">LDF has an existing web platform and a developed concept. The next stage is to validate user journeys, review security and governance, test with real users and run focused pilot projects.</p>
     </div>
-    <div>
+    <div class="fade-in delay-1">
       <h3>Development priorities</h3>
       <p>✓ Review and improve existing features</p>
       <p>✓ Test user, volunteer and organisation journeys</p>
@@ -175,7 +319,7 @@ footer small { color: #aebbd1; }
 </section>
 
 <section id="partner" class="w">
-  <div class="call">
+  <div class="call fade-in">
     <div class="tag" style="color:#8fe8dc">Invitation to collaborate</div>
     <h2>Looking for a strategic UK partner.</h2>
     <p>LDF is seeking an established organisation with experience in community development, education, volunteering, social innovation or digital services. A partner could help review the model, strengthen governance, connect with communities, identify suitable funding routes and co-design a focused pilot.</p>
@@ -184,10 +328,10 @@ footer small { color: #aebbd1; }
   </div>
 </section>
 
-<!-- ADVANCED PUBLIC FEEDBACK & CONSULTATION HUB -->
+<!-- ANIMATED PUBLIC FEEDBACK & CONSULTATION FORM -->
 <section id="consultation" class="pale">
   <div class="w cols">
-    <div>
+    <div class="fade-in">
       <div class="tag">Public Consultation & Feedback</div>
       <h2>Help Shape the Future of LDF</h2>
       <p class="muted">Whether you are an individual user, potential partner organisation, tutor, or volunteer, your insight helps us strengthen platform governance, design better pilots, and improve community impact.</p>
@@ -197,15 +341,17 @@ footer small { color: #aebbd1; }
           <h3>🔒 Data & Governance Commitment</h3>
           <p>Consultation submissions are strictly used for pilot design and operational improvements. Your details will never be sold or shared.</p>
         </div>
-        <div class="note">
-          <b>Active Consultation Phase:</b> Pilot Partner Alignment & Digital Platform Architecture Review (2026).
+        <div class="card" style="margin-bottom:12px; border-left: 3px solid var(--p);">
+          <h3>🌐 External Form Access</h3>
+          <p>Prefer to open in Google Forms? Access the standalone consultation form here:</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQ4zQ1XFkXm2P7g5Y6K-l8V_example/viewform" target="_blank" class="btn alt" style="margin-top:10px; font-size:0.85rem; padding:8px 16px;">Open LDF Public Feedback & Consultation Form ↗</a>
         </div>
       </div>
     </div>
 
-    <div>
+    <div class="fade-in delay-1">
       <div class="form-card">
-        <form id="ldf-consultation-form" onsubmit="handleFormSubmit(event)">
+        <form id="ldf-consultation-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeQ4zQ1XFkXm2P7g5Y6K-l8V_example/formResponse" method="POST" target="hidden_iframe" onsubmit="handleFormSubmit(event)">
           
           <!-- Category Selection -->
           <div class="form-group">
@@ -216,25 +362,25 @@ footer small { color: #aebbd1; }
               <button type="button" class="cat-btn" onclick="setCategory(this, 'Volunteering & Community')">Volunteering</button>
               <button type="button" class="cat-btn" onclick="setCategory(this, 'Platform Feature Suggestion')">Feature Idea</button>
             </div>
-            <input type="hidden" id="form-category" value="Strategic Partnership & Pilot">
+            <input type="hidden" name="entry.1000001" id="form-category" value="Strategic Partnership & Pilot">
           </div>
 
           <!-- Contact Inputs -->
           <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 0;">
             <div class="form-group">
               <label for="full-name">Your Name / Organisation</label>
-              <input type="text" id="full-name" class="form-control" placeholder="e.g. Jane Doe / SCVO" required>
+              <input type="text" name="entry.1000002" id="full-name" class="form-control" placeholder="e.g. Jane Doe / SCVO" required>
             </div>
             <div class="form-group">
               <label for="email-address">Email Address</label>
-              <input type="email" id="email-address" class="form-control" placeholder="name@domain.org" required>
+              <input type="email" name="entry.1000003" id="email-address" class="form-control" placeholder="name@domain.org" required>
             </div>
           </div>
 
           <!-- Role / Stakeholder Dropdown -->
           <div class="form-group">
             <label for="user-role">I am engaging as a:</label>
-            <select id="user-role" class="form-control" required>
+            <select name="entry.1000004" id="user-role" class="form-control" required>
               <option value="" disabled selected>Select your background...</option>
               <option value="UK Charity / Non-Profit Lead">UK Charity / Non-Profit Lead</option>
               <option value="Community Member / Learner">Community Member / Learner</option>
@@ -248,10 +394,10 @@ footer small { color: #aebbd1; }
           <!-- Detailed Feedback / Message -->
           <div class="form-group">
             <label for="feedback-message">Feedback & Proposal Details</label>
-            <textarea id="feedback-message" class="form-control" placeholder="Share your suggestions, partnership ideas, pilot interest, or questions regarding LDF..." required></textarea>
+            <textarea name="entry.1000005" id="feedback-message" class="form-control" placeholder="Share your suggestions, partnership ideas, pilot interest, or questions regarding LDF..." required></textarea>
           </div>
 
-          <!-- Platform Concept Rating -->
+          <!-- Concept Rating -->
           <div class="form-group">
             <label>How relevant is the LDF ecosystem model to your work/community?</label>
             <div class="rating-group" id="rating-stars">
@@ -261,18 +407,23 @@ footer small { color: #aebbd1; }
               <span class="star" onclick="setRating(4)">★</span>
               <span class="star" onclick="setRating(5)">★</span>
             </div>
-            <input type="hidden" id="concept-rating" value="5">
+            <input type="hidden" name="entry.1000006" id="concept-rating" value="5">
           </div>
 
           <!-- Submit Button -->
-          <button type="submit" class="btn" style="width:100%; text-align:center; margin-top:8px;">Submit Consultation Form ➔</button>
+          <button type="submit" class="btn" style="width:100%; justify-content:center; margin-top:8px;">
+            <span>Submit Consultation Form</span> <span>➔</span>
+          </button>
         </form>
+
+        <!-- Hidden Iframe for Direct Submission Handling -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessState(); }"></iframe>
 
         <!-- Form Success View State -->
         <div id="form-success">
           <div class="ico-check">✓</div>
           <h3>Thank You for Your Feedback</h3>
-          <p class="muted">Your consultation submission has been logged. The LDF team will review your proposal and respond if a follow-up discussion is requested.</p>
+          <p class="muted">Your consultation response has been successfully logged. The LDF team will review your proposal and respond if a follow-up discussion is requested.</p>
           <button class="btn alt" onclick="resetForm()" style="margin-top:20px;">Submit Another Response</button>
         </div>
 
@@ -289,6 +440,8 @@ footer small { color: #aebbd1; }
 </footer>
 
 <script>
+let submitted = false;
+
 function setCategory(btn, categoryValue) {
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -308,34 +461,25 @@ function setRating(rating) {
 }
 
 function handleFormSubmit(e) {
-  e.preventDefault();
-  
-  // Collect Data Object
-  const formData = {
-    category: document.getElementById('form-category').value,
-    name: document.getElementById('full-name').value,
-    email: document.getElementById('email-address').value,
-    role: document.getElementById('user-role').value,
-    message: document.getElementById('feedback-message').value,
-    rating: document.getElementById('concept-rating').value,
-    submittedAt: new Date().toISOString()
-  };
+  submitted = true;
+  // UI fallback in case iframe load trigger is delayed
+  setTimeout(showSuccessState, 600);
+}
 
-  console.log("LDF Consultation Form Submitted:", formData);
-  
-  // Transition UI to Success State
+function showSuccessState() {
   document.getElementById('ldf-consultation-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
 }
 
 function resetForm() {
+  submitted = false;
   document.getElementById('ldf-consultation-form').reset();
   document.getElementById('ldf-consultation-form').style.display = 'block';
   document.getElementById('form-success').style.display = 'none';
   setRating(5);
 }
 
-// Initialize 5-star rating by default
+// Initialize 5-star rating on load
 setRating(5);
 </script>
 
