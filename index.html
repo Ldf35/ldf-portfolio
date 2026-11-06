@@ -1,4 +1,1535 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Life Development Foundation - An integrated community platform connecting learning, support, opportunities and people.">
+
+<title>Life Development Foundation | LDF Partnership Portfolio</title>
+
+<style>
+
+/* =========================================
+   LDF BRAND COLOURS
+========================================= */
+
+:root {
+    --purple: #7b2cbf;
+    --purple-dark: #5a189a;
+    --purple-light: #e0aaff;
+
+    --cyan: #00b4d8;
+    --cyan-dark: #0077b6;
+    --cyan-light: #caf0f8;
+
+    --lime: #8ac926;
+    --silver: #94a3b8;
+
+    --background: #090d16;
+    --card: rgba(255,255,255,0.055);
+
+    --white: #ffffff;
+    --muted: #cbd5e1;
+
+    --radius: 20px;
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--white);
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.deck {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(123,44,191,.17),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(0,180,216,.10),
+            transparent 35%
+        ),
+        var(--background);
+}
+
+.ambient {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    right: -150px;
+    top: -180px;
+    background: radial-gradient(
+        circle,
+        rgba(123,44,191,.23),
+        rgba(0,180,216,.12),
+        transparent 70%
+    );
+    filter: blur(65px);
+    pointer-events: none;
+    animation: floatGlow 12s infinite alternate;
+}
+
+@keyframes floatGlow {
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(-70px,90px);
+    }
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 20%;
+    background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--cyan),
+        var(--lime)
+    );
+    z-index: 30;
+    transition: width .5s ease;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+
+    padding: 18px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(9,13,22,.97),
+        transparent
+    );
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+}
+
+.brand-name strong {
+    display: block;
+    font-size: 1.05rem;
+    letter-spacing: .04em;
+}
+
+.brand-name span {
+    color: var(--cyan);
+    font-size: .7rem;
+    letter-spacing: .18em;
+    font-weight: bold;
+}
+
+.header-label {
+    color: var(--cyan);
+    font-size: .75rem;
+    letter-spacing: .13em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   SLIDES
+========================================= */
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    padding: 100px 5% 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease,
+        visibility .5s ease;
+
+    overflow-y: auto;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.content {
+    width: min(1150px, 100%);
+    margin: auto;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.reveal {
+    animation: reveal .7s ease both;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.tag {
+    color: var(--lime);
+    font-size: .77rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: clamp(2.5rem,5vw,4.5rem);
+    line-height: 1.08;
+    margin-bottom: 20px;
+    letter-spacing: -.04em;
+}
+
+h2 {
+    font-size: clamp(2rem,3.5vw,3rem);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.lead {
+    font-size: 1.12rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 720px;
+    margin-bottom: 22px;
+}
+
+.muted {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 13px 23px;
+
+    border-radius: 30px;
+    border: none;
+
+    background: var(--cyan);
+    color: #07111d;
+
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.btn:hover {
+    background: var(--lime);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,.08);
+    color: white;
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+.btn-secondary:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-top: 22px;
+}
+
+.card {
+    padding: 22px;
+
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: var(--radius);
+
+    transition: .3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+    box-shadow: 0 12px 30px rgba(0,180,216,.12);
+}
+
+.card p {
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+.card-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: rgba(123,44,191,.2);
+    border: 1px solid rgba(0,180,216,.35);
+
+    color: var(--cyan);
+    font-size: 1.25rem;
+
+    margin-bottom: 13px;
+}
+
+/* =========================================
+   IMAGE AREAS
+========================================= */
+
+.visual {
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+
+    border: 1px solid rgba(0,180,216,.35);
+
+    background: rgba(255,255,255,.04);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+}
+
+.visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* =========================================
+   PARTNERSHIP SECTION
+========================================= */
+
+.partner-box {
+    padding: 18px;
+    margin-top: 15px;
+
+    background: var(--card);
+    border-radius: 14px;
+
+    border-left: 4px solid var(--cyan);
+}
+
+.partner-box:nth-child(2) {
+    border-left-color: var(--purple);
+}
+
+.partner-box:nth-child(3) {
+    border-left-color: var(--lime);
+}
+
+.partner-box p {
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+/* =========================================
+   CONSULTATION SECTION
+========================================= */
+
+.consultation-slide {
+    align-items: flex-start;
+    padding-top: 105px;
+}
+
+.consultation-layout {
+    width: min(1250px,100%);
+
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 28px;
+
+    align-items: start;
+}
+
+.consultation-badge {
+    display: inline-block;
+
+    padding: 8px 14px;
+    margin-bottom: 18px;
+
+    border-radius: 30px;
+
+    background: rgba(138,201,38,.12);
+    border: 1px solid rgba(138,201,38,.35);
+
+    color: var(--lime);
+
+    font-size: .72rem;
+    font-weight: bold;
+    letter-spacing: .12em;
+}
+
+.consultation-point {
+    padding: 16px;
+    margin-top: 12px;
+
+    background: var(--card);
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-left: 3px solid var(--cyan);
+
+    border-radius: 13px;
+}
+
+.consultation-point h3 {
+    color: white;
+}
+
+.consultation-point p {
+    color: var(--muted);
+    font-size: .85rem;
+    line-height: 1.7;
+}
+
+/* =========================================
+   REAL JOTFORM PANEL
+========================================= */
+
+.form-panel {
+    background: white;
+    color: #0f172a;
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    border-top: 5px solid var(--purple);
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+}
+
+.form-heading {
+    padding: 22px 22px 12px;
+}
+
+.form-heading .small-brand {
+    color: var(--purple);
+    font-size: .7rem;
+    font-weight: 900;
+    letter-spacing: .12em;
+    margin-bottom: 8px;
+}
+
+.form-heading h3 {
+    color: var(--purple-dark);
+    font-size: 1.35rem;
+}
+
+.form-heading p {
+    color: #64748b;
+    font-size: .88rem;
+    line-height: 1.6;
+}
+
+.form-frame {
+    width: 100%;
+    height: 1100px;
+    display: block;
+    border: 0;
+    background: #f8fafc;
+}
+
+.form-footer {
+    padding: 17px 22px;
+
+    border-top: 1px solid #e2e8f0;
+
+    color: #64748b;
+    font-size: .78rem;
+    line-height: 1.8;
+}
+
+.form-footer strong {
+    color: var(--purple-dark);
+}
+
+.form-footer a {
+    color: var(--purple);
+    font-weight: bold;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.controls {
+    position: absolute;
+    bottom: 18px;
+    left: 5%;
+    right: 5%;
+
+    z-index: 25;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.counter {
+    color: var(--silver);
+    font-size: .85rem;
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+
+    color: white;
+    font-size: 1.3rem;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media(max-width:900px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .slide {
+        padding: 95px 20px 85px;
+        align-items: flex-start;
+    }
+
+    .columns {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .consultation-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-frame {
+        height: 1150px;
+    }
+
+    .header-label {
+        display: none;
+    }
+
+    .brand-name strong {
+        font-size: .9rem;
+    }
+
+    .controls {
+        left: 20px;
+        right: 20px;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name strong {
+        font-size: .8rem;
+    }
+
+    .brand-name span {
+        font-size: .6rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .form-frame {
+        height: 1200px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="deck">
+
+    <div class="progress" id="progress"></div>
+    <div class="ambient"></div>
+
+    <!-- =====================================
+         LDF HEADER
+    ====================================== -->
+
+    <header>
+
+        <a href="#" class="brand" onclick="goToSlide(1);return false;">
+
+            <svg class="logo"
+                 viewBox="0 0 500 500"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <circle cx="210" cy="140" r="35" fill="#7B2CBF"/>
+
+                <path
+                d="M140 130 C190 200 260 260 240 370 C200 370 150 310 140 130Z"
+                fill="#7B2CBF"/>
+
+                <circle cx="310" cy="120" r="35" fill="#00B4D8"/>
+
+                <path
+                d="M220 90 C260 170 340 230 350 320 C310 320 260 260 220 90Z"
+                fill="#00B4D8"/>
+
+                <circle cx="250" cy="270" r="45" fill="#8AC926"/>
+
+                <path
+                d="M160 260 C160 360 340 360 340 260 C340 400 160 400 160 260Z"
+                fill="#94A3B8"/>
+
+            </svg>
+
+            <div class="brand-name">
+
+                <strong>LIFE DEVELOPMENT</strong>
+
+                <span>FOUNDATION</span>
+
+            </div>
+
+        </a>
+
+        <div class="header-label">
+            Partnership & Community Portfolio
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         SLIDE 1: INTRODUCTION
+    ====================================== -->
+
+    <section class="slide active" id="slide-1">
+
+        <div class="content columns">
+
+            <div class="reveal">
+
+                <div class="tag">
+                    Founded 2019 · Digital Community Ecosystem
+                </div>
+
+                <h1>
+                    One connected community.
+                    <br>
+                    <span style="color:var(--cyan)">
+                        More ways to grow.
+                    </span>
+                </h1>
+
+                <p class="lead">
+
+                    Life Development Foundation brings people,
+                    learning, community support, volunteering,
+                    professional services and opportunities
+                    together through one connected digital ecosystem.
+
+                </p>
+
+                <div class="buttons">
+
+                    <button class="btn" onclick="nextSlide()">
+                        Explore LDF →
+                    </button>
+
+                    <a
+                    class="btn btn-secondary"
+                    href="https://ldf-platform.vercel.app/#/home"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                        Explore Platform ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="visual reveal">
+
+                <img
+                src="watermarked_img_1927117843575365809.jpg"
+                alt="LDF digital ecosystem overview">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SLIDE 2: VISION
+    ====================================== -->
+
+    <section class="slide" id="slide-2">
+
+        <div class="content columns">
+
+            <div>
+
+                <div class="tag">
+                    01 / Our Vision
+                </div>
+
+                <h2>
+                    Giving, learning and growing together.
+                </h2>
+
+                <p class="muted">
+
+                    We believe people should have opportunities
+                    to learn, contribute, receive support,
+                    share knowledge and develop together.
+
+                    LDF aims to connect these opportunities
+                    in one accessible community.
+
+                </p>
+
+                <div class="grid">
+
+                    <div class="card">
+
+                        <div class="card-icon">♡</div>
+
+                        <h3>Human Dignity</h3>
+
+                        <p>
+                            Support people with respect,
+                            transparency and dignity.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-icon">↗</div>
+
+                        <h3>Shared Opportunities</h3>
+
+                        <p>
+                            Connect people with learning,
+                            skills, services and opportunities.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-icon">◎</div>
+
+                        <h3>Community</h3>
+
+                        <p>
+                            Encourage people and organisations
+                            to cooperate and contribute.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-icon">✦</div>
+
+                        <h3>Continuous Growth</h3>
+
+                        <p>
+                            Learn, practise, apply, reflect
+                            and improve together.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="visual">
+
+                <img
+                src="watermarked_img_9623259757956686802.jpg"
+                alt="LDF community and human dignity">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SLIDE 3: ECOSYSTEM
+    ====================================== -->
+
+    <section class="slide" id="slide-3">
+
+        <div class="content columns">
+
+            <div>
+
+                <div class="tag">
+                    02 / The LDF Ecosystem
+                </div>
+
+                <h2>
+                    Different services. One connected platform.
+                </h2>
+
+                <p class="muted">
+
+                    LDF is designed to bring different
+                    community activities into one ecosystem.
+
+                    People can participate in different ways
+                    according to their interests and abilities.
+
+                </p>
+
+                <div class="grid">
+
+                    <div class="card">
+
+                        <h3 style="color:var(--purple-light)">
+                            LDF Hope
+                        </h3>
+
+                        <p>
+                            Community support, projects,
+                            contributions, progress updates
+                            and transparency.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3 style="color:var(--cyan)">
+                            Learning Hub
+                        </h3>
+
+                        <p>
+                            Courses, tutoring, educational
+                            resources, workshops and learning
+                            opportunities.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3 style="color:var(--lime)">
+                            Pathfinder
+                        </h3>
+
+                        <p>
+                            Help people understand challenges,
+                            explore possible next steps
+                            and discover suitable support.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3 style="color:var(--cyan)">
+                            Volunteers & Leaders
+                        </h3>
+
+                        <p>
+                            Volunteer profiles, project teams,
+                            workshops, community activities
+                            and leadership opportunities.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3 style="color:var(--purple-light)">
+                            Organisations & Partners
+                        </h3>
+
+                        <p>
+                            Publish projects, connect with
+                            volunteers, host workshops
+                            and develop partnerships.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3 style="color:var(--lime)">
+                            LDF Market
+                        </h3>
+
+                        <p>
+                            Connect businesses, professionals,
+                            products, services and community
+                            opportunities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="visual">
+
+                <img
+                src="watermarked_img_8169973200633157149.jpg"
+                alt="LDF platform architecture">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SLIDE 4: PARTNERSHIPS
+    ====================================== -->
+
+    <section class="slide" id="slide-4">
+
+        <div class="content columns">
+
+            <div>
+
+                <div class="tag">
+                    03 / Strategic Collaboration
+                </div>
+
+                <h2>
+                    Let's develop something meaningful together.
+                </h2>
+
+                <p class="muted">
+
+                    We welcome conversations with universities,
+                    technology companies, charities, social
+                    enterprises, educational institutions
+                    and community organisations.
+
+                </p>
+
+                <div class="partner-box">
+
+                    <h3>Universities & Education Providers</h3>
+
+                    <p>
+                        Explore educational collaboration,
+                        research opportunities, tutoring,
+                        workshops and student participation.
+                    </p>
+
+                </div>
+
+                <div class="partner-box">
+
+                    <h3>Technology Companies</h3>
+
+                    <p>
+                        Review platform architecture,
+                        user experience, security,
+                        scalability and technical development.
+                    </p>
+
+                </div>
+
+                <div class="partner-box">
+
+                    <h3>Charities & Community Organisations</h3>
+
+                    <p>
+                        Explore community projects,
+                        volunteer coordination,
+                        support opportunities and pilot activities.
+                    </p>
+
+                </div>
+
+                <div class="partner-box">
+
+                    <h3>Strategic Partners & Sponsors</h3>
+
+                    <p>
+                        Discuss responsible growth,
+                        long-term collaboration,
+                        resources and potential pilot projects.
+                    </p>
+
+                </div>
+
+                <div class="buttons">
+
+                    <button class="btn" onclick="goToSlide(5)">
+                        Share Your Feedback →
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="visual">
+
+                <img
+                src="watermarked_img_3113571043441988386.jpg"
+                alt="LDF strategic partnership concept">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SLIDE 5: PUBLIC CONSULTATION
+    ====================================== -->
+
+    <section class="slide consultation-slide" id="slide-5">
+
+        <div class="consultation-layout">
+
+            <!-- LEFT SIDE -->
+
+            <div>
+
+                <div class="tag">
+                    04 / Public Consultation
+                </div>
+
+                <div class="consultation-badge">
+                    YOUR VOICE MATTERS
+                </div>
+
+                <h2>
+                    Help Shape the Future of LDF.
+                </h2>
+
+                <p class="lead">
+
+                    Before expanding the platform,
+                    we want to listen.
+
+                    Your experience, professional knowledge
+                    and ideas can help us build something
+                    genuinely valuable.
+
+                </p>
+
+                <div class="consultation-point">
+
+                    <h3>01. Share Your Perspective</h3>
+
+                    <p>
+                        Tell us what you think about
+                        the LDF concept, its purpose
+                        and its potential.
+                    </p>
+
+                </div>
+
+                <div class="consultation-point">
+
+                    <h3>02. Identify Opportunities</h3>
+
+                    <p>
+                        Suggest improvements, missing
+                        features, services, partnerships
+                        and possible pilot projects.
+                    </p>
+
+                </div>
+
+                <div class="consultation-point">
+
+                    <h3>03. Build Together</h3>
+
+                    <p>
+                        Explore opportunities to contribute
+                        as an organisation, university,
+                        professional, volunteer
+                        or community member.
+                    </p>
+
+                </div>
+
+                <div class="consultation-point">
+
+                    <h3>04. Be Honest</h3>
+
+                    <p>
+                        We welcome criticism, concerns,
+                        questions and different perspectives.
+                        Honest feedback helps us improve.
+                    </p>
+
+                </div>
+
+                <div class="buttons">
+
+                    <a
+                    class="btn"
+                    href="https://form.jotform.com/263091582945061"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                        Open Feedback Form ↗
+
+                    </a>
+
+                </div>
+
+                <p class="muted"
+                   style="font-size:.78rem;margin-top:22px;">
+
+                    Learn Together.
+                    Support Each Other.
+                    Grow with Purpose.
+
+                </p>
+
+            </div>
+
+
+            <!-- RIGHT SIDE: REAL JOTFORM -->
+
+            <div class="form-panel">
+
+                <div class="form-heading">
+
+                    <div class="small-brand">
+                        LIFE DEVELOPMENT FOUNDATION
+                    </div>
+
+                    <h3>
+                        LDF Community & Partner Feedback
+                    </h3>
+
+                    <p>
+
+                        We welcome honest opinions from
+                        individuals, universities, businesses,
+                        charities, professionals, volunteers
+                        and potential strategic partners.
+
+                    </p>
+
+                </div>
+
+
+                <!-- REAL FORM -->
+
+                <iframe
+
+                    class="form-frame"
+
+                    title="LDF Public Consultation and Feedback Form"
+
+                    src="https://form.jotform.com/263091582945061"
+
+                    loading="lazy"
+
+                    allow="geolocation; microphone; camera"
+
+                ></iframe>
+
+
+                <div class="form-footer">
+
+                    <strong>
+                        Thank you for contributing to LDF.
+                    </strong>
+
+                    <br>
+
+                    Your feedback will help inform
+                    future improvements and development priorities.
+
+                    <br><br>
+
+                    Please avoid submitting confidential
+                    or sensitive personal information.
+
+                    <br><br>
+
+                    If the form does not display correctly,
+                    <a
+                    href="https://form.jotform.com/263091582945061"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                        open the form separately here.
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <div class="controls">
+
+        <div class="counter" id="counter">
+            Slide 1 of 5
+        </div>
+
+        <div class="navigation">
+
+            <button
+            class="nav-btn"
+            onclick="prevSlide()"
+            aria-label="Previous slide">
+
+                ‹
+
+            </button>
+
+            <button
+            class="nav-btn"
+            onclick="nextSlide()"
+            aria-label="Next slide">
+
+                ›
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+let currentSlide = 1;
+
+const totalSlides = 5;
+
+
+function updateDeck() {
+
+    const slides = document.querySelectorAll(".slide");
+
+    slides.forEach((slide, index) => {
+
+        slide.classList.toggle(
+            "active",
+            index + 1 === currentSlide
+        );
+
+    });
+
+    const progress = document.getElementById("progress");
+
+    progress.style.width =
+        (currentSlide / totalSlides * 100) + "%";
+
+    document.getElementById("counter").innerText =
+        "Slide " + currentSlide + " of " + totalSlides;
+
+}
+
+
+function nextSlide() {
+
+    if (currentSlide < totalSlides) {
+
+        currentSlide++;
+
+        updateDeck();
+
+    }
+
+}
+
+
+function prevSlide() {
+
+    if (currentSlide > 1) {
+
+        currentSlide--;
+
+        updateDeck();
+
+    }
+
+}
+
+
+function goToSlide(number) {
+
+    if (number >= 1 && number <= totalSlides) {
+
+        currentSlide = number;
+
+        updateDeck();
+
+    }
+
+}
+
+
+/* KEYBOARD NAVIGATION */
+
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.key === "ArrowRight" ||
+        event.code === "Space"
+    ) {
+
+        event.preventDefault();
+
+        nextSlide();
+
+    }
+
+    if (event.key === "ArrowLeft") {
+
+        prevSlide();
+
+    }
+
+});
+
+
+/* TOUCH / SWIPE NAVIGATION */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+document.addEventListener("touchstart", function(event) {
+
+    touchStartX = event.changedTouches[0].screenX;
+
+});
+
+
+document.addEventListener("touchend", function(event) {
+
+    touchEndX = event.changedTouches[0].screenX;
+
+    const distance = touchEndX - touchStartX;
+
+    if (Math.abs(distance) > 80) {
+
+        if (distance < 0) {
+
+            nextSlide();
+
+        } else {
+
+            prevSlide();
+
+        }
+
+    }
+
+});
+
+
+/* INITIALISE */
+
+updateDeck();
+
+</script>
+
+</body>
+</html><!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
