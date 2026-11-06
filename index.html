@@ -2,22 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#100d20">
-<title>Life Development Foundation | A Connected Future</title>
-<meta name="description" content="Life Development Foundation — connecting people, knowledge, support and opportunities through one digital community ecosystem.">
-
-<!-- Fixed Google Fonts links -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&fam?variant="standard" title="LDF website code" id="83621"}
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="description" content="Life Development Foundation — Learn Together. Support Each Other. Grow with Purpose.">
 <meta name="theme-color" content="#100c1c">
 
@@ -44,7 +29,6 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -55,19 +39,11 @@ body {
 }
 
 a { text-decoration: none; color: inherit; }
-
 button { font: inherit; }
-
 img { display: block; max-width: 100%; }
 
-.container {
-  width: min(1160px, 90%);
-  margin: auto;
-}
-
-.section {
-  padding: 105px 0;
-}
+.container { width: min(1160px, 90%); margin: auto; }
+.section { padding: 105px 0; }
 
 .eyebrow {
   color: var(--purple);
@@ -95,7 +71,6 @@ img { display: block; max-width: 100%; }
 }
 
 /* NAVIGATION */
-
 .nav {
   position: fixed;
   top: 0;
@@ -103,13 +78,10 @@ img { display: block; max-width: 100%; }
   right: 0;
   z-index: 100;
   padding: 17px 0;
-  transition: .3s;
-}
-
-.nav.scrolled {
   background: rgba(16,12,28,.96);
   backdrop-filter: blur(16px);
   box-shadow: 0 8px 35px rgba(0,0,0,.15);
+  transition: .3s;
 }
 
 .nav-inner {
@@ -127,10 +99,7 @@ img { display: block; max-width: 100%; }
   color: white;
 }
 
-.logo svg {
-  width: 43px;
-  height: 43px;
-}
+.logo svg { width: 43px; height: 43px; }
 
 .logo-text strong {
   display: block;
@@ -149,7 +118,7 @@ img { display: block; max-width: 100%; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   color: rgba(255,255,255,.85);
   font-size: .88rem;
   font-weight: 600;
@@ -160,7 +129,7 @@ img { display: block; max-width: 100%; }
 .nav-cta {
   background: var(--cyan);
   color: #07111c !important;
-  padding: 11px 19px;
+  padding: 10px 18px;
   border-radius: 30px;
   font-weight: 800;
 }
@@ -176,10 +145,8 @@ img { display: block; max-width: 100%; }
 }
 
 /* HERO */
-
 .hero {
-  min-height: 760px;
-  min-height: 100svh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -195,13 +162,6 @@ img { display: block; max-width: 100%; }
     linear-gradient(90deg, rgba(13,9,25,.96) 0%, rgba(13,9,25,.79) 48%, rgba(13,9,25,.25) 100%),
     linear-gradient(0deg, rgba(13,9,25,.55), transparent 55%),
     url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=85') center/cover;
-  transform: scale(1.04);
-  animation: heroZoom 18s ease-in-out infinite alternate;
-}
-
-@keyframes heroZoom {
-  from { transform: scale(1.02); }
-  to { transform: scale(1.10); }
 }
 
 .hero-content {
@@ -233,11 +193,11 @@ img { display: block; max-width: 100%; }
 
 .hero h1 {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(3.2rem, 7.5vw, 6.5rem);
-  line-height: 1.02;
-  letter-spacing: -.065em;
+  font-size: clamp(3rem, 6.5vw, 5.8rem);
+  line-height: 1.04;
+  letter-spacing: -.05em;
   max-width: 850px;
-  margin-bottom: 27px;
+  margin-bottom: 24px;
 }
 
 .gradient-text {
@@ -250,23 +210,19 @@ img { display: block; max-width: 100%; }
 .hero-description {
   max-width: 650px;
   color: rgba(255,255,255,.82);
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.85;
   margin-bottom: 35px;
 }
 
-.button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
+.button-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 9px;
-  padding: 15px 24px;
+  padding: 14px 24px;
   border-radius: 35px;
   font-weight: 800;
   font-size: .9rem;
@@ -275,169 +231,30 @@ img { display: block; max-width: 100%; }
   cursor: pointer;
 }
 
-.btn-primary {
-  background: var(--cyan);
-  color: #07111c;
-}
+.btn-primary { background: var(--cyan); color: #07111c; }
+.btn-primary:hover { background: var(--lime); transform: translateY(-3px); }
+.btn-outline { color: white; border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.06); }
+.btn-outline:hover { background: rgba(255,255,255,.16); transform: translateY(-3px); }
 
-.btn-primary:hover {
-  background: var(--lime);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,180,216,.22);
-}
-
-.btn-outline {
-  color: white;
-  border-color: rgba(255,255,255,.5);
-  background: rgba(255,255,255,.06);
-  backdrop-filter: blur(8px);
-}
-
-.btn-outline:hover {
-  background: rgba(255,255,255,.16);
-  transform: translateY(-4px);
-}
-
-.hero-bottom {
-  position: absolute;
-  bottom: 35px;
-  left: 5%;
-  right: 5%;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: rgba(255,255,255,.7);
-  font-size: .78rem;
-  letter-spacing: .08em;
-}
-
-/* INTRODUCTION */
-
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.intro-image {
-  position: relative;
-}
-
-.intro-image img {
-  width: 100%;
-  height: 510px;
-  object-fit: cover;
-  border-radius: 28px;
-}
-
-.image-note {
-  position: absolute;
-  bottom: 25px;
-  left: -25px;
-  background: white;
-  padding: 22px 25px;
-  border-radius: 17px;
-  box-shadow: var(--shadow);
-  max-width: 250px;
-}
-
-.image-note strong {
-  display: block;
-  color: var(--purple);
-  font-size: 1.7rem;
-  margin-bottom: 5px;
-}
-
-.image-note span {
-  color: #686579;
-  font-size: .83rem;
-  line-height: 1.5;
-}
-
-.intro-copy p {
-  color: #686579;
-  line-height: 1.9;
-  margin-bottom: 18px;
-}
-
-.text-link {
-  display: inline-flex;
-  gap: 9px;
-  align-items: center;
-  color: var(--purple);
-  font-weight: 800;
-  margin-top: 12px;
-}
-
-/* PRINCIPLES */
-
-.principles {
-  background: var(--dark);
-  color: white;
-}
-
-.principles .eyebrow { color: var(--cyan); }
-.principles .section-description { color: var(--muted); }
-
-.principle-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 17px;
-  margin-top: 45px;
-}
-
-.principle {
-  padding: 27px 23px;
+/* VISION AND MISSION */
+.statement-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.statement {
   border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.045);
-  border-radius: 19px;
-  transition: .3s;
+  border-radius: 24px;
+  padding: 36px;
+  background: linear-gradient(145deg, var(--dark2), var(--dark));
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.principle:hover {
-  transform: translateY(-7px);
-  border-color: var(--cyan);
-  background: rgba(0,180,216,.07);
-}
+.statement .symbol { font-size: 32px; margin-bottom: 16px; }
+.statement h3 { font-size: 1.45rem; margin-bottom: 14px; font-family: 'Manrope', sans-serif; line-height: 1.3; }
+.statement p { font-size: 0.98rem; color: var(--muted); line-height: 1.75; }
+.statement-label { font-size: .74rem; letter-spacing: 2px; color: var(--cyan); font-weight: 800; text-transform: uppercase; margin-bottom: 8px; }
 
-.principle .icon {
-  font-size: 2rem;
-  margin-bottom: 19px;
-}
-
-.principle h3 {
-  margin-bottom: 10px;
-  font-size: 1.05rem;
-}
-
-.principle p {
-  color: var(--muted);
-  font-size: .88rem;
-  line-height: 1.7;
-}
-
-/* ECOSYSTEM */
-
-.ecosystem {
-  background: #fff;
-}
-
-.ecosystem-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 25px;
-}
-
-.module-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 22px;
-  margin-top: 45px;
-}
-
+/* MODULE ECOSYSTEM GRID */
+.module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 45px; }
 .module-card {
   background: white;
   border-radius: 21px;
@@ -446,461 +263,47 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 10px 35px rgba(20,10,40,.055);
   transition: .35s;
 }
-
-.module-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow);
-}
-
-.module-image {
-  height: 210px;
-  overflow: hidden;
-}
-
-.module-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .6s;
-}
-
+.module-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); }
+.module-image { height: 200px; overflow: hidden; }
+.module-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
 .module-card:hover img { transform: scale(1.08); }
-
 .module-body { padding: 25px; }
+.module-number { color: var(--purple); font-size: .72rem; font-weight: 900; letter-spacing: .15em; }
+.module-body h3 { font-family: 'Manrope', sans-serif; font-size: 1.3rem; margin: 9px 0 11px; }
+.module-body p { color: #6e6a7b; font-size: .91rem; line-height: 1.75; }
 
-.module-number {
-  color: var(--purple);
-  font-size: .72rem;
-  font-weight: 900;
-  letter-spacing: .15em;
-}
-
-.module-body h3 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.3rem;
-  margin: 9px 0 11px;
-}
-
-.module-body p {
-  color: #6e6a7b;
-  font-size: .91rem;
-  line-height: 1.75;
-}
-
-.module-tag {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 7px 11px;
-  border-radius: 30px;
-  background: #f1e9fa;
-  color: var(--purple-dark);
-  font-size: .72rem;
-  font-weight: 800;
-}
-
-/* HOW IT WORKS */
-
-.journey {
-  background: #f0edf7;
-}
-
-.journey-grid {
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  gap: 13px;
-  margin-top: 50px;
-}
-
-.journey-step {
-  background: white;
-  border-radius: 18px;
-  padding: 24px 18px;
-  position: relative;
-  box-shadow: 0 8px 30px rgba(20,10,40,.04);
-}
-
-.journey-step .number {
-  font-family: 'Manrope', sans-serif;
-  font-size: 2.5rem;
-  color: var(--purple);
-  font-weight: 800;
-  opacity: .65;
-}
-
-.journey-step h3 { margin: 8px 0; }
-
-.journey-step p {
-  color: #777286;
-  font-size: .83rem;
-  line-height: 1.7;
-}
-
-/* PEOPLE */
-
-.people-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.people-card {
-  min-height: 360px;
-  border-radius: 25px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: end;
-  color: white;
-  background-size: cover;
-  background-position: center;
-}
-
-.people-card:after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(10,8,20,.95), rgba(10,8,20,.03) 90%);
-}
-
-.people-card-content {
-  position: relative;
-  z-index: 1;
-  padding: 30px;
-}
-
-.people-card h3 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.7rem;
-  margin-bottom: 9px;
-}
-
-.people-card p {
-  color: rgba(255,255,255,.83);
-  line-height: 1.7;
-  max-width: 420px;
-  font-size: .9rem;
-}
-
-/* PARTNERS */
-
-.partners {
-  background: var(--dark);
-  color: white;
-}
-
-.partners .eyebrow { color: var(--lime); }
-.partners .section-description { color: var(--muted); }
-
-.partner-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 18px;
-  margin-top: 40px;
-}
-
-.partner-card {
-  padding: 28px;
-  background: rgba(255,255,255,.055);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 20px;
-  transition: .3s;
-}
-
-.partner-card:hover {
-  border-color: var(--cyan);
-  transform: translateY(-5px);
-}
-
-.partner-card .icon {
-  font-size: 2rem;
-  margin-bottom: 17px;
-}
-
-.partner-card h3 { margin-bottom: 10px; }
-
-.partner-card p {
-  color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.75;
-}
-
-/* IMAGE BREAK */
-
-.image-break {
-  min-height: 420px;
-  display: flex;
-  align-items: center;
-  color: white;
-  position: relative;
-  background:
-    linear-gradient(90deg, rgba(16,12,28,.92), rgba(16,12,28,.4)),
-    url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1900&q=85') center/cover;
-}
-
-.image-break h2 {
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(2.3rem,5vw,4.3rem);
-  line-height: 1.12;
-  max-width: 800px;
-}
-
-.image-break p {
-  color: rgba(255,255,255,.82);
-  line-height: 1.8;
-  margin-top: 20px;
-  max-width: 650px;
-}
-
-/* FEEDBACK */
-
-.feedback {
-  background: #f7f6fb;
-}
-
-.feedback-layout {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.feedback-points {
-  display: grid;
-  gap: 14px;
-  margin-top: 30px;
-}
-
-.feedback-point {
-  padding: 18px;
-  border-radius: 15px;
-  background: white;
-  border-left: 4px solid var(--cyan);
-  box-shadow: 0 7px 25px rgba(20,10,40,.04);
-}
-
-.feedback-point h3 { font-size: .97rem; }
-
-.feedback-point p {
-  color: #777286;
-  font-size: .84rem;
-  line-height: 1.65;
-}
-
-.form-panel {
-  background: white;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border-top: 5px solid var(--purple);
-}
-
+/* FEEDBACK & CONSULTATION */
+.feedback-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 40px; align-items: start; }
+.form-panel { background: white; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); border-top: 5px solid var(--purple); }
 .form-header { padding: 25px; }
-
-.form-header span {
-  font-size: .72rem;
-  color: var(--purple);
-  font-weight: 900;
-  letter-spacing: .13em;
-}
-
-.form-header h3 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.4rem;
-  margin: 10px 0;
-}
-
-.form-header p {
-  color: #777286;
-  line-height: 1.65;
-  font-size: .88rem;
-}
-
-.form-frame {
-  width: 100%;
-  height: 1100px;
-  border: 0;
-  display: block;
-  background: #fff;
-}
-
-.form-footer {
-  padding: 20px 25px;
-  border-top: 1px solid #eee;
-  font-size: .78rem;
-  line-height: 1.7;
-  color: #777286;
-}
-
-.form-footer a {
-  color: var(--purple);
-  font-weight: 800;
-}
-
-/* FINAL CTA */
-
-.final-cta {
-  padding: 100px 0;
-  background:
-    radial-gradient(circle at 80% 30%, rgba(0,180,216,.2), transparent 35%),
-    linear-gradient(130deg, #26113e, #100c1c 70%);
-  color: white;
-  text-align: center;
-}
-
-.final-cta h2 {
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(2.5rem,5vw,4.5rem);
-  line-height: 1.1;
-  max-width: 850px;
-  margin: 0 auto 20px;
-}
-
-.final-cta p {
-  max-width: 650px;
-  margin: 0 auto 30px;
-  color: var(--muted);
-  line-height: 1.8;
-}
+.form-header h3 { font-family: 'Manrope', sans-serif; font-size: 1.4rem; margin: 8px 0; }
+.form-frame { width: 100%; height: 800px; border: 0; background: #fff; }
 
 /* FOOTER */
+footer { padding: 50px 0 25px; background: #090711; color: white; }
+.footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; color: var(--muted); font-size: .88rem; }
 
-footer {
-  padding: 55px 0 25px;
-  background: #090711;
-  color: white;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 45px;
-  padding-bottom: 40px;
-}
-
-footer p, footer a {
-  color: #aaa5b8;
-  font-size: .86rem;
-  line-height: 1.8;
-}
-
-footer h3 {
-  margin-bottom: 15px;
-  font-size: .95rem;
-}
-
-footer a:hover { color: var(--cyan); }
-
-.footer-links {
-  display: grid;
-  gap: 8px;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: 20px;
-  color: #8c8799;
-  font-size: .76rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-}
+/* GUIDE & TOUR */
+.guide-launch { position: fixed; right: 22px; bottom: 22px; z-index: 60; padding: 13px 20px; border: 0; border-radius: 99px; background: linear-gradient(120deg, var(--cyan), var(--lime)); color: #171525; font-weight: 900; cursor: pointer; box-shadow: 0 10px 35px rgba(0,0,0,.4); }
+.guide-panel { position: fixed; right: 20px; bottom: 85px; z-index: 75; width: min(370px, calc(100% - 30px)); padding: 22px; border-radius: 22px; background: #201b35; border: 1px solid rgba(112,228,220,.5); color: #fff; display: none; }
+.guide-panel.open { display: block; }
+.guide-head { display: flex; align-items: center; justify-content: space-between; }
+.guide-avatar { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, var(--cyan), var(--lime)); color: #171525; display: grid; place-items: center; font-weight: 900; }
+.guide-close { background: none; border: 0; color: white; font-size: 23px; cursor: pointer; }
+.guide-message { font-size: .92rem; margin: 16px 0; min-height: 80px; }
+.guide-controls { display: flex; gap: 8px; }
+.guide-controls button { padding: 8px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2); background: #302849; color: white; cursor: pointer; font-weight: 700; }
+.guide-controls .next { background: var(--lime); color: #171525; }
 
 /* REVEAL ANIMATION */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .75s ease, transform .75s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE */
+.reveal { opacity: 0; transform: translateY(22px); transition: .75s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media(max-width:900px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 75px;
-    left: 4%;
-    right: 4%;
-    padding: 25px;
-    background: #19132a;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 18px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
-  }
-
+  .nav-links { display: none; position: absolute; top: 75px; left: 4%; right: 4%; padding: 25px; background: #19132a; border-radius: 18px; flex-direction: column; }
   .nav-links.open { display: flex; }
-
   .menu-button { display: block; }
-
-  .intro-grid,
-  .feedback-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .principle-grid { grid-template-columns: repeat(2,1fr); }
-
-  .module-grid { grid-template-columns: repeat(2,1fr); }
-
-  .journey-grid { grid-template-columns: repeat(2,1fr); }
-
-  .partner-grid { grid-template-columns: repeat(2,1fr); }
-
-  .ecosystem-header {
-    display: block;
-  }
-
-  .intro-image img { height: 400px; }
-}
-
-@media(max-width:580px) {
-  .section { padding: 75px 0; }
-
-  .hero { min-height: 760px; }
-
-  .hero h1 { font-size: 3.1rem; }
-
-  .hero-description { font-size: 1rem; }
-
-  .hero-bottom { font-size: .65rem; }
-
-  .principle-grid,
-  .module-grid,
-  .journey-grid,
-  .partner-grid,
-  .people-grid,
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .people-card { min-height: 310px; }
-
-  .image-note { left: 10px; bottom: 12px; }
-
-  .form-frame { height: 1200px; }
-
-  .footer-bottom {
-    flex-direction: column;
-  }
-
-  .button-row .btn { width: 100%; }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  *, *:before, *:after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
+  .statement-grid, .module-grid, .feedback-layout { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -908,12 +311,10 @@ footer a:hover { color: var(--cyan); }
 <body>
 
 <!-- NAVIGATION -->
-
-<nav class="nav" id="navbar">
+<nav class="nav">
   <div class="nav-inner">
-
     <a href="#home" class="logo">
-      <svg viewBox="0 0 500 500" fill="none" aria-hidden="true">
+      <svg viewBox="0 0 500 500" fill="none">
         <circle cx="210" cy="140" r="35" fill="#7B2CBF"/>
         <path d="M140 130 C190 200 260 260 240 370 C200 370 150 310 140 130Z" fill="#7B2CBF"/>
         <circle cx="310" cy="120" r="35" fill="#00B4D8"/>
@@ -921,2712 +322,210 @@ footer a:hover { color: var(--cyan); }
         <circle cx="250" cy="270" r="45" fill="#8AC926"/>
         <path d="M160 260 C160 360 340 360 340 260 C340 400 160 400 160 260Z" fill="#94A3B8"/>
       </svg>
-
       <div class="logo-text">
         <strong>LIFE DEVELOPMENT</strong>
         <span>FOUNDATION</span>
       </div>
     </a>
 
-    <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
-      ☰
-    </button>
+    <button class="menu-button" id="menuButton" aria-label="Toggle Navigation">☰</button>
 
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
-      <a href="#ecosystem">Our Ecosystem</a>
-      <a href="#journey">How It Works</a>
-      <a href="#partners">Partnerships</a>
-      <a href="#feedback">Feedback</a>
+      <a href="#vision">Vision & Mission</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="finance.html">Finance</a>
+      <a href="#feedback">Consultation</a>
       <a href="https://ldf-platform.vercel.app/#/home" target="_blank" rel="noopener noreferrer" class="nav-cta">Explore Platform ↗</a>
     </div>
-
   </div>
 </nav>
-
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-  <div class="hero-image"></div>
-
-  <div class="hero-content">
-
-    <div class="hero-label">
-      Founded 2019 · A vision for people and communities
-    </div>
-
-    <h1>
-      One community.<br>
-      <span class="gradient-text">Unlimited possibilities.</span>
-    </h1>
-
-    <p class="hero-description">
-      Imagine a place where people can learn, share knowledge,
-      support one another, discover opportunities and grow together.
-      Life Development Foundation is working towards connecting
-      these possibilities in one community ecosystem.
-    </p>
-
-    <div class="button-row">
-
-      <a href="#ecosystem" class="btn btn-primary">
-        Discover LDF ↓
-      </a>
-
-      <a href="https://ldf-platform.vercel.app/#/home"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="btn btn-outline">
-        Explore the Platform ↗
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="hero-bottom">
-    <span>LEARN TOGETHER</span>
-    <span>SUPPORT EACH OTHER</span>
-    <span>GROW WITH PURPOSE</span>
-  </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="section" id="about">
-
-  <div class="container intro-grid">
-
-    <div class="intro-image reveal">
-
-      <img
-        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85"
-        alt="People collaborating and sharing ideas"
-        loading="lazy">
-
-      <div class="image-note">
-        <strong>2019</strong>
-        <span>A vision that began with the desire to contribute something meaningful to society.</span>
-      </div>
-
-    </div>
-
-    <div class="intro-copy reveal">
-
-      <div class="eyebrow">The story behind LDF</div>
-
-      <h2 class="section-title">
-        A simple idea. A bigger purpose.
-      </h2>
-
-      <p>
-        Life Development Foundation began with an idea:
-        to contribute to society by developing people's
-        thinking, knowledge, abilities and opportunities.
-      </p>
-
-      <p>
-        We believe that people should not be limited to
-        one role. Someone can be a learner today, a volunteer
-        tomorrow, a mentor in the future and a source of
-        encouragement to someone else.
-      </p>
-
-      <p>
-        LDF aims to bring these different possibilities
-        together through a connected digital community,
-        built around cooperation, dignity and shared growth.
-      </p>
-
-      <a href="#ecosystem" class="text-link">
-        Discover our ecosystem →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PRINCIPLES -->
-
-<section class="section principles">
-
-  <div class="container">
-
-    <div class="eyebrow reveal">What guides us</div>
-
-    <h2 class="section-title reveal">
-      Technology should bring people closer.
-    </h2>
-
-    <p class="section-description reveal">
-      Our vision is built around people, not simply digital
-      services. These principles guide the direction in which
-      LDF is being developed.
-    </p>
-
-    <div class="principle-grid">
-
-      <div class="principle reveal">
-        <div class="icon">♡</div>
-        <h3>Humanity</h3>
-        <p>People deserve respect, dignity and meaningful opportunities.</p>
-      </div>
-
-      <div class="principle reveal">
-        <div class="icon">◎</div>
-        <h3>Transparency</h3>
-        <p>Trust grows through clear communication and responsible practices.</p>
-      </div>
-
-      <div class="principle reveal">
-        <div class="icon">✦</div>
-        <h3>Equality</h3>
-        <p>Everyone should have opportunities to participate and contribute.</p>
-      </div>
-
-      <div class="principle reveal">
-        <div class="icon">↗</div>
-        <h3>Cooperation</h3>
-        <p>We can achieve more when individuals and organisations work together.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ECOSYSTEM -->
-
-<section class="section ecosystem" id="ecosystem">
-
-  <div class="container">
-
-    <div class="ecosystem-header">
-
-      <div>
-        <div class="eyebrow reveal">One connected ecosystem</div>
-
-        <h2 class="section-title reveal">
-          Many opportunities.<br>One community.
-        </h2>
-
-        <p class="section-description reveal">
-          LDF brings together different services and activities
-          designed to complement one another.
-        </p>
-      </div>
-
-    </div>
-
-    <div class="module-grid">
-
-      <article class="module-card reveal">
-
-        <div class="module-image">
-          <img
-            src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=900&q=85"
-            alt="Community members working together"
-            loading="lazy">
-        </div>
-
-        <div class="module-body">
-          <span class="module-number">01 / COMMUNITY SUPPORT</span>
-          <h3>LDF Hope</h3>
-          <p>
-            A space designed for community support projects,
-            contributions, progress updates and transparent
-            communication, with dignity at its centre.
-          </p>
-          <span class="module-tag">Give Hope, Not Pity</span>
-        </div>
-
-      </article>
-
-
-      <article class="module-card reveal">
-
-        <div class="module-image">
-          <img
-            src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=85"
-            alt="People learning together"
-            loading="lazy">
-        </div>
-
-        <div class="module-body">
-          <span class="module-number">02 / EDUCATION</span>
-          <h3>Learning Hub</h3>
-          <p>
-            A learning environment bringing together courses,
-            tutors, workshops, educational resources and
-            opportunities to develop new skills.
-          </p>
-          <span class="module-tag">Learn · Practise · Grow</span>
-        </div>
-
-      </article>
-
-
-      <article class="module-card reveal">
-
-        <div class="module-image">
-          <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=85"
-            alt="People discussing ideas"
-            loading="lazy">
-        </div>
-
-        <div class="module-body">
-          <span class="module-number">03 / GUIDANCE</span>
-          <h3>Pathfinder</h3>
-          <p>
-            A concept designed to help people understand
-            challenges, explore possible next steps and
-            discover relevant support.
-          </p>
-          <span class="module-tag">Find a Way Forward</span>
-        </div>
-
-      </article>
-
-
-      <article class="module-card reveal">
-
-        <div class="module-image">
-          <img
-            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=85"
-            alt="Volunteers supporting a community project"
-            loading="lazy">
-        </div>
-
-        <div class="module-body">
-          <span class="module-number">04 / PARTICIPATION</span>
-          <h3>Volunteers & Leaders</h3>
-          <p>
-            Connect people with community projects,
-            volunteering opportunities, teams,
-            workshops and leadership activities.
-          </p>
-          <span class="module-tag">Make a Difference</span>
-        </div>
-
-      </article>
-
-
-      <article class="module-card reveal">
-
-        <div class="module-image">
-          <img
-            src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=85"
-            alt="People and organisations meeting"
-            loading="lazy">
-        </div>
-
-        <div class="module-body">
-          <span class="module-number">05 / COLLABORATION</span>
-          <h3>Organisations & Partners</h3>
-          <p>
-            Help organisations publish projects,
-            connect with volunteers, host workshops
-            and explore collaborative opportunities.
-          </p>
-          <span class="module-tag">Stronger Together</span>
-        </div>
-
-      </article>
-
-
-      <article class="module-card reveal">
-
-        <div class="module-image">
-          <img
-            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
-            alt="Entrepreneurs and professionals working together"
-            loading="lazy">
-        </div>
-
-        <div class="module-body">
-          <span class="module-number">06 / OPPORTUNITY</span>
-          <h3>LDF Market</h3>
-          <p>
-            A planned marketplace connecting businesses,
-            professionals, products, services and
-            community opportunities.
-          </p>
-          <span class="module-tag">Connect & Discover</span>
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- JOURNEY -->
-
-<section class="section journey" id="journey">
-
-  <div class="container">
-
-    <div class="eyebrow reveal">The LDF experience</div>
-
-    <h2 class="section-title reveal">
-      Growth is a journey, not a destination.
-    </h2>
-
-    <p class="section-description reveal">
-      The LDF learning and development philosophy
-      encourages people to move from knowledge
-      towards meaningful action.
-    </p>
-
-    <div class="journey-grid">
-
-      <div class="journey-step reveal">
-        <div class="number">01</div>
-        <h3>Learn</h3>
-        <p>Discover knowledge, skills and new perspectives.</p>
-      </div>
-
-      <div class="journey-step reveal">
-        <div class="number">02</div>
-        <h3>Practise</h3>
-        <p>Build confidence through experience and practice.</p>
-      </div>
-
-      <div class="journey-step reveal">
-        <div class="number">03</div>
-        <h3>Apply</h3>
-        <p>Use what you learn in real situations.</p>
-      </div>
-
-      <div class="journey-step reveal">
-        <div class="number">04</div>
-        <h3>Reflect</h3>
-        <p>Understand your progress and identify improvements.</p>
-      </div>
-
-      <div class="journey-step reveal">
-        <div class="number">05</div>
-        <h3>Grow</h3>
-        <p>Continue developing and share your experience with others.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- COMMUNITY -->
-
-<section class="section">
-
-  <div class="container">
-
-    <div class="eyebrow reveal">A place for everyone</div>
-
-    <h2 class="section-title reveal">
-      You don't have to be just one thing.
-    </h2>
-
-    <p class="section-description reveal">
-      Within the LDF vision, people can participate in
-      different ways as their interests, skills and
-      circumstances change.
-    </p>
-
-    <div class="people-grid">
-
-      <div class="people-card reveal"
-        style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85')">
-
-        <div class="people-card-content">
-          <h3>For Individuals</h3>
-          <p>
-            Learn, discover opportunities, share knowledge,
-            volunteer, receive support and connect with people.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="people-card reveal"
-        style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=85')">
-
-        <div class="people-card-content">
-          <h3>For Organisations</h3>
-          <p>
-            Share projects, connect with volunteers,
-            host workshops, reach communities
-            and explore collaboration.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PARTNERSHIPS -->
-
-<section class="section partners" id="partners">
-
-  <div class="container">
-
-    <div class="eyebrow reveal">Let's work together</div>
-
-    <h2 class="section-title reveal">
-      The right partnerships can turn ideas into impact.
-    </h2>
-
-    <p class="section-description reveal">
-      We are inviting independent feedback and exploring
-      potential collaboration with organisations that share
-      an interest in learning, community development,
-      technology and social impact.
-    </p>
-
-    <div class="partner-grid">
-
-      <div class="partner-card reveal">
-        <div class="icon">🎓</div>
-        <h3>Universities</h3>
-        <p>
-          Explore academic feedback, research conversations,
-          educational collaboration, workshops
-          and student participation.
-        </p>
-      </div>
-
-      <div class="partner-card reveal">
-        <div class="icon">💻</div>
-        <h3>Technology Companies</h3>
-        <p>
-          Help review technical architecture,
-          accessibility, security, user experience
-          and future development opportunities.
-        </p>
-      </div>
-
-      <div class="partner-card reveal">
-        <div class="icon">🤝</div>
-        <h3>Charities & Social Enterprises</h3>
-        <p>
-          Explore community projects, volunteering,
-          service collaboration and possible pilot activities.
-        </p>
-      </div>
-
-      <div class="partner-card reveal">
-        <div class="icon">🌍</div>
-        <h3>Community Organisations</h3>
-        <p>
-          Share local knowledge, identify community needs
-          and explore ways to connect people with opportunities.
-        </p>
-      </div>
-
-      <div class="partner-card reveal">
-        <div class="icon">🚀</div>
-        <h3>Strategic Partners</h3>
-        <p>
-          Discuss long-term development, shared objectives,
-          delivery models and potential partnerships.
-        </p>
-      </div>
-
-      <div class="partner-card reveal">
-        <div class="icon">💡</div>
-        <h3>Sponsors & Supporters</h3>
-        <p>
-          Explore possible support through expertise,
-          resources, mentoring, funding or collaboration.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- VISUAL MESSAGE -->
-
-<section class="image-break">
-
-  <div class="container reveal">
-
-    <div class="eyebrow" style="color:var(--lime)">
-      Our belief
-    </div>
-
-    <h2>
-      A better community begins when people recognise
-      the value they can bring to one another.
-    </h2>
-
-    <p>
-      LDF is an invitation to think beyond individual roles
-      and build a community where learning, opportunity,
-      support and contribution can connect.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- FEEDBACK -->
-
-<section class="section feedback" id="feedback">
-
-  <div class="container feedback-layout">
-
-    <div>
-
-      <div class="eyebrow reveal">Public consultation</div>
-
-      <h2 class="section-title reveal">
-        Help us build it better.
-      </h2>
-
-      <p class="section-description reveal">
-        Before taking the platform further, we want to hear
-        from people who may use it, work with it,
-        support it or challenge its ideas.
-      </p>
-
-      <div class="feedback-points">
-
-        <div class="feedback-point reveal">
-          <h3>01. What makes sense?</h3>
-          <p>Tell us which parts of the LDF vision are valuable and relevant.</p>
-        </div>
-
-        <div class="feedback-point reveal">
-          <h3>02. What needs improvement?</h3>
-          <p>Identify weaknesses, missing features, risks and unclear ideas.</p>
-        </div>
-
-        <div class="feedback-point reveal">
-          <h3>03. What opportunities exist?</h3>
-          <p>Suggest pilot projects, research, partnerships and collaboration.</p>
-        </div>
-
-        <div class="feedback-point reveal">
-          <h3>04. What should happen next?</h3>
-          <p>Help us decide what deserves attention before wider launch.</p>
-        </div>
-
-      </div>
-
-      <a
-        class="text-link"
-        href="https://form.jotform.com/263091582945061"
-        target="_blank"
-        rel="noopener noreferrer">
-        Open feedback form separately ↗
-      </a>
-
-    </div>
-
-
-    <div class="form-panel reveal">
-
-      <div class="form-header">
-
-        <span>LIFE DEVELOPMENT FOUNDATION</span>
-
-        <h3>Share Your Perspective</h3>
-
-        <p>
-          Feedback from individuals, universities,
-          organisations, businesses, professionals,
-          volunteers and potential partners is welcome.
-        </p>
-
-      </div>
-
-      <iframe
-        class="form-frame"
-        title="LDF Community and Partner Feedback Form"
-        src="https://form.jotform.com/263091582945061"
-        loading="lazy">
-      </iframe>
-
-      <div class="form-footer">
-        <strong>Thank you for helping LDF improve.</strong>
-        <br>
-        Please do not submit confidential or sensitive
-        personal information. Your feedback will help
-        inform future development priorities.
-        <br><br>
-        If the form does not load,
-        <a href="https://form.jotform.com/263091582945061"
-           target="_blank"
-           rel="noopener noreferrer">
-          open it in a separate window.
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FINAL INVITATION -->
-
-<section class="final-cta">
-
-  <div class="container reveal">
-
-    <div class="eyebrow" style="color:var(--lime)">
-      Be part of the conversation
-    </div>
-
-    <h2>
-      The future of a community is something we build together.
-    </h2>
-
-    <p>
-      Explore the LDF platform, share your thoughts
-      and help us discover what this vision could become.
-    </p>
-
-    <div class="button-row" style="justify-content:center">
-
-      <a
-        href="https://ldf-platform.vercel.app/#/home"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-primary">
-        Explore LDF Platform ↗
-      </a>
-
-      <a href="#feedback" class="btn btn-outline">
-        Give Your Feedback ↓
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-
-        <a href="#home" class="logo">
-
-          <svg viewBox="0 0 500 500" fill="none" aria-hidden="true">
-            <circle cx="210" cy="140" r="35" fill="#7B2CBF"/>
-            <path d="M140 130 C190 200 260 260 240 370 C200 370 150 310 140 130Z" fill="#7B2CBF"/>
-            <circle cx="310" cy="120" r="35" fill="#00B4D8"/>
-            <path d="M220 90 C260 170 340 230 350 320 C310 320 260 260 220 90Z" fill="#00B4D8"/>
-            <circle cx="250" cy="270" r="45" fill="#8AC926"/>
-            <path d="M160 260 C160 360 340 360 340 260 C340 400 160 400 160 260Z" fill="#94A3B8"/>
-          </svg>
-
-          <div class="logo-text">
-            <strong>LIFE DEVELOPMENT</strong>
-            <span>FOUNDATION</span>
-          </div>
-
-        </a>
-
-        <p style="margin-top:20px;max-width:360px">
-          Learn Together. Support Each Other.
-          Grow with Purpose.
-        </p>
-
-      </div>
-
-      <div>
-        <h3>Explore</h3>
-
-        <div class="footer-links">
-          <a href="#about">About LDF</a>
-          <a href="#ecosystem">Our Ecosystem</a>
-          <a href="#journey">How It Works</a>
-          <a href="#partners">Partnerships</a>
-          <a href="#feedback">Feedback</a>
-        </div>
-
-      </div>
-
-      <div>
-        <h3>Connect</h3>
-
-        <div class="footer-links">
-
-          <a
-            href="https://ldf-platform.vercel.app/#/home"
-            target="_blank"
-            rel="noopener noreferrer">
-            LDF Platform
-          </a>
-
-          <a
-            href="https://form.jotform.com/263091582945061"
-            target="_blank"
-            rel="noopener noreferrer">
-            Share Feedback
-          </a>
-
-          <a href="mailto:[INSERT-OFFICIAL-LDF-EMAIL]">
-            Contact LDF
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-      <span>© <span id="year"></span> Life Development Foundation.</span>
-
-      <span>Learn Together. Support Each Other. Grow with Purpose.</span>
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-<script>
-
-/* NAVIGATION */
-
-const navbar = document.getElementById('navbar');
-const menuButton = document.getElementById('menuButton');
-const navLinks = document.getElementById('navLinks');
-
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 30);
-});
-
-menuButton.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-});
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuButton.setAttribute('aria-expanded', 'false');
-  });
-});
-
-
-/* SCROLL REVEAL */
-
-const observer = new IntersectionObserver((entries) => {
-
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-
-      entry.target.classList.add('visible');
-
-      observer.unobserve(entry.target);
-
-    }
-
-  });
-
-}, {
-  threshold: 0.12
-});
-
-document.querySelectorAll('.reveal').forEach(element => {
-  observer.observe(element);
-});
-
-
-/* FOOTER YEAR */
-
-document.getElementById('year').textContent =
-  new Date().getFullYear();
-
-</script>
-
-</body>
-</html>
-```ily=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
- --bg:#100d20;--panel:#19152c;--panel2:#211b38;
- --text:#f8f6ff;--muted:#b9b3ca;
- --cyan:#70e4dc;--lime:#c9f27b;--purple:#a99aff;
- --border:rgba(255,255,255,.12);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-.container{width:min(1160px,90%);margin:auto}
-.section{padding:100px 0;position:relative}
-.eyebrow{color:var(--cyan);font-size:.76rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-.gradient{
- background:linear-gradient(100deg,var(--cyan),var(--lime),var(--purple));
- -webkit-background-clip:text;background-clip:text;color:transparent
-}
-h1,h2,h3{font-family:Manrope,sans-serif}
-h2{font-size:clamp(2rem,4vw,3.35rem);line-height:1.15;letter-spacing:-1.4px}
-p{color:var(--muted)}
-.btn{
- display:inline-flex;align-items:center;justify-content:center;gap:9px;
- padding:13px 21px;border-radius:99px;border:1px solid var(--border);
- font-weight:800;transition:.25s
-}
-.btn:hover{transform:translateY(-3px)}
-.primary{background:var(--lime);color:#171525;border-color:var(--lime)}
-.outline:hover{border-color:var(--cyan);color:var(--cyan)}
-.section-heading{max-width:750px;margin-bottom:42px}
-.section-heading h2{margin:12px 0 17px}
-.section-heading p{max-width:690px}
-
-/* Navigation */
-.nav{position:sticky;top:0;z-index:30;background:rgba(16,13,32,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
-.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:11px;font-family:Manrope;font-weight:800;line-height:1.1;font-size:.85rem}
-.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--cyan),var(--lime));color:#151327;display:grid;place-items:center;font-size:21px}
-.nav-links{display:flex;gap:21px;font-size:.85rem;color:var(--muted)}
-.nav-links a:hover{color:var(--cyan)}
-.menu-toggle{display:none;border:0;background:none;color:white;font-size:25px}
-
-/* Hero */
-.hero{padding:88px 0 95px;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;width:650px;height:650px;right:-220px;top:-240px;background:radial-gradient(circle,rgba(112,228,220,.16),transparent 68%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
-.hero h1{font-size:clamp(3.1rem,6.3vw,5.5rem);line-height:1.02;letter-spacing:-3px;margin:19px 0 24px}
-.hero-copy{font-size:1.08rem;max-width:600px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
-.hero-image{
- min-height:460px;border-radius:30px;position:relative;overflow:hidden;
- background:linear-gradient(0deg,rgba(16,13,32,.85),transparent 70%),
- url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85") center/cover;
- border:1px solid var(--border);animation:float 7s ease-in-out infinite
-}
-.hero-image-card{position:absolute;bottom:23px;left:23px;right:23px;padding:20px;border-radius:18px;background:rgba(20,17,38,.88);backdrop-filter:blur(14px);z-index:2}
-.hero-image-card strong{display:block;font-size:1.1rem}
-.hero-image-card span{font-size:.87rem;color:var(--muted)}
-@keyframes float{50%{transform:translateY(-8px)}}
-
-/* Vision and mission */
-.statement-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.statement{
- border:1px solid var(--border);border-radius:25px;padding:32px;
- background:linear-gradient(145deg,var(--panel2),var(--panel));position:relative;overflow:hidden
-}
-.statement:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-85px;bottom:-100px;background:rgba(112,228,220,.07)}
-.statement .symbol{font-size:31px;margin-bottom:17px}
-.statement h3{font-size:1.55rem;margin-bottom:12px}
-.statement p{font-size:1rem}
-.statement-label{font-size:.72rem;letter-spacing:2px;color:var(--cyan);font-weight:800;text-transform:uppercase}
-
-/* Mission pillars */
-.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.pillar{padding:24px;border:1px solid var(--border);background:var(--panel);border-radius:19px;transition:.3s}
-.pillar:hover{transform:translateY(-5px);border-color:var(--cyan)}
-.pillar .number{font-size:.8rem;color:var(--cyan);font-weight:900}
-.pillar h3{font-size:1.13rem;margin:10px 0}
-.pillar p{font-size:.89rem}
-
-/* Ecosystem diagram */
-.diagram-wrap{
- padding:30px;border:1px solid var(--border);border-radius:28px;
- background:radial-gradient(circle at center,rgba(169,154,255,.08),transparent 60%),var(--panel);
-}
-.diagram-intro{text-align:center;margin-bottom:25px}
-.diagram-intro p{font-size:.9rem;margin-top:7px}
-.ecosystem-diagram{position:relative;max-width:850px;margin:auto}
-.diagram-svg{width:100%;height:auto;display:block}
-.diagram-node{cursor:pointer;outline:none}
-.diagram-node rect{fill:#211b38;stroke:rgba(255,255,255,.23);stroke-width:1.5;transition:.25s}
-.diagram-node text{fill:#fff;font-family:"DM Sans",sans-serif;font-size:15px;font-weight:700;pointer-events:none}
-.diagram-node .sub{fill:#b9b3ca;font-size:10px;font-weight:400}
-.diagram-node:hover rect,.diagram-node:focus rect,.diagram-node.selected rect{stroke:#70e4dc;stroke-width:3;fill:#302849}
-.diagram-line{stroke:rgba(112,228,220,.5);stroke-width:2;stroke-dasharray:6 7;fill:none}
-.diagram-centre{fill:#c9f27b;stroke:#fff;stroke-width:2}
-.diagram-centre-text{fill:#151327;font-family:Manrope;font-size:17px;font-weight:900}
-.diagram-help{text-align:center;margin-top:18px;font-size:.85rem}
-.diagram-detail{margin:20px auto 0;max-width:650px;padding:18px;border:1px solid var(--border);border-radius:16px;background:#171329;text-align:center}
-.diagram-detail strong{color:var(--cyan)}
-.diagram-detail p{font-size:.9rem;margin-top:5px}
-
-/* Ecosystem cards */
-.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.feature-card{
- display:block;text-align:left;width:100%;color:var(--text);
- padding:26px;border:1px solid var(--border);border-radius:21px;
- background:linear-gradient(145deg,var(--panel2),var(--panel));
- transition:.3s;min-height:225px
-}
-.feature-card:hover{transform:translateY(-7px);border-color:var(--cyan)}
-.feature-icon{width:50px;height:50px;border-radius:15px;background:rgba(112,228,220,.12);display:grid;place-items:center;font-size:24px;margin-bottom:17px}
-.feature-card h3{font-size:1.2rem;margin-bottom:9px}
-.feature-card p{font-size:.9rem}
-.feature-card .more{display:inline-block;color:var(--cyan);font-weight:800;font-size:.85rem;margin-top:15px}
-
-/* How it works */
-.process{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.process-step{padding:20px 12px;border:1px solid var(--border);background:var(--panel);border-radius:17px;text-align:center}
-.process-step .icon{font-size:25px}
-.process-step strong{display:block;margin:7px 0 3px}
-.process-step span{font-size:.8rem;color:var(--muted)}
-
-/* Technology / AI */
-.tech-section{background:linear-gradient(130deg,#19152c,#171d31);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.tech-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:center}
-.ai-visual{min-height:350px;border:1px solid var(--border);border-radius:28px;background:radial-gradient(circle,rgba(112,228,220,.13),transparent 60%),#151226;display:grid;place-items:center}
-.orbit{width:220px;height:220px;border:1px dashed rgba(112,228,220,.5);border-radius:50%;display:grid;place-items:center;position:relative;animation:spin 24s linear infinite}
-.core{width:100px;height:100px;border-radius:30px;display:grid;place-items:center;font-size:38px;background:linear-gradient(135deg,var(--cyan),var(--lime));color:#171525;animation:pulse 3s infinite}
-.dot{position:absolute;width:35px;height:35px;border-radius:50%;background:var(--panel2);border:1px solid var(--cyan);display:grid;place-items:center}
-.dot:nth-child(2){top:0;left:50%;transform:translate(-50%,-50%)}
-.dot:nth-child(3){right:0;top:50%;transform:translate(50%,-50%)}
-.dot:nth-child(4){bottom:0;left:50%;transform:translate(-50%,50%)}
-.dot:nth-child(5){left:0;top:50%;transform:translate(-50%,-50%)}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes pulse{50%{scale:1.07}}
-.ai-steps{display:grid;gap:12px;margin-top:24px}
-.ai-step{display:flex;gap:14px;padding:15px;border:1px solid var(--border);border-radius:15px;background:rgba(255,255,255,.025)}
-.ai-step b{color:var(--cyan)}
-.ai-step span{font-size:.88rem}
-
-/* Impact */
-.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.impact-card{border:1px solid var(--border);background:var(--panel);border-radius:18px;padding:22px}
-.impact-card strong{display:block;font-size:1.05rem;margin-bottom:7px}
-.impact-card p{font-size:.86rem}
-.note{font-size:.8rem;margin-top:20px;padding:14px;border-left:3px solid var(--cyan);background:rgba(112,228,220,.05)}
-
-/* Partners */
-.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.partner-card{padding:23px;border-radius:18px;background:var(--panel);border:1px solid var(--border)}
-.partner-card h3{font-size:1.03rem;margin-bottom:8px}
-.partner-card p{font-size:.88rem}
-
-/* Feedback / CTA */
-.feedback-frame{width:100%;height:850px;border:1px solid var(--border);border-radius:20px;background:white}
-.cta{border:1px solid var(--border);border-radius:28px;padding:50px;background:linear-gradient(120deg,rgba(112,228,220,.12),rgba(169,154,255,.12));display:flex;justify-content:space-between;align-items:center;gap:25px}
-.cta h2{margin:10px 0}
-footer{padding:40px 0;border-top:1px solid var(--border);font-size:.86rem}
-.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted)}
-
-/* AI guide */
-.guide-launch{position:fixed;right:22px;bottom:22px;z-index:60;padding:13px 18px;border:0;border-radius:99px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#171525;font-weight:900;box-shadow:0 10px 35px #0005}
-.guide-panel{position:fixed;right:20px;bottom:85px;z-index:75;width:min(370px,calc(100% - 30px));padding:22px;border-radius:22px;background:#201b35;border:1px solid rgba(112,228,220,.5);box-shadow:0 20px 70px #0008;display:none}
-.guide-panel.open{display:block;animation:pop .25s}
-@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.guide-head{display:flex;align-items:center;justify-content:space-between}
-.guide-avatar{width:43px;height:43px;border-radius:14px;background:linear-gradient(135deg,var(--cyan),var(--lime));color:#171525;display:grid;place-items:center;font-size:23px}
-.guide-name{display:flex;gap:10px;align-items:center}
-.guide-name small{display:block;color:var(--cyan)}
-.guide-close{background:none;border:0;color:white;font-size:23px}
-.guide-message{font-size:.92rem;margin:18px 0;min-height:85px}
-.guide-progress{height:5px;background:#39334d;border-radius:10px;overflow:hidden;margin:15px 0}
-.guide-progress span{display:block;height:100%;background:var(--cyan);width:0;transition:.3s}
-.guide-controls{display:flex;gap:8px;flex-wrap:wrap}
-.guide-controls button{padding:9px 12px;border-radius:11px;border:1px solid var(--border);background:#302849;color:white;font-weight:700}
-.guide-controls .next{background:var(--lime);color:#171525}
-#tourShade{position:fixed;inset:0;z-index:45;background:rgba(4,3,12,.77);display:none;pointer-events:none}
-#tourShade.active{display:block}
-.tour-highlight{position:relative!important;z-index:50!important;border-color:var(--cyan)!important;box-shadow:0 0 0 3px rgba(112,228,220,.45),0 0 40px rgba(112,228,220,.2)!important}
-body.tour-active .nav{z-index:55}
-#featureModal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(4,3,12,.84);backdrop-filter:blur(8px)}
-#featureModal.open{display:flex}
-.modal-card{width:min(550px,100%);padding:30px;border-radius:24px;background:#211b38;border:1px solid var(--border);position:relative;animation:pop .25s}
-.modal-card h3{font-size:1.8rem;margin:12px 0}
-.modal-card p{font-size:.95rem}
-.modal-close{position:absolute;right:17px;top:12px;background:none;border:0;color:white;font-size:24px}
-.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.reveal{opacity:0;transform:translateY(22px);transition:.7s}
-.reveal.visible{opacity:1;transform:none}
-
-@media(max-width:850px){
- .hero-grid,.tech-grid{grid-template-columns:1fr}
- .hero-image{min-height:350px}
- .feature-grid,.partner-grid{grid-template-columns:repeat(2,1fr)}
- .pillar-grid{grid-template-columns:repeat(2,1fr)}
- .impact-grid{grid-template-columns:repeat(2,1fr)}
- .nav-links{display:none;position:absolute;top:76px;left:0;right:0;padding:22px 5%;background:#171329;flex-direction:column}
- .nav-links.show{display:flex}
- .menu-toggle{display:block}
-}
-@media(max-width:560px){
- .section{padding:72px 0}
- .statement-grid,.feature-grid,.partner-grid,.pillar-grid{grid-template-columns:1fr}
- .process{grid-template-columns:repeat(2,1fr)}
- .impact-grid{grid-template-columns:1fr 1fr}
- .hero h1{letter-spacing:-2px}
- .cta{padding:28px;display:block}
- .cta .btn{margin-top:20px}
- .diagram-wrap{padding:12px}
- .diagram-node text{font-size:19px}
- .diagram-node .sub{font-size:14px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
- .reveal{opacity:1;transform:none}
-}
-</style>
-</head>
-
-<body>
-
-<header class="nav">
- <div class="container nav-inner">
-  <a class="brand" href="#home"><span class="brand-mark">L</span><span>LIFE DEVELOPMENT<br>FOUNDATION</span></a>
-  <nav class="nav-links" id="navLinks">
-   <a href="#about">About</a>
-   <a href="#vision">Vision & Mission</a>
-   <a href="#ecosystem">Ecosystem</a>
-   <a href="#technology">Technology</a>
-   <a href="#partners">Partnerships</a>
-   <a href="#feedback">Feedback</a>
-   <a href="finance.html">finance.html</a>
-  </nav>
-  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
- </div>
-</header>
 
 <main>
 
 <!-- HERO -->
 <section class="hero" id="home">
- <div class="container hero-grid">
-  <div>
-   <div class="eyebrow">A connected digital community · Established 2019</div>
-   <h1>Connecting people.<br><span class="gradient">Developing possibilities.</span></h1>
-   <p class="hero-copy">
-    Life Development Foundation is building a connected digital ecosystem
-    where people can learn, support one another, share knowledge,
-    discover opportunities and contribute to meaningful development.
-   </p>
-   <div class="hero-actions">
-    <a class="btn primary" href="#ecosystem">Explore the ecosystem →</a>
-    <button class="btn outline" id="startTour">✦ Meet the LDF guide</button>
-   </div>
-   <p style="font-size:.84rem;margin-top:22px">Learn Together. Support Each Other. Grow with Purpose.</p>
-  </div>
-  <div class="hero-image" role="img" aria-label="People collaborating together">
-   <div class="hero-image-card">
-    <strong>One ecosystem. Many ways to contribute.</strong>
-    <span>People, knowledge, support and opportunities connected through technology.</span>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="about">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">Who we are</div>
-   <h2>Technology should connect people to <span class="gradient">possibility.</span></h2>
-   <p>
-    LDF began in 2019 with an ambition to contribute something meaningful
-    to society by developing people's thinking, knowledge, abilities and
-    opportunities. Its long-term direction is to connect different
-    forms of development and community participation within one ecosystem.
-   </p>
-  </div>
-  <div class="statement-grid">
-   <article class="statement reveal">
-    <div class="symbol">🌍</div>
-    <div class="statement-label">Our philosophy</div>
-    <h3>People are the purpose. Technology is the connection.</h3>
-    <p>
-     We believe that people should have meaningful ways to learn,
-     contribute, receive support and develop. Digital tools can help
-     make those connections easier to discover and access.
+  <div class="hero-image"></div>
+  <div class="hero-content">
+    <div class="hero-label">Established 2019 · Connecting Opportunities</div>
+    <h1>Connecting people.<br><span class="gradient-text">Developing possibilities.</span></h1>
+    <p class="hero-description">
+      Life Development Foundation is an integrated digital community platform where people can learn, support one another, share knowledge, and build meaningful pathways for social growth.
     </p>
-   </article>
-   <article class="statement reveal">
-    <div class="symbol">🔗</div>
-    <div class="statement-label">Our approach</div>
-    <h3>Bring separate opportunities into one connected journey.</h3>
-    <p>
-     Learning, community projects, professional knowledge, volunteering
-     and organisational collaboration can strengthen one another when
-     they are connected through a thoughtful digital system.
-    </p>
-   </article>
+    <div class="button-row">
+      <a href="#vision" class="btn btn-primary">Discover Our Mission ↓</a>
+      <a href="https://ldf-platform.vercel.app/#/home" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Explore Platform ↗</a>
+    </div>
   </div>
- </div>
 </section>
 
 <!-- VISION AND MISSION -->
-<section class="section" id="vision">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">Our direction</div>
-   <h2>A clear vision.<br><span class="gradient">A practical mission.</span></h2>
-   <p>
-    The vision describes the future we want to contribute to.
-    The mission describes the work and principles that move us towards it.
-   </p>
-  </div>
+<section class="section" id="vision" style="background: var(--dark);">
+  <div class="container">
+    <div class="eyebrow reveal" style="color:var(--lime);">Our Core Purpose</div>
+    <h2 class="section-title reveal" style="color:white; margin-bottom:35px;">
+      Empowering individuals.<br><span class="gradient-text">Inspiring societal change.</span>
+    </h2>
 
-  <div class="statement-grid">
-   <article class="statement reveal">
-    <div class="symbol">🔭</div>
-    <div class="statement-label">Our vision</div>
-    <h3>A world where everyone has greater opportunities to learn, develop, contribute and grow.</h3>
-    <p>
-     We envision a connected and inclusive society where knowledge,
-     support and opportunities are more accessible, where people can
-     develop their potential and where cooperation helps communities
-     become stronger.
-    </p>
-   </article>
+    <div class="statement-grid">
+      <!-- VISION CARD -->
+      <article class="statement reveal">
+        <div class="symbol">🔭</div>
+        <div class="statement-label">Our Vision</div>
+        <h3>Nurturing spirituality & good attitudes alongside knowledge and skills.</h3>
+        <p>
+          Creating a positive and thriving community involves nurturing spirituality and fostering good attitudes, alongside the acquisition of knowledge and skills.
+        </p>
+      </article>
 
-   <article class="statement reveal">
-    <div class="symbol">🚀</div>
-    <div class="statement-label">Our mission</div>
-    <h3>To connect people, knowledge, support and opportunities through an accessible, transparent and collaborative digital ecosystem.</h3>
-    <p>
-     We aim to bring individuals, educators, professionals, volunteers,
-     businesses and organisations together to enable learning,
-     encourage participation, support meaningful projects and create
-     pathways for personal and community development.
-    </p>
-   </article>
+      <!-- MISSION CARD -->
+      <article class="statement reveal">
+        <div class="symbol">🚀</div>
+        <div class="statement-label">Our Mission</div>
+        <h3>Spreading knowledge & organizing workshops for societal change.</h3>
+        <p>
+          Spreading knowledge and organizing workshops to inspire societal change, helping people find mental happiness, and fostering responsible citizens who contribute to their country.
+        </p>
+      </article>
+    </div>
   </div>
- </div>
 </section>
 
-<!-- MISSION PILLARS -->
-<section class="section">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">How we deliver the mission</div>
-   <h2>Six commitments. <span class="gradient">One purpose.</span></h2>
-   <p>These commitments translate the mission into practical areas of development.</p>
-  </div>
-  <div class="pillar-grid">
-   <article class="pillar reveal"><div class="number">01 / LEARN</div><h3>Make learning accessible</h3><p>Connect people with knowledge, learning resources, tutors, workshops and opportunities to develop skills.</p></article>
-   <article class="pillar reveal"><div class="number">02 / SUPPORT</div><h3>Strengthen community support</h3><p>Encourage responsible, transparent and dignity-centred community projects and participation.</p></article>
-   <article class="pillar reveal"><div class="number">03 / CONNECT</div><h3>Build meaningful connections</h3><p>Help individuals, professionals, volunteers and organisations discover ways to work together.</p></article>
-   <article class="pillar reveal"><div class="number">04 / EMPOWER</div><h3>Develop people's potential</h3><p>Support personal growth, practical skills, confidence, knowledge-sharing and participation.</p></article>
-   <article class="pillar reveal"><div class="number">05 / COLLABORATE</div><h3>Enable shared action</h3><p>Provide ways for partners and communities to publish projects, organise activities and collaborate.</p></article>
-   <article class="pillar reveal"><div class="number">06 / IMPROVE</div><h3>Use technology responsibly</h3><p>Explore digital tools and AI to make information, navigation and participation more useful and accessible.</p></article>
-  </div>
- </div>
-</section>
-
-<!-- HOW MISSION CONNECTS -->
+<!-- MODULE ECOSYSTEM -->
 <section class="section" id="ecosystem">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">The LDF operating model</div>
-   <h2>One mission.<br><span class="gradient">A connected digital ecosystem.</span></h2>
-   <p>
-    Each LDF service has a distinct role, but the greatest potential comes
-    from the connections between them. Select a part of the diagram to
-    explore how it contributes to the overall mission.
-   </p>
+  <div class="container">
+    <div class="eyebrow reveal">One Connected Ecosystem</div>
+    <h2 class="section-title reveal">Interconnected Services.<br>Shared Growth.</h2>
+
+    <div class="module-grid">
+      <article class="module-card reveal">
+        <div class="module-image"><img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=900&q=85" alt="LDF Hope"></div>
+        <div class="module-body">
+          <span class="module-number">01 / COMMUNITY SUPPORT</span>
+          <h3>LDF Hope</h3>
+          <p>Transparent food security and support distribution with verified receipt-backed auditing and human dignity at its core.</p>
+        </div>
+      </article>
+
+      <article class="module-card reveal">
+        <div class="module-image"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=85" alt="Learning Hub"></div>
+        <div class="module-body">
+          <span class="module-number">02 / EDUCATION</span>
+          <h3>Learning Hub</h3>
+          <p>Courses, verified tutors, Daham school support, and multi-lingual practical skill workshops (English, Sinhala, Tamil).</p>
+        </div>
+      </article>
+
+      <article class="module-card reveal">
+        <div class="module-image"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=85" alt="Pathfinder"></div>
+        <div class="module-body">
+          <span class="module-number">03 / GUIDANCE</span>
+          <h3>Pathfinder</h3>
+          <p>Guided navigation connecting users toward relevant learning, health, legal, or professional community support.</p>
+        </div>
+      </article>
+    </div>
   </div>
-
-  <div class="diagram-wrap reveal">
-   <div class="diagram-intro">
-    <strong>How the LDF ecosystem connects</strong>
-    <p>People and organisations at the centre of shared development.</p>
-   </div>
-
-   <div class="ecosystem-diagram">
-    <svg class="diagram-svg" viewBox="0 0 800 540" role="img" aria-label="Diagram connecting LDF people and organisations to Hope, Learning Hub, Pathfinder, volunteers, partners and market">
-     <path class="diagram-line" d="M400 270 L145 105 M400 270 L400 75 M400 270 L655 105 M400 270 L145 435 M400 270 L400 465 M400 270 L655 435"/>
-     <g class="diagram-node" data-node="hope" tabindex="0" role="button" aria-label="Hope">
-      <rect x="40" y="60" width="210" height="85" rx="16"/>
-      <text x="145" y="96" text-anchor="middle">💚 Hope</text><text class="sub" x="145" y="119" text-anchor="middle">Community support</text>
-     </g>
-     <g class="diagram-node" data-node="learning" tabindex="0" role="button" aria-label="Learning Hub">
-      <rect x="295" y="30" width="210" height="85" rx="16"/>
-      <text x="400" y="66" text-anchor="middle">📚 Learning Hub</text><text class="sub" x="400" y="89" text-anchor="middle">Knowledge and skills</text>
-     </g>
-     <g class="diagram-node" data-node="pathfinder" tabindex="0" role="button" aria-label="Pathfinder">
-      <rect x="550" y="60" width="210" height="85" rx="16"/>
-      <text x="655" y="96" text-anchor="middle">🧭 Pathfinder</text><text class="sub" x="655" y="119" text-anchor="middle">Guidance and direction</text>
-     </g>
-     <g class="diagram-node" data-node="volunteers" tabindex="0" role="button" aria-label="Volunteers and leaders">
-      <rect x="40" y="395" width="210" height="85" rx="16"/>
-      <text x="145" y="431" text-anchor="middle">🙌 Volunteers</text><text class="sub" x="145" y="454" text-anchor="middle">People and action</text>
-     </g>
-     <g class="diagram-node" data-node="partners" tabindex="0" role="button" aria-label="Organisations and partners">
-      <rect x="295" y="425" width="210" height="85" rx="16"/>
-      <text x="400" y="461" text-anchor="middle">🏛️ Partners</text><text class="sub" x="400" y="484" text-anchor="middle">Organisations and projects</text>
-     </g>
-     <g class="diagram-node" data-node="market" tabindex="0" role="button" aria-label="LDF Market">
-      <rect x="550" y="395" width="210" height="85" rx="16"/>
-      <text x="655" y="431" text-anchor="middle">🛍️ LDF Market</text><text class="sub" x="655" y="454" text-anchor="middle">Services and opportunities</text>
-     </g>
-     <circle class="diagram-centre" cx="400" cy="270" r="82"/>
-     <text class="diagram-centre-text" x="400" y="263" text-anchor="middle">LDF</text>
-     <text class="diagram-centre-text" x="400" y="286" text-anchor="middle" style="font-size:12px">ONE MISSION</text>
-    </svg>
-   </div>
-
-   <div class="diagram-help">Select any part of the diagram to understand its role.</div>
-   <div class="diagram-detail" aria-live="polite">
-    <strong id="diagramTitle">The LDF ecosystem</strong>
-    <p id="diagramText">The services are designed to work together around people, knowledge, support and opportunities.</p>
-   </div>
-  </div>
- </div>
 </section>
 
-<!-- FEATURE CARDS -->
-<section class="section">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">The connected services</div>
-   <h2>Different functions.<br><span class="gradient">Shared development.</span></h2>
-   <p>Explore the role each part of the ecosystem could play in delivering the LDF mission.</p>
-  </div>
+<!-- FEEDBACK & CONSULTATION HUB -->
+<section class="section" id="feedback" style="background:#f7f6fb;">
+  <div class="container">
+    <div class="feedback-layout">
+      <div class="reveal">
+        <div class="eyebrow">Public Consultation</div>
+        <h2 class="section-title">Help Shape the Next Stage</h2>
+        <p class="section-description">
+          Whether you are an individual learner, volunteer, tutor, or potential UK host organization, your feedback helps us refine platform governance and pilot delivery.
+        </p>
+      </div>
 
-  <div class="feature-grid">
-   <button class="feature-card reveal" data-feature="hope"><div class="feature-icon">💚</div><h3>Hope</h3><p>Connect community projects, contributions, volunteers and transparent progress.</p><span class="more">Explore Hope →</span></button>
-   <button class="feature-card reveal" data-feature="learning"><div class="feature-icon">📚</div><h3>Learning Hub</h3><p>Bring learners, tutors, resources, courses and workshops together.</p><span class="more">Explore Learning →</span></button>
-   <button class="feature-card reveal" data-feature="pathfinder"><div class="feature-icon">🧭</div><h3>Pathfinder</h3><p>Help people understand challenges and explore appropriate next steps.</p><span class="more">Explore Pathfinder →</span></button>
-   <button class="feature-card reveal" data-feature="volunteers"><div class="feature-icon">🙌</div><h3>Volunteers and Leaders</h3><p>Enable people to contribute skills, coordinate activities and support projects.</p><span class="more">Explore community roles →</span></button>
-   <button class="feature-card reveal" data-feature="partners"><div class="feature-icon">🏛️</div><h3>Organisations and Partners</h3><p>Help organisations publish projects, connect with volunteers and host workshops.</p><span class="more">Explore partnerships →</span></button>
-   <button class="feature-card reveal" data-feature="market"><div class="feature-icon">🛍️</div><h3>LDF Market</h3><p>Connect professionals, businesses, products, services and community opportunities.</p><span class="more">Explore Market →</span></button>
+      <div class="form-panel reveal">
+        <div class="form-header">
+          <span>CONSULTATION HUB</span>
+          <h3>Submit Your Feedback</h3>
+        </div>
+        <iframe class="form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSeQ4zQ1XFkXm2P7g5Y6K-l8V_example/viewform?embedded=true" title="LDF Consultation Form">Loading…</iframe>
+      </div>
+    </div>
   </div>
- </div>
-</section>
-
-<!-- USER JOURNEY -->
-<section class="section">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">A connected user journey</div>
-   <h2>From discovery to <span class="gradient">development.</span></h2>
-   <p>One person may take different roles throughout their journey. They might learn, volunteer, teach, receive support or become a partner.</p>
-  </div>
-  <div class="process reveal">
-   <div class="process-step"><div class="icon">👤</div><strong>Discover</strong><span>Find relevant opportunities</span></div>
-   <div class="process-step"><div class="icon">📖</div><strong>Learn</strong><span>Build knowledge and skills</span></div>
-   <div class="process-step"><div class="icon">🤝</div><strong>Participate</strong><span>Connect and contribute</span></div>
-   <div class="process-step"><div class="icon">🚀</div><strong>Develop</strong><span>Apply and grow</span></div>
-   <div class="process-step"><div class="icon">🌱</div><strong>Give back</strong><span>Support others</span></div>
-  </div>
- </div>
-</section>
-
-<!-- DIGITAL TECHNOLOGY -->
-<section class="section tech-section" id="technology">
- <div class="container tech-grid">
-  <div class="ai-visual reveal">
-   <div class="orbit">
-    <div class="core">✦</div>
-    <div class="dot">📚</div><div class="dot">💚</div><div class="dot">🧭</div><div class="dot">🤝</div>
-   </div>
-  </div>
-  <div class="reveal">
-   <div class="eyebrow">Technology with purpose</div>
-   <h2 style="margin:12px 0 18px">A smarter way to <span class="gradient">connect.</span></h2>
-   <p>
-    LDF's technology vision is to make the ecosystem easier to navigate,
-    use and improve. Digital tools and responsible AI could help people
-    find relevant resources, understand information and discover
-    appropriate opportunities.
-   </p>
-   <div class="ai-steps">
-    <div class="ai-step"><b>01</b><div><strong>Understand</strong><br><span>Recognise what a person is trying to achieve.</span></div></div>
-    <div class="ai-step"><b>02</b><div><strong>Discover</strong><br><span>Find relevant services, information and opportunities.</span></div></div>
-    <div class="ai-step"><b>03</b><div><strong>Connect</strong><br><span>Guide people towards suitable resources and people.</span></div></div>
-    <div class="ai-step"><b>04</b><div><strong>Continue</strong><br><span>Support learning, participation and future development.</span></div></div>
-   </div>
-   <p class="note">This is a technology direction, not a claim that all AI capabilities are currently implemented. The portfolio's animated guide is a scripted demonstration.</p>
-  </div>
- </div>
-</section>
-
-<!-- IMPACT -->
-<section class="section" id="impact">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">Accountability and outcomes</div>
-   <h2>Measure what <span class="gradient">matters.</span></h2>
-   <p>A meaningful mission needs more than activity. LDF's impact approach should focus on useful outcomes, trust and continuous improvement.</p>
-  </div>
-  <div class="impact-grid">
-   <article class="impact-card reveal"><strong>📚 Learning outcomes</strong><p>Participation, skills developed, learning progress and access to educational opportunities.</p></article>
-   <article class="impact-card reveal"><strong>💚 Community outcomes</strong><p>Projects delivered, support provided, contributions made and evidence of progress.</p></article>
-   <article class="impact-card reveal"><strong>🤝 Collaboration</strong><p>Active partnerships, volunteer participation, workshops and shared projects.</p></article>
-   <article class="impact-card reveal"><strong>🌱 Personal development</strong><p>Skills, confidence, opportunities discovered and continued participation.</p></article>
-  </div>
-  <p class="note">These are proposed impact measures. No numerical outcomes or verified impact claims are being made here.</p>
- </div>
-</section>
-
-<!-- PARTNERS -->
-<section class="section" id="partners">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">Strategic collaboration</div>
-   <h2>Building the future <span class="gradient">together.</span></h2>
-   <p>LDF welcomes constructive discussion with organisations that share an interest in education, technology, community development and responsible collaboration.</p>
-  </div>
-  <div class="partner-grid">
-   <article class="partner-card reveal"><h3>🎓 Universities and education</h3><p>Explore learning collaborations, workshops, student participation and educational projects.</p></article>
-   <article class="partner-card reveal"><h3>💻 Digital and technology companies</h3><p>Explore platform development, technical review, AI opportunities and digital innovation.</p></article>
-   <article class="partner-card reveal"><h3>💚 Charities and social enterprises</h3><p>Explore community projects, shared delivery, support pathways and impact approaches.</p></article>
-   <article class="partner-card reveal"><h3>🙌 Community organisations</h3><p>Connect volunteers, local projects, workshops and people with shared interests.</p></article>
-   <article class="partner-card reveal"><h3>🏢 Businesses and professionals</h3><p>Share expertise, services, knowledge and responsible marketplace opportunities.</p></article>
-   <article class="partner-card reveal"><h3>🌍 Strategic partners</h3><p>Help review the model, strengthen governance and explore long-term development.</p></article>
-  </div>
- </div>
-</section>
-
-<!-- FEEDBACK -->
-<section class="section" id="feedback">
- <div class="container">
-  <div class="section-heading reveal">
-   <div class="eyebrow">Help shape the next stage</div>
-   <h2>Your perspective <span class="gradient">matters.</span></h2>
-   <p>
-    LDF is an evolving initiative. We want honest feedback from potential
-    partners, organisations, volunteers, tutors, learners and community
-    members. What is valuable? What is unclear? What should change?
-   </p>
-  </div>
-  <iframe class="feedback-frame" src="https://form.jotform.com/263091582945061" title="LDF feedback form" loading="lazy"></iframe>
-  <p style="margin-top:14px"><a class="btn primary" href="https://form.jotform.com/263091582945061" target="_blank" rel="noopener">Open feedback form ↗</a></p>
- </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="section">
- <div class="container">
-  <div class="cta reveal">
-   <div>
-    <div class="eyebrow">The next chapter</div>
-    <h2>Let's turn a shared <span class="gradient">vision into action.</span></h2>
-    <p>Explore the platform, review the concept or start a conversation about collaboration.</p>
-   </div>
-   <a class="btn primary" href="https://ldf-platform.vercel.app/#/home" target="_blank" rel="noopener">Explore LDF platform ↗</a>
-  </div>
- </div>
 </section>
 
 </main>
 
 <footer>
- <div class="container footer-row">
-  <div><strong style="color:white">Life Development Foundation</strong><br>Learn Together. Support Each Other. Grow with Purpose.</div>
-  <div>© <span id="year"></span> LDF · Built around humanity and opportunity.</div>
- </div>
+  <div class="container footer-row">
+    <div>
+      <strong>Life Development Foundation (LDF)</strong>
+      <p style="margin-top:4px;">Learn Together. Support Each Other. Grow with Purpose.</p>
+    </div>
+    <div>
+      <p>© 2019–2026 Life Development Foundation. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
 
-<button class="guide-launch" id="guideLaunch" type="button">✦ Explore with LDF Guide</button>
-<div id="tourShade" aria-hidden="true"></div>
+<!-- INTERACTIVE GUIDE -->
+<button class="guide-launch" id="guideLaunch">✦ Meet the LDF Guide</button>
 
-<aside class="guide-panel" id="guidePanel" aria-label="LDF guided tour">
- <div class="guide-head">
-  <div class="guide-name"><div class="guide-avatar">✦</div><div><strong>LDF Explorer</strong><small>Interactive guided tour · Demo</small></div></div>
-  <button class="guide-close" id="guideClose" type="button" aria-label="Close">×</button>
- </div>
- <div class="guide-message" id="guideMessage" aria-live="polite">Welcome! Let's explore the LDF vision, mission and ecosystem.</div>
- <div class="guide-progress"><span id="guideProgress"></span></div>
- <div class="guide-controls">
-  <button id="guidePrev" type="button">← Back</button>
-  <button id="guidePause" type="button">Pause</button>
-  <button class="next" id="guideNext" type="button">Start tour →</button>
- </div>
-</aside>
-
-<div id="featureModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
- <div class="modal-card">
-  <button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button>
-  <div class="eyebrow">LDF ecosystem</div>
-  <h3 id="modalTitle">Explore</h3>
-  <p id="modalText"></p>
-  <div class="modal-actions">
-   <button class="btn primary" id="modalGuide" type="button">Take the guided tour</button>
-   <button class="btn outline" id="modalDismiss" type="button">Close</button>
+<div class="guide-panel" id="guidePanel">
+  <div class="guide-head">
+    <div class="guide-avatar">✦</div>
+    <strong>LDF Tour Guide</strong>
+    <button class="guide-close" id="guideClose">×</button>
   </div>
- </div>
+  <div class="guide-message" id="guideMessage">Welcome! Let's explore how LDF connects spirituality, attitude, education, and community support.</div>
+  <div class="guide-controls">
+    <button id="guidePrev" style="display:none">Back</button>
+    <button class="next" id="guideNext">Start Tour ➔</button>
+  </div>
 </div>
 
 <script>
-(() => {
- const $ = id => document.getElementById(id);
- $("year").textContent = new Date().getFullYear();
+// Menu Navigation Toggle
+const menuButton = document.getElementById('menuButton');
+const navLinks = document.getElementById('navLinks');
+menuButton.addEventListener('click', () => navLinks.classList.toggle('open'));
 
- // Navigation
- $("menuToggle").addEventListener("click",()=>$("navLinks").classList.toggle("show"));
- document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>$("navLinks").classList.remove("show")));
-
- // Reveal animations
- const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-   if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}
+// Scroll Reveal
+const revealElements = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
   });
- },{threshold:.12});
- document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+}, { threshold: 0.1 });
+revealElements.forEach(el => observer.observe(el));
 
- // Ecosystem diagram
- const diagram={
-  hope:["Hope","Connect people, volunteers and organisations around community-support projects, with an emphasis on dignity, transparency and progress."],
-  learning:["Learning Hub","Bring learners, tutors, educational resources, courses and workshops together to support continued learning and skills development."],
-  pathfinder:["Pathfinder","Help people understand challenges and explore possible next steps, including suitable learning or qualified human support."],
-  volunteers:["Volunteers and Leaders","Enable people to contribute time and skills, organise activities, coordinate teams and participate in community projects."],
-  partners:["Organisations and Partners","Give organisations ways to present projects, connect with volunteers, host workshops and explore collaboration."],
-  market:["LDF Market","Explore connections between professionals, local businesses, products, services and community opportunities."]
- };
- function selectDiagram(key){
-  if(!diagram[key])return;
-  document.querySelectorAll(".diagram-node").forEach(n=>n.classList.toggle("selected",n.dataset.node===key));
-  $("diagramTitle").textContent=diagram[key][0];
-  $("diagramText").textContent=diagram[key][1];
- }
- document.querySelectorAll(".diagram-node").forEach(node=>{
-  node.addEventListener("click",()=>selectDiagram(node.dataset.node));
-  node.addEventListener("keydown",e=>{
-   if(e.key==="Enter"||e.key===" "){e.preventDefault();selectDiagram(node.dataset.node)}
-  });
- });
+// Interactive Guide Panel
+const guideLaunch = document.getElementById('guideLaunch');
+const guidePanel = document.getElementById('guidePanel');
+const guideClose = document.getElementById('guideClose');
+const guideMessage = document.getElementById('guideMessage');
+const guideNext = document.getElementById('guideNext');
 
- // Feature explanations
- const featureDetails={
-  hope:["Hope — Give Hope, Not Pity","Hope is the community-support concept within LDF. It aims to connect people, volunteers, contributors and organisations around meaningful projects. Its proposed approach includes sharing project progress and appropriate evidence so that people can understand what is happening and how support is used."],
-  learning:["Learning Hub — Learn, Practise and Grow","The Learning Hub aims to bring learners, tutors, courses, educational resources and workshops together. People could discover a topic, practise a skill, connect with a tutor and continue developing."],
-  pathfinder:["Pathfinder — Find a Way Forward","Pathfinder is intended to help people organise their thoughts, understand a challenge and explore possible next steps. It could connect people with learning resources or suitable professional support. It is not a substitute for professional advice."],
-  volunteers:["Volunteers and Leaders — Turn Ideas into Action","The proposed volunteer journey helps people discover projects, contribute skills, organise activities and work in teams. Leaders could coordinate groups and support workshops and community activities."],
-  partners:["Organisations and Partners — Collaborate","The proposed organisation journey allows suitable partners to present their work, publish projects, connect with volunteers and explore shared workshops or initiatives."],
-  market:["LDF Market — Connect Skills and Services","LDF Market is a proposed community marketplace connecting businesses, professionals, products, services and opportunities. Trust, fair participation and transparent marketplace rules are important to this concept."]
- };
- const modal=$("featureModal");
- function openFeature(key){
-  const d=featureDetails[key];if(!d)return;
-  $("modalTitle").textContent=d[0];$("modalText").textContent=d[1];modal.classList.add("open");
- }
- function closeModal(){modal.classList.remove("open")}
- document.querySelectorAll("[data-feature]").forEach(card=>card.addEventListener("click",()=>openFeature(card.dataset.feature)));
- $("modalClose").addEventListener("click",closeModal);
- $("modalDismiss").addEventListener("click",closeModal);
- modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
- $("modalGuide").addEventListener("click",()=>{closeModal();startTour()});
+const steps = [
+  { text: "LDF nurtures spirituality, knowledge, and positive attitudes across communities.", target: "#vision" },
+  { text: "Explore our interconnected platform modules: Hope, Learning Hub, and Pathfinder.", target: "#ecosystem" },
+  { text: "Share your thoughts or explore UK pilot collaboration in our Consultation Hub.", target: "#feedback" }
+];
+let currentStep = 0;
 
- // Guided tour
- const tour=[
-  {target:"#home",message:"Welcome to Life Development Foundation. LDF began in 2019 with an ambition to contribute something meaningful to society. Let's explore how its vision connects to its mission."},
-  {target:"#about",message:"LDF's starting point is simple: people are the purpose and technology is the connection. The idea is to bring separate opportunities into a connected journey."},
-  {target:"#vision",message:"**Creating a positive and thriving community by nurturing spirituality, encouraging positive attitudes, and promoting the development of knowledge and skills.**
-We envision a society where people grow not only intellectually and professionally, but also personally and spiritually, developing the values, attitudes and abilities needed to build a better future together."},
-  {target:".pillar-grid",message:"**Sharing knowledge, organising inspiring workshops, promoting positive social change, supporting mental well-being, and nurturing responsible citizens who contribute positively to their communities and country.**
-Through education, personal development, community support and collaboration, LDF aims to help people discover their potential and turn knowledge into meaningful action."},
-  {target:".diagram-wrap",message:"Here is the operating model. Each part has a different role, but the services connect around one mission. You can also select each node to explore it."},
-  {target:'[data-feature="hope"]',message:"Hope is about community support, dignity and transparency. The aim is to connect people around meaningful projects and make progress understandable."},
-  {target:'[data-feature="learning"]',message:"The Learning Hub brings learners, tutors, courses and workshops together. Learning should lead to practice and continued development."},
-  {target:'[data-feature="pathfinder"]',message:"Pathfinder is designed to help people think through challenges and discover sensible next steps and appropriate support."},
-  {target:".process",message:"A person's journey can move from discovering opportunities to learning, participating, developing and eventually giving back to others."},
-  {target:"#technology",message:"Technology and AI could help people navigate the ecosystem, find information and discover relevant resources. The animated guide is a scripted concept demonstration, not a live AI service."},
-  {target:"#impact",message:"A meaningful mission needs accountability. LDF should measure useful outcomes such as learning progress, community project delivery and collaboration rather than simply counting activity."},
-  {target:"#partners",message:"This vision cannot be delivered by technology alone. Universities, technology companies, charities, businesses, professionals and communities can all contribute."},
-  {target:"#feedback",message:"Finally, feedback helps improve the model. Tell us what is useful, what is missing and what should change. Thank you for exploring LDF."}
- ];
+guideLaunch.addEventListener('click', () => guidePanel.classList.add('open'));
+guideClose.addEventListener('click', () => guidePanel.classList.remove('open'));
 
- let current=-1,playing=false,timer=null,active=null;
- function clearHighlight(){
-  if(active)active.classList.remove("tour-highlight");
-  active=null;$("tourShade").classList.remove("active");
- }
- function showStep(index){
-  if(index<0||index>=tour.length){finishTour();return}
-  clearHighlight();current=index;
-  const step=tour[index],el=document.querySelector(step.target);
-  $("guideMessage").textContent=step.message;
-  $("guideProgress").style.width=((index+1)/tour.length*100)+"%";
-  $("guideNext").textContent=index===tour.length-1?"Finish tour ✓":"Next section →";
-  if(el){
-   active=el;el.classList.add("tour-highlight");
-   $("tourShade").classList.add("active");
-   el.scrollIntoView({behavior:"smooth",block:"center"});
+guideNext.addEventListener('click', () => {
+  if (currentStep < steps.length) {
+    guideMessage.textContent = steps[currentStep].text;
+    document.querySelector(steps[currentStep].target).scrollIntoView({ behavior: 'smooth' });
+    currentStep++;
+  } else {
+    guidePanel.classList.remove('open');
+    currentStep = 0;
   }
- }
- function stopTimer(){if(timer)clearTimeout(timer);timer=null}
- function scheduleNext(){
-  stopTimer();
-  if(playing)timer=setTimeout(()=>{
-   if(current<tour.length-1){showStep(current+1);scheduleNext()}
-   else finishTour();
-  },7000);
- }
- function startTour(){
-  stopTimer();closeModal();$("guidePanel").classList.add("open");
-  document.body.classList.add("tour-active");
-  $("guidePause").textContent="Pause";playing=true;showStep(0);scheduleNext();
- }
- function finishTour(){
-  stopTimer();playing=false;clearHighlight();current=-1;
-  $("guideMessage").textContent="That completes the LDF introduction. Explore the sections yourself, visit the platform or share your feedback.";
-  $("guideProgress").style.width="100%";
-  $("guideNext").textContent="Start again ↻";$("guidePause").textContent="Close tour";
-  document.body.classList.remove("tour-active");
- }
- function closeGuide(){
-  stopTimer();playing=false;clearHighlight();
-  $("guidePanel").classList.remove("open");
-  document.body.classList.remove("tour-active");
- }
- $("guideLaunch").addEventListener("click",()=>{$("guidePanel").classList.contains("open")?closeGuide():startTour()});
- $("startTour").addEventListener("click",startTour);
- $("guideClose").addEventListener("click",closeGuide);
- $("guideNext").addEventListener("click",()=>{
-  if(current===-1||current===tour.length-1){startTour();return}
-  showStep(current+1);if(playing)scheduleNext();
- });
- $("guidePrev").addEventListener("click",()=>{
-  if(current>0){showStep(current-1);if(playing)scheduleNext()}
- });
- $("guidePause").addEventListener("click",()=>{
-  if(current===-1){closeGuide();return}
-  if(playing){playing=false;stopTimer();$("guidePause").textContent="Resume"}
-  else{playing=true;$("guidePause").textContent="Pause";scheduleNext()}
- });
- document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"){closeModal();closeGuide()}
- });
-})();
+});
 </script>
- <!-- LDF PUBLIC FEEDBACK SECTION -->
-<section id="public-feedback" class="public-feedback">
-  <div class="feedback-container">
 
-    <div class="feedback-label">
-      <span class="feedback-dot"></span>
-      OPEN TO EVERYONE
-    </div>
-
-    <h2>
-      Your Ideas.<br>
-      <span>Our Shared Future.</span>
-    </h2>
-
-    <p class="feedback-intro">
-      A meaningful platform should not be designed by one person alone.
-      It should grow through ideas, experiences and perspectives from
-      different people and communities.
-    </p>
-
-    <p class="feedback-description">
-      Whether you are a student, parent, teacher, professional, volunteer,
-      business owner, organisation or simply someone with an idea,
-      we would love to hear your thoughts about Life Development Foundation.
-    </p>
-
-    <div class="feedback-grid">
-
-      <div class="feedback-card">
-        <span>01</span>
-        <h3>Share your perspective</h3>
-        <p>What do you think about the LDF vision and its connected ecosystem?</p>
-      </div>
-
-      <div class="feedback-card">
-        <span>02</span>
-        <h3>Suggest new ideas</h3>
-        <p>What features, services or opportunities would make LDF more valuable?</p>
-      </div>
-
-      <div class="feedback-card">
-        <span>03</span>
-        <h3>Tell us what is missing</h3>
-        <p>What challenges, concerns or improvements should we consider?</p>
-      </div>
-
-      <div class="feedback-card">
-        <span>04</span>
-        <h3>Help shape the future</h3>
-        <p>Your feedback can help us make better decisions as LDF develops.</p>
-      </div>
-
-    </div>
-
-    <div class="feedback-audience">
-      <h3>Everyone has a perspective worth hearing.</h3>
-      <div class="audience-tags">
-        <span>🌍 General Public</span>
-        <span>🎓 Students</span>
-        <span>📚 Teachers & Tutors</span>
-        <span>🤝 Volunteers</span>
-        <span>🏢 Organisations</span>
-        <span>💡 Technology Professionals</span>
-        <span>🏪 Businesses</span>
-        <span>👨‍👩‍👧 Families</span>
-      </div>
-    </div>
-
-    <div class="feedback-callout">
-      <div>
-        <span class="callout-label">YOUR VOICE MATTERS</span>
-        <h3>Explore the idea. Share your thoughts. Help us improve.</h3>
-        <p>
-          You do not need to register, donate, volunteer or make any commitment.
-          We simply want your honest opinion.
-        </p>
-      </div>
-
-      <a
-        href="https://form.jotform.com/263091582945061"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="feedback-button"
-      >
-        Share Your Ideas <span>↗</span>
-      </a>
-    </div>
-
-    <p class="feedback-privacy">
-      Your feedback is collected to support LDF research and development.
-      Anonymous responses are welcome. Submitting feedback does not create
-      any obligation to participate in LDF.
-    </p>
-
-  </div>
-</section>
-
-<style>
-.public-feedback {
-  padding: 110px 22px;
-  background:
-    radial-gradient(circle at 15% 15%, rgba(115, 75, 255, .17), transparent 35%),
-    radial-gradient(circle at 85% 85%, rgba(0, 220, 190, .10), transparent 35%),
-    #090b17;
-  color: #fff;
-  font-family: inherit;
-}
-
-.feedback-container {
-  max-width: 1150px;
-  margin: auto;
-}
-
-.feedback-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 17px;
-  border: 1px solid rgba(0, 230, 190, .3);
-  border-radius: 30px;
-  color: #7af5d8;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  background: rgba(0, 230, 190, .07);
-}
-
-.feedback-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #50f0bd;
-  box-shadow: 0 0 12px #50f0bd;
-}
-
-.public-feedback h2 {
-  margin: 30px 0 20px;
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: 1.05;
-  letter-spacing: -3px;
-}
-
-.public-feedback h2 span {
-  background: linear-gradient(90deg, #9c85ff, #54ead1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.feedback-intro {
-  max-width: 800px;
-  font-size: 22px;
-  line-height: 1.65;
-  color: #e1e2f1;
-}
-
-.feedback-description {
-  max-width: 800px;
-  margin-top: 18px;
-  color: #aeb2c9;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.feedback-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 17px;
-  margin: 55px 0;
-}
-
-.feedback-card {
-  padding: 27px 23px;
-  border: 1px solid rgba(255,255,255,.09);
-  border-radius: 20px;
-  background: rgba(255,255,255,.035);
-  transition: .3s ease;
-}
-
-.feedback-card:hover {
-  transform: translateY(-7px);
-  border-color: rgba(95, 230, 208, .6);
-  background: rgba(255,255,255,.07);
-}
-
-.feedback-card > span {
-  color: #76ead2;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.feedback-card h3 {
-  margin: 23px 0 12px;
-  font-size: 19px;
-}
-
-.feedback-card p {
-  color: #aeb2c9;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.feedback-audience {
-  padding: 35px;
-  border-radius: 22px;
-  background: linear-gradient(120deg, rgba(112, 83, 255, .13), rgba(0, 220, 190, .07));
-  border: 1px solid rgba(255,255,255,.09);
-}
-
-.feedback-audience h3 {
-  margin: 0 0 22px;
-  font-size: 22px;
-}
-
-.audience-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.audience-tags span {
-  padding: 11px 16px;
-  border-radius: 30px;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.1);
-  color: #e3e5f5;
-  font-size: 13px;
-}
-
-.feedback-callout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 35px;
-  padding: 40px;
-  border-radius: 25px;
-  background: linear-gradient(110deg, #6244d9, #087f88);
-}
-
-.callout-label {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #bdfcf0;
-}
-
-.feedback-callout h3 {
-  max-width: 600px;
-  margin: 13px 0;
-  font-size: clamp(23px, 3vw, 32px);
-}
-
-.feedback-callout p {
-  max-width: 600px;
-  margin: 0;
-  color: #e0f5f3;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.feedback-button {
-  flex-shrink: 0;
-  display: inline-flex;
-  gap: 15px;
-  align-items: center;
-  padding: 17px 24px;
-  border-radius: 12px;
-  background: #fff;
-  color: #17152a;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 800;
-  transition: .25s;
-}
-
-.feedback-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,.2);
-}
-
-.feedback-privacy {
-  margin-top: 25px;
-  color: #858aa4;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-@media(max-width: 850px) {
-  .feedback-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .feedback-callout {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-@media(max-width: 520px) {
-  .public-feedback {
-    padding: 75px 17px;
-  }
-
-  .public-feedback h2 {
-    letter-spacing: -1.5px;
-  }
-
-  .feedback-grid {
-    grid-template-columns: 1fr;
-    margin: 35px 0;
-  }
-
-  .feedback-audience,
-  .feedback-callout {
-    padding: 25px 20px;
-  }
-
-  .feedback-intro {
-    font-size: 18px;
-  }
-
-  .feedback-button {
-    width: 100%;
-    justify-content: center;
-    box-sizing: border-box;
-  }
-}
-
-@media(prefers-reduced-motion: reduce) {
-  .feedback-card,
-  .feedback-button {
-    transition: none;
-  }
-}
-</style>
- <!-- LDF CONFIDENTIAL FINANCIAL & SPONSORSHIP PORTAL -->
-
-<section id="ldf-financial-strategy">
-
-<style>
-#ldf-financial-strategy {
-  background: #090b17;
-  color: #ffffff;
-  padding: 80px 22px;
-  font-family: inherit;
-}
-
-#ldf-financial-strategy * {
-  box-sizing: border-box;
-}
-
-.ldf-finance-container {
-  max-width: 1150px;
-  margin: auto;
-}
-
-.ldf-confidential {
-  display: inline-block;
-  padding: 10px 17px;
-  border: 1px solid #d6a94c;
-  border-radius: 30px;
-  color: #f4d58c;
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 800;
-}
-
-.ldf-finance-title {
-  font-size: clamp(38px, 6vw, 65px);
-  line-height: 1.1;
-  margin: 30px 0 20px;
-}
-
-.ldf-finance-title span {
-  background: linear-gradient(90deg,#a78bfa,#52e5cf);
-  color: transparent;
-  background-clip: text;
-}
-
-.ldf-finance-intro {
-  color: #b5bad0;
-  line-height: 1.9;
-  max-width: 850px;
-  font-size: 17px;
-}
-
-.ldf-finance-block {
-  margin-top: 65px;
-}
-
-.ldf-finance-block h3 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.ldf-finance-block > p {
-  color: #adb2c9;
-  line-height: 1.8;
-}
-
-.ldf-finance-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 18px;
-  margin-top: 30px;
-}
-
-.ldf-finance-card {
-  padding: 27px;
-  border-radius: 20px;
-  background: rgba(255,255,255,.045);
-  border: 1px solid rgba(255,255,255,.09);
-  transition: .3s;
-}
-
-.ldf-finance-card:hover {
-  transform: translateY(-5px);
-  border-color: #62dcca;
-}
-
-.ldf-finance-card .number {
-  color: #75e7d0;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.ldf-finance-card h4 {
-  font-size: 19px;
-  margin: 17px 0 12px;
-}
-
-.ldf-finance-card p,
-.ldf-finance-card li {
-  color: #b1b6ca;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.ldf-finance-card ul {
-  padding-left: 18px;
-}
-
-.ldf-sponsor-card {
-  background: linear-gradient(
-    145deg,
-    rgba(112,83,255,.16),
-    rgba(0,220,190,.07)
-  );
-  border: 1px solid rgba(120,170,255,.2);
-}
-
-.ldf-feature-list {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
-  margin-top: 25px;
-}
-
-.ldf-feature {
-  padding: 17px;
-  border-radius: 13px;
-  background: rgba(255,255,255,.045);
-  color: #dce1f2;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.ldf-feature strong {
-  display: block;
-  color: #75e7d0;
-  margin-bottom: 5px;
-}
-
-.ldf-finance-highlight {
-  margin-top: 35px;
-  padding: 35px;
-  border-radius: 22px;
-  background: linear-gradient(110deg,#6044c9,#087f88);
-}
-
-.ldf-finance-highlight h3 {
-  margin-top: 0;
-}
-
-.ldf-finance-highlight p {
-  color: #e5f4f2;
-  line-height: 1.8;
-}
-
-.ldf-finance-note {
-  margin-top: 30px;
-  padding: 22px;
-  border-left: 3px solid #e4bb65;
-  background: rgba(228,187,101,.07);
-  color: #d8d5c7;
-  line-height: 1.8;
-  font-size: 13px;
-}
-
-.ldf-finance-footer {
-  margin-top: 65px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255,255,255,.1);
-  color: #858ba5;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-@media(max-width:850px) {
-  .ldf-finance-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-}
-
-@media(max-width:550px) {
-  .ldf-finance-grid,
-  .ldf-feature-list {
-    grid-template-columns: 1fr;
-  }
-
-  #ldf-financial-strategy {
-    padding: 55px 16px;
-  }
-}
-</style>
-
-<div class="ldf-finance-container">
-
-  <span class="ldf-confidential">
-    CONFIDENTIAL · STRATEGIC PARTNERS
-  </span>
-
-  <h2 class="ldf-finance-title">
-    Building a financially sustainable
-    <span>community ecosystem.</span>
-  </h2>
-
-  <p class="ldf-finance-intro">
-    Life Development Foundation aims to create a sustainable
-    digital ecosystem where education, professional services,
-    community support, collaboration and technology work together.
-
-    Our financial strategy combines affordable paid services,
-    strategic sponsorship, organisational partnerships and
-    responsible reinvestment.
-
-    The objective is not simply to generate revenue.
-    It is to build a platform capable of supporting its services,
-    maintaining its technology and creating long-term community value.
-  </p>
-
-
-  <!-- 01 FINANCIAL STRATEGY -->
-
-  <div class="ldf-finance-block">
-
-    <h3>01 · Our financial sustainability model</h3>
-
-    <p>
-      LDF is designed around multiple complementary income streams.
-      This reduces dependence on a single sponsor or source of funding
-      and creates opportunities for different participants to contribute.
-    </p>
-
-    <div class="ldf-finance-grid">
-
-      <div class="ldf-finance-card">
-        <span class="number">01</span>
-        <h4>Paid services</h4>
-        <p>
-          Affordable courses, professional services, tutoring,
-          workshops and selected premium platform features.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">02</span>
-        <h4>Platform sponsorship</h4>
-        <p>
-          Main sponsors help support the development, operation
-          and long-term sustainability of the entire ecosystem.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">03</span>
-        <h4>Programme sponsorship</h4>
-        <p>
-          Partners fund specific educational programmes,
-          community projects, workshops and development initiatives.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">04</span>
-        <h4>Organisation partnerships</h4>
-        <p>
-          Organisations may use selected platform tools,
-          collaboration features and project-management services.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">05</span>
-        <h4>Marketplace income</h4>
-        <p>
-          LDF may generate agreed transaction commissions
-          from participating businesses and service providers.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">06</span>
-        <h4>Technology partnerships</h4>
-        <p>
-          Technology companies may contribute infrastructure,
-          software, technical expertise or financial support.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- 02 PAID SERVICES -->
-
-  <div class="ldf-finance-block">
-
-    <h3>02 · Paid services and revenue generation</h3>
-
-    <p>
-      LDF intends to maintain accessible free opportunities
-      while offering optional paid services that help finance
-      the platform and reward participating professionals.
-    </p>
-
-    <div class="ldf-finance-grid">
-
-      <div class="ldf-finance-card">
-        <span class="number">LEARNING HUB</span>
-        <h4>Courses and learning programmes</h4>
-        <ul>
-          <li>Free educational resources.</li>
-          <li>Paid structured courses.</li>
-          <li>Professional training programmes.</li>
-          <li>Certificates where appropriate.</li>
-          <li>Specialist learning opportunities.</li>
-        </ul>
-        <p>
-          Revenue comes from course fees and selected
-          learning subscriptions.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">TUTORS & PROFESSIONALS</span>
-        <h4>Bookings and services</h4>
-        <ul>
-          <li>One-to-one tutoring.</li>
-          <li>Professional consultations.</li>
-          <li>Coaching and development services.</li>
-          <li>Specialist support sessions.</li>
-        </ul>
-        <p>
-          LDF may receive an agreed platform commission
-          from completed paid bookings.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">WORKSHOPS</span>
-        <h4>Events and training</h4>
-        <ul>
-          <li>Free community workshops.</li>
-          <li>Paid specialist workshops.</li>
-          <li>Professional development events.</li>
-          <li>Organisation-hosted programmes.</li>
-        </ul>
-        <p>
-          Revenue may come from event fees,
-          institutional partnerships and sponsorship.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">LDF MARKET</span>
-        <h4>Business and marketplace services</h4>
-        <ul>
-          <li>Business profiles.</li>
-          <li>Product and service listings.</li>
-          <li>Participating shop opportunities.</li>
-          <li>Selected premium business tools.</li>
-        </ul>
-        <p>
-          Revenue may come from agreed transaction
-          commissions and optional business services.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">ORGANISATIONS</span>
-        <h4>Organisation tools</h4>
-        <ul>
-          <li>Project publishing.</li>
-          <li>Volunteer management.</li>
-          <li>Workshop organisation.</li>
-          <li>Team and collaboration tools.</li>
-        </ul>
-        <p>
-          Organisations may subscribe to selected
-          advanced features or services.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">PREMIUM FEATURES</span>
-        <h4>Optional platform upgrades</h4>
-        <ul>
-          <li>Advanced team tools.</li>
-          <li>Enhanced organisational dashboards.</li>
-          <li>Additional management features.</li>
-          <li>Selected premium platform services.</li>
-        </ul>
-        <p>
-          Optional subscriptions can support ongoing
-          platform maintenance and development.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- 03 MAIN SPONSORSHIP -->
-
-  <div class="ldf-finance-block">
-
-    <h3>03 · Main platform sponsorship</h3>
-
-    <p>
-      LDF is seeking a credible strategic organisation
-      willing to become a long-term platform sponsor.
-
-      Rather than sponsoring one isolated activity,
-      the main sponsor would support the wider ecosystem
-      and its development.
-    </p>
-
-    <div class="ldf-finance-card ldf-sponsor-card">
-
-      <span class="number">ANCHOR PARTNERSHIP</span>
-
-      <h4>Main Platform Sponsor</h4>
-
-      <p>
-        An organisation that supports the long-term development
-        and sustainability of Life Development Foundation.
-      </p>
-
-      <h4>Potential areas of support</h4>
-
-      <ul>
-        <li>Platform development and technical improvement.</li>
-        <li>Hosting, infrastructure and cybersecurity.</li>
-        <li>Accessibility and multilingual development.</li>
-        <li>Educational and community programme development.</li>
-        <li>Testing, research and user experience improvement.</li>
-        <li>Responsible AI and digital innovation.</li>
-        <li>Operational development and sustainability.</li>
-      </ul>
-
-    </div>
-
-  </div>
-
-
-  <!-- 04 SPONSOR BENEFITS -->
-
-  <div class="ldf-finance-block">
-
-    <h3>04 · What does the main sponsor receive?</h3>
-
-    <p>
-      Sponsorship should create value for both the organisation
-      and the communities served by LDF.
-      Benefits would be agreed through a formal partnership agreement.
-    </p>
-
-    <div class="ldf-feature-list">
-
-      <div class="ldf-feature">
-        <strong>01 · Strategic recognition</strong>
-        Recognition as an official LDF main platform sponsor,
-        subject to agreed branding and communication permissions.
-      </div>
-
-      <div class="ldf-feature">
-        <strong>02 · Brand visibility</strong>
-        Opportunities for approved logo placement,
-        partner profiles and joint announcements.
-      </div>
-
-      <div class="ldf-feature">
-        <strong>03 · Impact reporting</strong>
-        Periodic reports covering agreed platform activity,
-        programme delivery and measurable outcomes.
-      </div>
-
-      <div class="ldf-feature">
-        <strong>04 · Collaboration opportunities</strong>
-        Opportunities to co-develop educational programmes,
-        workshops and community initiatives.
-      </div>
-
-      <div class="ldf-feature">
-        <strong>05 · Employee participation</strong>
-        Opportunities for employee volunteering,
-        mentoring and knowledge-sharing activities.
-      </div>
-
-      <div class="ldf-feature">
-        <strong>06 · Innovation involvement</strong>
-        Opportunities to contribute technical knowledge,
-        research and responsible digital innovation.
-      </div>
-
-      <div class="ldf-feature">
-        <strong>07 · Strategic discussions</strong>
-        Participation in agreed partnership reviews,
-        development discussions and planning meetings.
-      </div>
-
-      <div class="ldf-feature">
-        <strong>08 · Long-term relationship</strong>
-        The opportunity to develop a continuing relationship
-        as LDF grows into new communities and markets.
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- 05 PROGRAMME SPONSORS -->
-
-  <div class="ldf-finance-block">
-
-    <h3>05 · Other strategic sponsorship opportunities</h3>
-
-    <div class="ldf-finance-grid">
-
-      <div class="ldf-finance-card">
-        <span class="number">EDUCATION</span>
-        <h4>Learning Hub Sponsor</h4>
-        <p>
-          Support affordable learning, educational resources,
-          tutor development, digital skills and workshops.
-        </p>
-        <p><strong>Potential recognition:</strong> Learning programme partner.</p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">COMMUNITY</span>
-        <h4>Hope Programme Sponsor</h4>
-        <p>
-          Support transparent community projects,
-          practical assistance and local initiatives.
-        </p>
-        <p><strong>Potential recognition:</strong> Community impact partner.</p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">TECHNOLOGY</span>
-        <h4>Technology Sponsor</h4>
-        <p>
-          Contribute hosting, software, security,
-          technical expertise and development resources.
-        </p>
-        <p><strong>Potential recognition:</strong> Technology partner.</p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">INNOVATION</span>
-        <h4>AI and Digital Development Sponsor</h4>
-        <p>
-          Help explore responsible AI applications,
-          digital learning and accessible technology.
-        </p>
-        <p><strong>Potential recognition:</strong> Innovation partner.</p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">YOUTH</span>
-        <h4>Personal Development Sponsor</h4>
-        <p>
-          Support personal development, mentoring,
-          employability and leadership opportunities.
-        </p>
-        <p><strong>Potential recognition:</strong> Development partner.</p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <span class="number">GLOBAL</span>
-        <h4>Community Growth Sponsor</h4>
-        <p>
-          Support international collaboration,
-          multilingual accessibility and expansion.
-        </p>
-        <p><strong>Potential recognition:</strong> Global development partner.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- 06 FINANCIAL TRANSPARENCY -->
-
-  <div class="ldf-finance-block">
-
-    <h3>06 · Financial transparency and accountability</h3>
-
-    <p>
-      Trust must be built into the financial structure from the beginning.
-      LDF intends to establish clear financial reporting and appropriate
-      controls as its operations develop.
-    </p>
-
-    <div class="ldf-finance-grid">
-
-      <div class="ldf-finance-card">
-        <h4>Separate financial records</h4>
-        <p>
-          Record platform income, sponsorship, programme funding,
-          service payments and operating expenses separately.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <h4>Clear fund allocation</h4>
-        <p>
-          Agree how restricted sponsorship and project funding
-          can be used before funds are accepted.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <h4>Periodic reporting</h4>
-        <p>
-          Provide agreed financial summaries and programme
-          progress reports to relevant partners.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <h4>Responsible management</h4>
-        <p>
-          Establish appropriate approval procedures,
-          record keeping and financial oversight.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <h4>Privacy and data protection</h4>
-        <p>
-          Protect user information and share only
-          authorised, appropriate and aggregated reporting.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <h4>Measurable outcomes</h4>
-        <p>
-          Assess agreed outcomes rather than relying
-          only on financial figures or promotional claims.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- 07 REINVESTMENT -->
-
-  <div class="ldf-finance-block">
-
-    <h3>07 · How revenue supports the ecosystem</h3>
-
-    <div class="ldf-finance-highlight">
-
-      <h3>Generate → Operate → Improve → Reinvest → Grow</h3>
-
-      <p>
-        Income generated through paid services and partnerships
-        can support platform operations, professional delivery,
-        technology, accessibility, community programmes and
-        future development.
-      </p>
-
-      <p>
-        The intended approach is to balance financial sustainability
-        with affordable access and meaningful community outcomes.
-      </p>
-
-    </div>
-
-    <div class="ldf-finance-note">
-      Financial allocations, sponsor contributions, operating costs
-      and reinvestment percentages will be determined through
-      a documented business plan, actual costs and formal agreements.
-      No financial return or guaranteed impact is promised.
-    </div>
-
-  </div>
-
-
-  <!-- 08 LONG TERM -->
-
-  <div class="ldf-finance-block">
-
-    <h3>08 · Long-term sustainability vision</h3>
-
-    <p>
-      Our aim is to gradually develop a diversified financial model
-      where LDF does not depend permanently on a single funding source.
-    </p>
-
-    <div class="ldf-finance-grid">
-
-      <div class="ldf-finance-card">
-        <h4>Phase 1 · Establish</h4>
-        <p>
-          Validate the platform, identify strategic partners,
-          test user journeys and establish reliable operations.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <h4>Phase 2 · Develop</h4>
-        <p>
-          Expand paid services, develop sponsored programmes,
-          improve technology and build organisational relationships.
-        </p>
-      </div>
-
-      <div class="ldf-finance-card">
-        <h4>Phase 3 · Sustain</h4>
-        <p>
-          Develop diversified revenue, strengthen partnerships
-          and expand community participation responsibly.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- PARTNERSHIP INVITATION -->
-
-  <div class="ldf-finance-highlight">
-
-    <h3>Let's build a sustainable ecosystem together.</h3>
-
-    <p>
-      We are interested in working with organisations that believe
-      education, personal development, community support and
-      responsible technology can create meaningful social value.
-    </p>
-
-    <p>
-      We welcome discussions about strategic sponsorship,
-      technical partnerships, programme funding and long-term
-      collaboration.
-    </p>
-
-  </div>
-
-
-  <div class="ldf-finance-footer">
-
-    CONFIDENTIAL STRATEGIC PARTNERSHIP MATERIAL
-
-    <br><br>
-
-    This document outlines LDF's proposed financial sustainability
-    strategy. It is a development proposal, not a financial offer,
-    investment prospectus or guarantee of commercial returns.
-
-    All sponsorship arrangements, commercial terms, intellectual
-    property rights, responsibilities and benefits are subject
-    to due diligence and written agreements.
-
-  </div>
-
-</div>
-</section>
 </body>
 </html>
