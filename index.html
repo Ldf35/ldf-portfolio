@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LDF Platform | Portfolio</title>
+<meta name="description" content="Portfolio case study: the Life Development Foundation platform, a community learning, giving and marketplace system built on Supabase.">
+<meta name="theme-color" content="#100c1c">
+<style>
+:root{--bg:#100c1c;--bg2:#19132a;--card:#1a1430;--bd:#2f2752;--tx:#eceaf5;--mu:#a9a4bf;--pu:#7b2cbf;--cy:#22d3ee;--li:#a3e635;--am:#f59e0b;--pk:#ec4899;--sv:#94a3b8}
+[data-theme=light]{--bg:#f7f6fb;--bg2:#ffffff;--card:#ffffff;--bd:#e3dff0;--tx:#171326;--mu:#5f5b73;--cy:#0891b2;--li:#4d7c0f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;overflow-x:hidden;transition:background .3s,color .3s}
+h1,h2,h3{line-height:1.12;letter-spacing:-.03em;font-weight:800}
+a{color:inherit;text-decoration:none}
+.w{width:min(1120px,91%);margin:auto}
+section{padding:96px 0;position:relative}
+.ey{color:var(--cy);font-weight:700;font-size:.74rem;letter-spacing:.17em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(1.8rem,4vw,2.9rem);margin-bottom:14px}
+.lead{color:var(--mu);max-width:700px}
+.gt{background:linear-gradient(90deg,var(--cy),var(--li));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:800;letter-spacing:-.02em}.logo b{color:var(--cy)}
+.nl{display:flex;gap:20px;align-items:center;font-size:.84rem;color:var(--mu)}.nl a:hover,.nl a.on{color:var(--cy)}
+.tg{background:none;border:1px solid var(--bd);color:var(--tx);border-radius:20px;padding:6px 12px;cursor:pointer;font-size:.8rem}
+.mb{display:none;background:none;border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:6px 11px}
+.pbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cy),var(--li));z-index:60}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.7}
+.hero .w{position:relative;z-index:2}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--li);font-weight:700;margin-bottom:18px}
+.tag:before{content:"";width:28px;height:2px;background:var(--li)}
+.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);margin-bottom:18px}
+.type{min-height:1.4em;color:var(--cy);font-weight:700;font-size:clamp(1rem,2.2vw,1.35rem);margin-bottom:18px}
+.type:after{content:"|";animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.hero p.lead{margin-bottom:28px;font-size:1.05rem}
+.btn{display:inline-block;padding:12px 24px;border-radius:30px;font-weight:700;font-size:.9rem;border:1px solid transparent;transition:.25s;cursor:pointer;font-family:inherit}
+.b1{background:var(--cy);color:#06121c}.b1:hover{background:var(--li);transform:translateY(-3px)}
+.b2{border-color:var(--bd);color:var(--tx);margin-left:8px}.b2:hover{background:var(--bg2)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.pills span{padding:6px 14px;border:1px solid var(--bd);border-radius:20px;font-size:.78rem;color:var(--mu);background:color-mix(in srgb,var(--bg2) 80%,transparent)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:-50px;position:relative;z-index:3}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:20px 14px;text-align:center;transition:.3s}
+.stat:hover{transform:translateY(-6px);border-color:var(--cy)}
+.stat b{display:block;font-size:2rem;font-weight:800;color:var(--cy);line-height:1.1}
+.stat span{font-size:.74rem;color:var(--mu)}
+/* cards */
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:26px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}.rv.vis{opacity:1;transform:none}
+/* architecture */
+.arch{width:100%;margin-top:26px}
+.arch text{font-family:inherit}
+.dash{stroke-dasharray:6 7;animation:fl 1.1s linear infinite}@keyframes fl{to{stroke-dashoffset:-13}}
+.node{transition:.25s;cursor:pointer}.node:hover rect{stroke:var(--cy);stroke-width:2}
+#tip{position:fixed;pointer-events:none;background:var(--bg2);border:1px solid var(--cy);border-radius:10px;padding:8px 12px;font-size:.78rem;z-index:80;opacity:0;transition:opacity .15s;max-width:240px}
+/* charts */
+.donut{width:100%;max-width:290px;margin:auto;display:block;transform:rotate(-90deg)}
+.donut circle{transition:stroke-dasharray 1.6s cubic-bezier(.2,.8,.2,1),stroke-width .2s;cursor:pointer}
+.lg{list-style:none;font-size:.88rem;margin-top:6px}
+.lg li{display:flex;align-items:center;gap:10px;padding:7px 4px;border-bottom:1px solid var(--bd);cursor:default;transition:.2s}
+.lg li:hover,.lg li.hl{padding-left:10px;color:var(--cy)}
+.lg i{width:12px;height:12px;border-radius:4px;flex:none}.lg b{margin-left:auto}
+.line path.ln{fill:none;stroke:var(--cy);stroke-width:3;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2.4s ease}
+.line.vis path.ln{stroke-dashoffset:0}
+.line .ar{fill:url(#ag);opacity:0;transition:opacity 1.4s 1.2s}.line.vis .ar{opacity:1}
+.line circle{fill:var(--bg);stroke:var(--li);stroke-width:2.5;cursor:pointer}
+.chart-note{font-size:.78rem;color:var(--mu);margin-top:8px}
+/* lifecycle */
+.life{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:30px}
+.stp{position:relative;text-align:center;padding:16px 6px;border:1px solid var(--bd);border-radius:16px;background:var(--card);font-size:.76rem;font-weight:700;transition:.4s;color:var(--mu)}
+.stp i{display:block;font-style:normal;font-size:1.5rem;margin-bottom:4px}
+.stp.on{border-color:var(--li);color:var(--tx);box-shadow:0 0 0 3px color-mix(in srgb,var(--li) 25%,transparent);transform:translateY(-6px)}
+.stp.done{border-color:var(--cy);color:var(--tx)}
+.gate{margin-top:16px;text-align:center;font-size:.84rem;color:var(--mu)}
+.gate b{color:var(--am)}
+.bar{height:6px;background:var(--bd);border-radius:6px;margin-top:18px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cy),var(--li));transition:width .6s}
+/* features */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.tab{background:none;border:1px solid var(--bd);color:var(--mu);padding:8px 16px;border-radius:24px;cursor:pointer;font-size:.82rem;font-weight:600;font-family:inherit;transition:.2s}
+.tab.on,.tab:hover{background:var(--cy);color:#06121c;border-color:var(--cy)}
+.fcard{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px;transition:.3s;animation:pop .45s both}
+.fcard:hover{transform:translateY(-6px);border-color:var(--cy)}
+.fcard h3{font-size:1.02rem;margin:4px 0 6px}.fcard p{color:var(--mu);font-size:.86rem}
+.fcard .ic{font-size:1.7rem}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(12px)}}
+/* roles */
+.roles{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.role{padding:9px 16px;border-radius:22px;border:1px solid var(--bd);background:var(--card);font-size:.82rem;font-weight:700;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+.ring{width:150px;height:150px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:12}
+.ring .bgc{stroke:var(--bd)}.ring .fg{stroke:var(--li);stroke-linecap:round;stroke-dasharray:0 377;transition:stroke-dasharray 2s ease}
+.sec{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center}
+.sec ul{list-style:none;font-size:.88rem;color:var(--mu)}.sec li{padding:5px 0}.sec li b{color:var(--tx)}
+.stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.stack span{padding:10px 18px;border-radius:12px;border:1px solid var(--bd);background:var(--card);font-weight:700;font-size:.86rem;transition:.25s}
+.stack span:hover{border-color:var(--li);transform:translateY(-4px)}
+.cta{text-align:center}
+.cta .btn{margin:6px}
+footer{border-top:1px solid var(--bd);padding:30px 0;color:var(--mu);font-size:.82rem;text-align:center}
+.note{margin-top:20px;border-left:3px solid var(--am);background:color-mix(in srgb,var(--am) 10%,transparent);padding:12px 18px;border-radius:0 12px 12px 0;font-size:.82rem;color:var(--mu)}
+@media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr);margin-top:-30px}.g2,.g3,.sec{grid-template-columns:1fr}.life{grid-template-columns:repeat(2,1fr)}.mb{display:block}.nl{display:none;position:absolute;top:60px;left:4%;right:4%;padding:20px;background:var(--bg2);border:1px solid var(--bd);border-radius:16px;flex-direction:column}.nl.open{display:flex}.b2{margin:10px 0 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#net{display:none}.line path.ln{stroke-dashoffset:0}.line .ar{opacity:1}}
+</style>
+</head>
+<body>
+<div class="pbar" id="pbar"></div>
+<div id="tip"></div>
+
+<nav><div class="w">
+<a href="#home" class="logo">LDF<b>.</b>platform</a>
+<button class="mb" id="mb" aria-label="Menu">☰</button>
+<div class="nl" id="nl">
+<a href="#architecture">Architecture</a><a href="#data">Data</a><a href="#flow">Workflow</a><a href="#features">Features</a><a href="#security">Security</a><a href="#stack">Stack</a><a href="#contact">Contact</a>
+<button class="tg" id="tg" aria-label="Toggle theme">☀ / ☾</button>
+</div></div></nav>
+
+<header class="hero" id="home">
+<canvas id="net"></canvas>
+<div class="w">
+<div class="tag">Portfolio case study · 2026</div>
+<h1>Building a platform<br><span class="gt">for community good.</span></h1>
+<div class="type" id="type"></div>
+<p class="lead">The Life Development Foundation platform brings learning, transparent giving, local commerce and community support into one secure system, designed and built on Supabase.</p>
+<a class="btn b1" href="#architecture">Explore the build ↓</a><a class="btn b2" id="appLink" href="#" target="_blank" rel="noopener noreferrer">Open the live app ↗</a>
+<div class="pills"><span>Postgres 17</span><span>Row-level security</span><span>Edge Functions</span><span>Multi-country</span><span>English · Sinhala · Tamil</span></div>
+</div></header>
+
+<div class="w"><div class="stats" id="stats"></div></div>
+
+<section id="architecture"><div class="w">
+<div class="ey rv">System design</div><h2 class="rv">One backend, many services</h2>
+<p class="lead rv">Every feature shares the same members, roles and audit trail. Hover a block to see what it does.</p>
+<div class="panel rv" style="margin-top:26px">
+<svg class="arch" viewBox="0 0 900 400" font-size="13" text-anchor="middle" id="arch">
+<g stroke="var(--cy)" stroke-width="2" fill="none">
+<path class="dash" d="M165 200H280"/>
+<path class="dash" d="M470 200H520"/>
+<path class="dash" d="M470 170C500 110 520 90 560 80"/>
+<path class="dash" d="M470 230C500 290 520 310 560 320"/>
+<path class="dash" d="M690 80C740 80 740 60 760 60"/>
+<path class="dash" d="M690 320C740 320 740 340 760 340"/>
+<path class="dash" d="M690 200H760"/>
+</g>
+<g class="node" data-t="Web app on Vercel. Members, donors, volunteers, shops, coaches, partners and admins all use the same app.">
+<rect x="20" y="150" width="145" height="100" rx="18" fill="var(--bg2)" stroke="var(--bd)"/><text x="92" y="196" fill="var(--tx)" font-weight="800">Web app</text><text x="92" y="216" fill="var(--mu)" font-size="11">Vercel · 3 languages</text></g>
+<g class="node" data-t="Sign-in, roles and sessions. 10 roles scoped by region, with optional two-step verification for staff.">
+<rect x="280" y="140" width="190" height="120" rx="18" fill="var(--bg2)" stroke="var(--pu)"/><text x="375" y="188" fill="var(--tx)" font-weight="800">Supabase API</text><text x="375" y="208" fill="var(--mu)" font-size="11">Auth · RPC · 135 policies</text><text x="375" y="226" fill="var(--mu)" font-size="11">1,101 database functions</text></g>
+<g class="node" data-t="200 tables, every one with row-level security. 239 triggers keep audit logs, points, receipts and guards in step.">
+<rect x="560" y="40" width="130" height="80" rx="16" fill="var(--bg2)" stroke="var(--cy)"/><text x="625" y="76" fill="var(--tx)" font-weight="800">Postgres 17</text><text x="625" y="96" fill="var(--mu)" font-size="11">200 tables · RLS</text></g>
+<g class="node" data-t="10 storage areas. 8 private (proofs, invoices, evidence, books, avatars) and 2 public (marketplace and programme photos).">
+<rect x="560" y="160" width="130" height="80" rx="16" fill="var(--bg2)" stroke="var(--li)"/><text x="625" y="196" fill="var(--tx)" font-weight="800">Storage</text><text x="625" y="216" fill="var(--mu)" font-size="11">10 buckets</text></g>
+<g class="node" data-t="Daily jobs: reminders, bills, payouts, sponsor and plan notices, usage tracking.">
+<rect x="560" y="280" width="130" height="80" rx="16" fill="var(--bg2)" stroke="var(--am)"/><text x="625" y="316" fill="var(--tx)" font-weight="800">Automation</text><text x="625" y="336" fill="var(--mu)" font-size="11">scheduled jobs</text></g>
+<g class="node" data-t="10 Edge Functions: email outbox, AI coach, LDF assistant, Pathfinder, workshop video, video usage, account deletion, LDF brain, LDF agents, LDF Siri.">
+<rect x="760" y="20" width="125" height="80" rx="16" fill="var(--bg2)" stroke="var(--pk)"/><text x="822" y="56" fill="var(--tx)" font-weight="800">Edge</text><text x="822" y="76" fill="var(--mu)" font-size="11">10 functions</text></g>
+<g class="node" data-t="Transactional email: receipts, proof updates, batch reports and reminders go through a queued outbox.">
+<rect x="760" y="160" width="125" height="80" rx="16" fill="var(--bg2)" stroke="var(--sv)"/><text x="822" y="196" fill="var(--tx)" font-weight="800">Email</text><text x="822" y="216" fill="var(--mu)" font-size="11">queued outbox</text></g>
+<g class="node" data-t="AI features: course coach, assistant, Pathfinder guidance, plus internal agents.">
+<rect x="760" y="300" width="125" height="80" rx="16" fill="var(--bg2)" stroke="var(--pu)"/><text x="822" y="336" fill="var(--tx)" font-weight="800">AI</text><text x="822" y="356" fill="var(--mu)" font-size="11">coach · guide</text></g>
+</svg></div>
+</div></section>
+
+<section id="data" style="background:var(--bg2)"><div class="w">
+<div class="ey rv">Data model</div><h2 class="rv">200 tables across six domains</h2>
+<p class="lead rv">Hover the chart or the legend. The line shows how the schema grew, migration by migration.</p>
+<div class="g2">
+<div class="panel rv"><svg class="donut" id="donut" viewBox="0 0 200 200"></svg><ul class="lg" id="legend"></ul></div>
+<div class="panel rv"><h3 style="font-size:1.05rem;margin-bottom:10px">Schema growth (cumulative migrations)</h3>
+<svg class="line" id="line" viewBox="0 0 500 300" width="100%"></svg>
+<p class="chart-note">47 migrations between 16 Oct and 6 Nov 2026.</p></div>
+</div></div></section>
+
+<section id="flow"><div class="w">
+<div class="ey rv">Workflow</div><h2 class="rv">Giving you can trace</h2>
+<p class="lead rv">A support batch moves through seven states. Money to the shop is released only after proof is approved.</p>
+<div class="life rv" id="life"></div>
+<div class="bar rv"><i id="lbar"></i></div>
+<p class="gate rv" id="gate"></p>
+<div class="note rv">Batches can also be cancelled. Refunds raise alerts for staff, and every state change is written to the audit log.</div>
+</div></section>
+
+<section id="features" style="background:var(--bg2)"><div class="w">
+<div class="ey rv">What it does</div><h2 class="rv">Features by area</h2>
+<div class="tabs rv" id="tabs"></div>
+<div class="g3" id="fgrid"></div>
+</div></section>
+
+<section id="security"><div class="w">
+<div class="ey rv">Trust</div><h2 class="rv">Secure by default</h2>
+<div class="g2">
+<div class="panel sec rv">
+<svg class="ring" viewBox="0 0 140 140" id="ring"><circle class="bgc" cx="70" cy="70" r="60"/><circle class="fg" cx="70" cy="70" r="60"/></svg>
+<ul><li><b>200 of 200</b> tables use row-level security</li><li><b>8 of 10</b> storage areas are private</li><li><b>239</b> triggers for audit, guards and receipts</li><li>Optional two-step verification for staff</li></ul>
+</div>
+<div class="panel rv"><h3 style="font-size:1.05rem">10 roles, scoped by region</h3>
+<div class="roles" id="roles"></div></div>
+</div></div></section>
+
+<section id="stack" style="background:var(--bg2)"><div class="w">
+<div class="ey rv">Tools</div><h2 class="rv">Stack</h2>
+<div class="stack rv"><span>Supabase</span><span>PostgreSQL 17</span><span>Row-level security</span><span>Edge Functions (Deno)</span><span>Supabase Auth</span><span>Supabase Storage</span><span>Vercel</span><span>PL/pgSQL</span><span>HTML · CSS · JavaScript</span></div>
+</div></section>
+
+<section id="contact"><div class="w cta">
+<div class="ey rv">Let's talk</div><h2 class="rv">Want to build something like this?</h2>
+<p class="lead rv" style="margin:0 auto 24px">Replace the links below in the CONFIG block at the bottom of this file.</p>
+<div class="rv"><a class="btn b1" id="lnkMail" href="#">Email me</a><a class="btn b2" id="lnkGit" href="#" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="btn b2" id="lnkIn" href="#" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+</div></section>
+
+<footer><div class="w">© <span id="yr"></span> <span id="nm"></span> · Case study of the Life Development Foundation platform · Figures are from the live schema as of 6 Nov 2026.</div></footer>
+
+<script>
+/* ===== CONFIG: edit these ===== */
+var CONFIG={
+ name:"Your Name",
+ github:"https://github.com/YOUR-USERNAME",
+ linkedin:"https://www.linkedin.com/in/YOUR-PROFILE",
+ email:"you@example.com",
+ appUrl:"https://ldf-platform.vercel.app/#/home"
+};
+/* ================================ */
+function $(i){return document.getElementById(i)}
+$('appLink').href=CONFIG.appUrl;$('lnkGit').href=CONFIG.github;$('lnkIn').href=CONFIG.linkedin;$('lnkMail').href='mailto:'+CONFIG.email;
+$('nm').textContent=CONFIG.name;$('yr').textContent=new Date().getFullYear();
+$('mb').onclick=function(){$('nl').classList.toggle('open')};$('nl').onclick=function(e){if(e.target.tagName==='A')$('nl').classList.remove('open')};
+$('tg').onclick=function(){var d=document.documentElement;d.dataset.theme=d.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('th',d.dataset.theme)}catch(e){}};
+try{var t=localStorage.getItem('th');if(t)document.documentElement.dataset.theme=t}catch(e){}
+window.addEventListener('scroll',function(){var h=document.documentElement;$('pbar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* typing */
+var phrases=["Supabase backend with 200 secured tables","Transparent giving, proof before payment","Learning hub with coaches, video and certificates","Multi-country rollout, one district at a time"],pi=0,ci=0,del=false;
+(function tick(){var p=phrases[pi];$('type').textContent=p.slice(0,ci);if(!del&&ci===p.length){del=true;return setTimeout(tick,1600)}if(del&&ci===0){del=false;pi=(pi+1)%phrases.length}ci+=del?-1:1;setTimeout(tick,del?22:46)})();
+
+/* stats */
+var S=[[200,'Tables'],[1101,'DB functions'],[135,'Policies'],[239,'Triggers'],[47,'Migrations'],[10,'Edge functions']];
+$('stats').innerHTML=S.map(function(s){return '<div class="stat rv"><b data-n="'+s[0]+'">0</b><span>'+s[1]+'</span></div>'}).join('');
+function count(el){var n=+el.dataset.n,t=0,st=n/50;var iv=setInterval(function(){t+=st;if(t>=n){t=n;clearInterval(iv)}el.textContent=Math.round(t).toLocaleString()},24)}
+
+/* network canvas */
+(function(){var c=$('net'),x=c.getContext('2d'),P=[],W,H;
+function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;P=[];var n=Math.min(70,Math.floor(W/16));for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
+rs();window.addEventListener('resize',rs);
+function col(){return document.documentElement.dataset.theme==='dark'?'34,211,238':'8,145,178'}
+(function loop(){x.clearRect(0,0,W,H);var k=col();
+P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;x.beginPath();x.arc(p.x,p.y,2,0,6.3);x.fillStyle='rgba('+k+',.8)';x.fill()});
+for(var i=0;i<P.length;i++)for(var j=i+1;j<P.length;j++){var dx=P[i].x-P[j].x,dy=P[i].y-P[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){x.strokeStyle='rgba('+k+','+(1-d/120)*.35+')';x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(P[j].x,P[j].y);x.stroke()}}
+requestAnimationFrame(loop)})()})();
+
+/* tooltip for architecture */
+var tip=$('tip');
+document.querySelectorAll('#arch .node').forEach(function(n){
+ n.addEventListener('mousemove',function(e){tip.textContent=n.dataset.t;tip.style.opacity=1;tip.style.left=Math.min(e.clientX+14,innerWidth-260)+'px';tip.style.top=(e.clientY+14)+'px'});
+ n.addEventListener('mouseleave',function(){tip.style.opacity=0});
+});
+
+/* donut (real table counts by domain) */
+var D=[["Learning",44,"#7b2cbf"],["Community & people",43,"#22d3ee"],["Hope & giving",39,"#a3e635"],["Platform & admin",37,"#94a3b8"],["Partners & sponsors",20,"#f59e0b"],["Marketplace & events",12,"#ec4899"],["AI & guidance",5,"#38bdf8"]];
+var C=2*Math.PI*70,off=0;
+$('donut').innerHTML=D.map(function(r,i){var s='<circle data-i="'+i+'" cx="100" cy="100" r="70" fill="none" stroke="'+r[2]+'" stroke-width="30" data-len="'+(r[1]/200*C)+'" stroke-dasharray="0 '+C+'" stroke-dashoffset="'+(-off)+'"/>';off+=r[1]/200*C;return s}).join('');
+$('legend').innerHTML=D.map(function(r,i){return '<li data-i="'+i+'"><i style="background:'+r[2]+'"></i>'+r[0]+'<b>'+r[1]+'</b></li>'}).join('');
+function hl(i,on){var c=document.querySelector('#donut circle[data-i="'+i+'"]'),l=document.querySelector('#legend li[data-i="'+i+'"]');c.setAttribute('stroke-width',on?36:30);l.classList.toggle('hl',on)}
+document.querySelectorAll('#donut circle,#legend li').forEach(function(e){e.addEventListener('mouseenter',function(){hl(e.dataset.i,true)});e.addEventListener('mouseleave',function(){hl(e.dataset.i,false)})});
+
+/* line chart: cumulative migrations by build day */
+var M=[["16 Oct",4],["20 Oct",28],["22 Oct",35],["23 Oct",39],["25 Oct",40],["26 Oct",41],["2 Nov",46],["6 Nov",47]];
+(function(){var w=500,h=300,l=40,r=15,tp=20,b=40,mx=50,pts=M.map(function(m,i){return [l+i*(w-l-r)/(M.length-1),tp+(h-tp-b)*(1-m[1]/mx)]});
+var s='<defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22d3ee" stop-opacity=".35"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></linearGradient></defs>';
+for(var g=0;g<=5;g++){var y=tp+(h-tp-b)*g/5;s+='<line x1="'+l+'" x2="'+(w-r)+'" y1="'+y+'" y2="'+y+'" stroke="var(--bd)"/><text x="'+(l-6)+'" y="'+(y+4)+'" font-size="10" text-anchor="end" fill="var(--mu)">'+Math.round(mx*(1-g/5))+'</text>'}
+var d='M'+pts.map(function(p){return p[0]+' '+p[1]}).join('L');
+s+='<path class="ar" d="'+d+'L'+pts[pts.length-1][0]+' '+(h-b)+'L'+pts[0][0]+' '+(h-b)+'Z"/><path class="ln" d="'+d+'"/>';
+pts.forEach(function(p,i){s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="5" data-t="'+M[i][0]+': '+M[i][1]+' migrations total"/><text x="'+p[0]+'" y="'+(h-18)+'" font-size="10" text-anchor="middle" fill="var(--mu)">'+M[i][0]+'</text>'});
+$('line').innerHTML=s;
+$('line').querySelectorAll('circle').forEach(function(c){c.addEventListener('mousemove',function(e){tip.textContent=c.dataset.t;tip.style.opacity=1;tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});c.addEventListener('mouseleave',function(){tip.style.opacity=0})})})();
+
+/* lifecycle */
+var L=[["📝","Draft","Staff or a district leader creates the batch."],["📢","Published","Open for giving."],["💜","Funded","Target reached. Bank gifts confirmed by staff."],["🏪","Shop assigned","Approved shop chosen from quotes."],["📦","Packed","Shop uploads packing proof."],["🚚","Delivered","Volunteers upload delivery proof."],["✅","Completed","Proof approved, shop paid, report and receipts sent."]];
+$('life').innerHTML=L.map(function(s){return '<div class="stp"><i>'+s[0]+'</i>'+s[1]+'</div>'}).join('');
+var si=0,steps=document.querySelectorAll('.stp'),running=false;
+function adv(){steps.forEach(function(e,i){e.classList.toggle('done',i<si);e.classList.toggle('on',i===si)});$('lbar').style.width=((si+1)/L.length*100)+'%';$('gate').innerHTML='<b>'+L[si][1]+':</b> '+L[si][2]+(si===5?' <b>Proof gate:</b> payment stays on hold until approved.':'');si=(si+1)%L.length}
+function startLife(){if(running)return;running=true;adv();setInterval(adv,2200)}
+
+/* features */
+var F={
+"Hope":[["🍲","Batches by place","Create, publish and track support batches by village."],["📸","Proof of delivery","Photos and checklists reviewed before payment."],["🧾","Receipts and reports","Automatic receipts and batch reports to supporters."],["👪","Family registry","Consent, priority scoring and restricted private details."],["🏪","Shop quotes","Shops quote, invoice and get paid after approval."],["🏫","Schools and mothers","Dedicated batches for school children and mothers."]],
+"Learning":[["🎓","Courses","Modules, video lessons, quizzes and pass marks."],["📜","Certificates","Numbered, publicly verifiable, revocable."],["🧑‍🏫","Coaches","Applications, ranking, plans and monthly payouts."],["📹","Video sessions","Booking with allowances and top-ups."],["🛠","Workshops","Booking, waitlist, recordings and sponsor-funded places."],["🤖","AI coach","In-course answers, switchable per course."]],
+"Marketplace":[["🛒","Local shops","Items, orders and delivery fees by district."],["🏅","Certification","Verifiable certificates for approved shops."],["🛵","Delivery jobs","Volunteers can take delivery jobs."],["🎉","Fun events","Tickets, check-in, safety rules and incident reports."],["💳","Plans and bills","Monthly plans with automated reminders."]],
+"Community":[["💬","Feed and messages","Public feed, groups and direct messages with moderation."],["🙋","Volunteers","Applications, hours, teams and live check-in."],["🧭","District leaders","Terms, contracts, renewals and awards."],["⭐","Points","Points, levels, milestones and leaderboard."]],
+"Partners":[["🏢","Organisations","Company, charity, school and NGO accounts with roles."],["🥇","Main sponsor","Application, approval, dashboard and recognition."],["📊","Sponsor reports","Impact and money reports for agreed outcomes."],["🌐","Public profile","Optional public page and public books."]],
+"Platform":[["🌍","Multi-country","Region currencies, fees, banks and admin teams."],["🔒","Rollout locks","Unlock districts and countries one at a time."],["🌐","3 languages","English, Sinhala and Tamil with approvals."],["📝","Audit log","Who changed what and when."]]};
+var keys=Object.keys(F);
+$('tabs').innerHTML=keys.map(function(k,i){return '<button class="tab'+(i?'':' on')+'" data-k="'+k+'">'+k+'</button>'}).join('');
+function show(k){$('fgrid').innerHTML=F[k].map(function(f,i){return '<div class="fcard" style="animation-delay:'+(i*60)+'ms"><div class="ic">'+f[0]+'</div><h3>'+f[1]+'</h3><p>'+f[2]+'</p></div>'}).join('')}
+$('tabs').onclick=function(e){var b=e.target.closest('.tab');if(!b)return;document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on')});b.classList.add('on');show(b.dataset.k)};
+show(keys[0]);
+
+/* roles */
+$('roles').innerHTML=["member","donor","volunteer","learner","partner","team lead","staff","officer","shop","admin"].map(function(r,i){return '<span class="role" style="animation-delay:'+(i*.35)+'s">'+r+'</span>'}).join('');
+
+/* observer */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;t.classList.add('vis');
+ t.querySelectorAll&&t.querySelectorAll('[data-n]').forEach(count);if(t.matches&&t.matches('[data-n]'))count(t);
+ if(t.querySelector&&t.querySelector('#donut'))document.querySelectorAll('#donut circle').forEach(function(c){c.setAttribute('stroke-dasharray',c.dataset.len+' '+C)});
+ if(t.querySelector&&t.querySelector('#line'))$('line').classList.add('vis');
+ if(t.id==='life')startLife();
+ if(t.querySelector&&t.querySelector('#ring'))document.querySelector('#ring .fg').setAttribute('stroke-dasharray','377 377');
+ io.unobserve(t)})},{threshold:.2});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+
+/* active nav link */
+var secs=[].slice.call(document.querySelectorAll('section[id]')),links=document.querySelectorAll('.nl a');
+addEventListener('scroll',function(){var y=scrollY+120,cur='';secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)})},{passive:true});
+</script>
+</body>
+</html>
