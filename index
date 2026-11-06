@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Life Development Foundation: Learn Together. Support Each Other. Grow with Purpose.">
+<meta name="theme-color" content="#100c1c">
+<title>Life Development Foundation | A Community Without Limits</title>
+<link rel="icon" href="hero.jpg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--pu:#7b2cbf;--pd:#5a189a;--cy:#00b4d8;--li:#8ac926;--sv:#94a3b8;--dk:#100c1c;--d2:#19132a;--mu:#6a667c;--bd:#e8e5f1;--lt:#f7f6fb}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--lt);color:#171326;line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Manrope',system-ui,sans-serif;line-height:1.15;letter-spacing:-.03em}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+.w{width:min(1140px,90%);margin:auto}section{padding:92px 0;position:relative}
+.ey{color:var(--pu);font-weight:700;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(1.9rem,4vw,3.1rem);margin-bottom:16px}.lead{color:var(--mu);max-width:720px;font-size:1.05rem}
+.dk{background:var(--dk);color:#fff}.dk .lead{color:#b9b4c8}.dk .ey{color:var(--li)}
+.gt{background:linear-gradient(90deg,var(--cy),var(--li));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:90;background:rgba(16,12,28,.95);backdrop-filter:blur(14px);padding:9px 0;box-shadow:0 6px 30px rgba(0,0,0,.2)}
+nav .w{width:min(1240px,93%);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;color:#fff;font-family:Manrope;font-weight:800;font-size:.9rem;line-height:1.1}
+.brand img{width:46px;height:46px;border-radius:50%;object-fit:cover;background:#fff;border:2px solid var(--cy)}.brand small{display:block;color:var(--cy);font-size:.62rem;letter-spacing:.2em}
+.nl{display:flex;gap:20px;align-items:center;color:#e2dff0;font-size:.85rem;font-weight:500}.nl a:hover{color:var(--cy)}
+.cta{background:var(--cy);color:#06121c!important;padding:9px 17px;border-radius:30px;font-weight:700}
+.mb{display:none;background:none;border:1px solid #fff5;color:#fff;border-radius:9px;padding:7px 12px;font-size:1rem}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;background:radial-gradient(circle at 78% 42%,#33186a,var(--dk) 62%);color:#fff;padding:100px 0 70px;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.7rem,6vw,5rem);margin-bottom:20px}.hero p{color:#d0ccdf;font-size:1.1rem;max-width:560px;margin-bottom:28px}
+.tag{display:inline-flex;align-items:center;gap:10px;color:var(--li);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}.tag:before{content:"";width:30px;height:2px;background:var(--li)}
+.btn{display:inline-block;padding:13px 24px;border-radius:30px;font-weight:700;font-size:.9rem;border:1px solid transparent;cursor:pointer;transition:.25s;font-family:inherit}
+.b1{background:var(--cy);color:#06121c}.b1:hover{background:var(--li);transform:translateY(-3px)}.b2{border-color:#fff7;color:#fff;margin-left:8px}.b2:hover{background:#fff2}
+.logo-stage{position:relative;width:min(420px,88%);aspect-ratio:1;margin:auto}
+.logo-stage .ring{position:absolute;inset:-6%;border-radius:50%;border:2px dashed #ffffff30;animation:spin 30s linear infinite}
+.logo-stage .ring.r2{inset:-18%;border-color:#22d3ee40;animation-duration:44s;animation-direction:reverse}
+.logo-stage .ring i{position:absolute;top:-9px;left:50%;width:18px;height:18px;border-radius:50%;background:var(--li)}.ring.r2 i{background:var(--cy)}
+.logo-card{position:absolute;inset:0;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 80px #7b2cbf99;animation:float 6s ease-in-out infinite}
+.logo-card img{width:100%;height:100%;object-fit:cover}
+.fl{position:absolute;font-size:2rem;animation:float 5s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-16px)}}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.4;animation:float 9s ease-in-out infinite}
+/* MARQUEE */
+.mq{background:var(--pu);color:#fff;overflow:hidden;white-space:nowrap;padding:13px 0;font-family:Manrope;font-weight:800;letter-spacing:.05em}
+.mq div{display:inline-block;animation:mq 28s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}.mq span{margin:0 26px}
+/* GRIDS & CARDS */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:22px;padding:26px;transition:.35s}.card:hover{transform:translateY(-8px);box-shadow:0 22px 55px #00000024;border-color:var(--cy)}
+.dk .card{background:var(--d2);border-color:#2f2752;color:#fff}.card p,.card li{color:var(--mu);font-size:.92rem}.dk .card p,.dk .card li{color:#b9b4c8}
+.card h3{font-size:1.2rem;margin:6px 0}.ic{font-size:2.2rem;display:inline-block;animation:float 4s ease-in-out infinite}.num{color:var(--pu);font-size:.72rem;font-weight:800;letter-spacing:.15em}.dk .num{color:var(--cy)}
+.st{background:linear-gradient(145deg,var(--d2),var(--dk));color:#fff;border-radius:24px;padding:34px;border:1px solid #fff2}.st p{color:#b9b4c8}.st .lb{color:var(--cy);font-size:.74rem;letter-spacing:2px;font-weight:800}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;counter-reset:s}
+.step{position:relative;background:#fff;border:1px solid var(--bd);border-radius:24px;padding:62px 24px 26px;overflow:hidden;transition:.35s}.step:hover{transform:translateY(-8px);box-shadow:0 22px 55px #00000024}
+.step:before{counter-increment:s;content:"0" counter(s);position:absolute;top:-6px;left:18px;font-family:Manrope;font-weight:800;font-size:4.2rem;color:var(--pu);opacity:.13}
+.step .ic{position:absolute;top:18px;right:20px}.step h3{font-size:1.2rem;margin-bottom:8px}.step p{color:var(--mu);font-size:.92rem}
+.step .res{margin-top:14px;padding-top:12px;border-top:1px dashed var(--bd);font-size:.82rem;font-weight:700;color:var(--pd)}
+.step:after{content:"";position:absolute;left:0;bottom:0;height:5px;width:0;background:linear-gradient(90deg,var(--cy),var(--li));transition:width 1.2s .3s}.step.vis:after{width:100%}
+/* MODULES */
+.mod{padding:0;overflow:hidden}.mod .im{height:190px;overflow:hidden;background:linear-gradient(135deg,var(--pu),var(--cy))}.mod img{width:100%;height:100%;object-fit:cover;animation:kb 14s ease-in-out infinite alternate}@keyframes kb{to{transform:scale(1.15)}}.mod .bd{padding:24px}
+/* IMPACT */
+.big{font-family:Manrope;font-weight:800;font-size:2.8rem;color:var(--cy);line-height:1}.card.k{text-align:center}
+.prog{height:8px;border-radius:9px;background:#fff2;margin-top:14px;overflow:hidden}.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cy),var(--li));transition:width 2s}
+/* FINANCE */
+.fin{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;margin-top:34px}
+.panel{background:#fff;border:1px solid var(--bd);border-radius:24px;padding:26px}.dk .panel{background:var(--d2);border-color:#2f2752}
+.donut{width:100%;max-width:300px;margin:auto;display:block;transform:rotate(-90deg)}.donut circle{transition:stroke-dasharray 1.6s cubic-bezier(.2,.8,.2,1)}
+.lg{list-style:none;font-size:.9rem}.lg li{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid #ffffff14;cursor:default;transition:.2s}.lg li:hover{padding-left:8px;color:var(--cy)}.lg i{width:13px;height:13px;border-radius:4px;flex:none}.lg b{margin-left:auto}
+.flow{width:100%;margin-top:30px}.dash{stroke-dasharray:7 7;animation:fl 1s linear infinite}@keyframes fl{to{stroke-dashoffset:-14}}
+.loop{max-width:780px;margin:30px auto 0;display:block;width:100%}
+.calc{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;margin-top:30px}.ctl label{display:flex;justify-content:space-between;font-size:.86rem;font-weight:700;margin-top:15px}.ctl label em{color:var(--pu);font-style:normal}input[type=range]{width:100%;accent-color:var(--pu)}
+.bar{transition:y .7s,height .7s}.leg{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--mu);margin-top:8px}.leg i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px}
+.tot{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;text-align:center}.tot div{background:var(--lt);border-radius:14px;padding:12px}.tot b{display:block;font-family:Manrope;font-size:1.25rem;color:var(--pu)}.tot span{font-size:.75rem;color:var(--mu)}
+.note{margin-top:24px;border-left:3px solid #e4bb65;background:#e4bb6520;padding:16px 20px;border-radius:0 12px 12px 0;font-size:.85rem;color:var(--mu)}.dk .note{color:#d8d5c7}
+.road{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}.ph{background:#fff;border:1px solid var(--bd);border-radius:22px;padding:26px;border-top:5px solid var(--pu)}.ph:nth-child(2){border-top-color:var(--cy)}.ph:nth-child(3){border-top-color:var(--li)}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.pills span{padding:9px 18px;border-radius:30px;border:1px solid var(--bd);background:#fff;font-weight:700;font-size:.85rem}
+/* FEEDBACK */
+.fb{display:grid;grid-template-columns:.85fr 1.15fr;gap:36px;align-items:start}
+form{background:#fff;border-radius:24px;padding:30px;box-shadow:0 22px 60px #00000022;border-top:5px solid var(--pu)}form label{display:block;font-weight:700;font-size:.85rem;margin:14px 0 6px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--bd);background:var(--lt);font:inherit;color:inherit}
+.stars{display:flex;gap:6px;font-size:1.9rem;cursor:pointer}.stars span{color:#d6d2e2;transition:.2s}.stars span.on{color:#f5b301;transform:scale(1.15)}
+.ok{display:none;text-align:center;padding:30px 0}.ok.show{display:block}
+footer{background:#090711;color:#b9b4c8;padding:44px 0 28px;font-size:.86rem}footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(26px);transition:.8s}.rv.vis{opacity:1;transform:none}
+.top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;border:0;background:linear-gradient(120deg,var(--cy),var(--li));font-size:1.2rem;font-weight:800;cursor:pointer;z-index:80;box-shadow:0 8px 25px #0006}
+@media(max-width:900px){.hero .w,.g3,.g2,.g4,.steps,.fin,.calc,.fb,.road{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}.mb{display:block}.nl{display:none;position:absolute;top:66px;left:4%;right:4%;padding:22px;background:var(--d2);border-radius:18px;flex-direction:column}.nl.open{display:flex}.b2{margin:10px 0 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+
+<nav><div class="w">
+<a href="#home" class="brand"><img src="hero.jpg" alt="LDF logo"><span>LIFE DEVELOPMENT<small>FOUNDATION</small></span></a>
+<button class="mb" id="mb" aria-label="Menu">☰</button>
+<div class="nl" id="nl"><a href="#about">About</a><a href="#steps">What we do</a><a href="#impact">Impact</a><a href="#finance">Finance</a><a href="#sponsor">Sponsors</a><a href="#feedback">Consultation</a><a class="cta" href="https://ldf-platform.vercel.app/#/home" target="_blank" rel="noopener noreferrer">Explore Platform ↗</a></div>
+</div></nav>
+
+<header class="hero" id="home">
+<div class="blob" style="width:300px;height:300px;background:var(--pu);top:8%;left:-80px"></div><div class="blob" style="width:260px;height:260px;background:var(--cy);bottom:5%;right:5%;animation-delay:2s"></div>
+<div class="w"><div>
+<div class="tag">Established 2019 · Connecting Opportunities</div>
+<h1>Connecting people.<br><span class="gt">Developing possibilities.</span></h1>
+<p>Life Development Foundation is a community platform where people learn, support one another, share knowledge and build real pathways for growth, backed by transparent funding anyone can follow.</p>
+<a href="#steps" class="btn b1">See what we do ↓</a><a href="#finance" class="btn b2">How we are funded</a></div>
+<div class="logo-stage"><div class="ring"><i></i></div><div class="ring r2"><i></i></div>
+<div class="logo-card"><img src="hero.jpg" alt="Life Development Foundation logo"></div>
+<span class="fl" style="top:2%;left:-6%">📚</span><span class="fl" style="top:12%;right:-8%;animation-delay:1s">🤝</span><span class="fl" style="bottom:6%;left:-4%;animation-delay:2s">🌱</span><span class="fl" style="bottom:0;right:-4%;animation-delay:.5s">💡</span></div>
+</div></header>
+
+<div class="mq"><div><span>LEARN TOGETHER</span><span>✦</span><span>SUPPORT EACH OTHER</span><span>✦</span><span>GROW WITH PURPOSE</span><span>✦</span><span>ENGLISH · SINHALA · TAMIL</span><span>✦</span><span>LEARN TOGETHER</span><span>✦</span><span>SUPPORT EACH OTHER</span><span>✦</span><span>GROW WITH PURPOSE</span><span>✦</span><span>ENGLISH · SINHALA · TAMIL</span><span>✦</span></div></div>
+
+<section id="about"><div class="w"><div class="ey rv">Who we are</div><h2 class="rv">Empowering individuals.<br>Inspiring change.</h2>
+<p class="lead rv">Think of LDF as an online town square: learn a skill, find a trusted tutor, get guided to the right help, or support a neighbour. Everything is connected.</p>
+<div class="g2"><div class="st rv"><div class="ic">🔭</div><div class="lb">OUR VISION</div><h3 style="margin:8px 0">Spirituality and good attitudes, alongside knowledge and skills.</h3><p>A positive, thriving community grows when character and capability grow together.</p></div>
+<div class="st rv"><div class="ic">🚀</div><div class="lb">OUR MISSION</div><h3 style="margin:8px 0">Spread knowledge and run workshops that inspire change.</h3><p>Helping people find peace of mind and raising responsible citizens who contribute to their country.</p></div></div></div></section>
+
+<section id="steps" style="background:#fff"><div class="w"><div class="ey rv">Step by step</div><h2 class="rv">Everything we do, in 6 steps</h2>
+<p class="lead rv">From the first hello to measurable results, this is the journey every person and partner follows.</p>
+<div class="steps">
+<div class="step rv"><span class="ic">👂</span><h3>Listen &amp; consult</h3><p>We ask communities, learners, volunteers and host organisations what they actually need before we build.</p><div class="res">Result: services shaped by real feedback</div></div>
+<div class="step rv"><span class="ic">🔗</span><h3>Connect</h3><p>People join the platform free and are matched with learning, support, tutors and volunteers.</p><div class="res">Result: one open community</div></div>
+<div class="step rv"><span class="ic">🎓</span><h3>Learn</h3><p>Free resources, structured courses, verified tutors and workshops in English, Sinhala and Tamil.</p><div class="res">Result: new skills and certificates</div></div>
+<div class="step rv"><span class="ic">🍲</span><h3>Support</h3><p>LDF Hope delivers food and practical help with receipt-backed auditing and dignity at its core.</p><div class="res">Result: help that is provable</div></div>
+<div class="step rv"><span class="ic">🧭</span><h3>Guide</h3><p>Pathfinder points each person to the right learning, health, legal or professional support.</p><div class="res">Result: nobody left unsure where to turn</div></div>
+<div class="step rv"><span class="ic">📈</span><h3>Grow &amp; report</h3><p>Income is reinvested and partners receive clear impact and financial reports.</p><div class="res">Result: trust and long-term growth</div></div></div></div></section>
+
+<section id="eco"><div class="w"><div class="ey rv">One connected ecosystem</div><h2 class="rv">Interconnected services. Shared growth.</h2>
+<div class="g3">
+<article class="card mod rv"><div class="im"><img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=900&q=80" alt="" onerror="this.remove()"></div><div class="bd"><span class="num">01 / COMMUNITY SUPPORT</span><h3>LDF Hope</h3><p>Transparent food security and support, audited with receipts.</p></div></article>
+<article class="card mod rv"><div class="im"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80" alt="" onerror="this.remove()"></div><div class="bd"><span class="num">02 / EDUCATION</span><h3>Learning Hub</h3><p>Courses, verified tutors, Daham school support and practical workshops.</p></div></article>
+<article class="card mod rv"><div class="im"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="" onerror="this.remove()"></div><div class="bd"><span class="num">03 / GUIDANCE</span><h3>Pathfinder</h3><p>Guided navigation to learning, health, legal or professional support.</p></div></article></div></div></section>
+
+<section id="impact" class="dk"><div class="w"><div class="ey rv">What we achieve</div><h2 class="rv">The impact we are building toward</h2>
+<p class="lead rv">These are our targets. Edit the numbers in the <code>GOALS</code> list at the bottom of this file as real results come in.</p>
+<div class="g4" id="goals"></div></div></section>
+
+<section id="finance"><div class="w"><div class="ey rv">Finance, made simple</div><h2 class="rv">How LDF pays for itself</h2>
+<p class="lead rv">Six income streams share the load, so no single funder can switch us off. Here is the money picture in four diagrams.</p></div></section>
+
+<section class="dk" style="padding-top:70px"><div class="w"><div class="ey rv">Diagram 1 · Where income comes from</div><h2 class="rv" style="font-size:2rem">Our proposed income mix</h2>
+<div class="fin"><div class="panel rv"><svg class="donut" id="donut" viewBox="0 0 200 200"></svg><p style="text-align:center;margin-top:8px;font-family:Manrope;font-weight:800">6 income streams</p></div>
+<div class="panel rv"><ul class="lg" id="legend"></ul></div></div>
+<div class="note rv">Illustrative mix to explain the idea. Real percentages will be set by a documented business plan and signed agreements.</div>
+
+<div class="ey rv" style="margin-top:70px">Diagram 2 · Where money goes</div><h2 class="rv" style="font-size:2rem">Follow the money</h2>
+<div class="panel rv"><svg class="flow" viewBox="0 0 800 330" font-family="DM Sans" font-size="13" text-anchor="middle">
+<g fill="#7b2cbf"><rect x="10" y="20" width="170" height="52" rx="14"/><rect x="10" y="95" width="170" height="52" rx="14"/><rect x="10" y="170" width="170" height="52" rx="14"/><rect x="10" y="245" width="170" height="52" rx="14"/></g>
+<g fill="#fff" font-weight="700"><text x="95" y="51">Paid courses &amp; tutoring</text><text x="95" y="126">Sponsors</text><text x="95" y="201">Organisation plans</text><text x="95" y="276">Marketplace &amp; tech partners</text></g>
+<g fill="none" stroke="#22d3ee" stroke-width="2.5"><path class="dash" d="M180 46C300 46 300 165 340 165"/><path class="dash" d="M180 121C260 121 290 165 340 165"/><path class="dash" d="M180 196C260 196 290 165 340 165"/><path class="dash" d="M180 271C300 271 300 165 340 165"/></g>
+<circle cx="400" cy="165" r="62" fill="#0891b2"/><text x="400" y="162" fill="#fff" font-family="Manrope" font-weight="800" font-size="20">LDF</text><text x="400" y="182" fill="#fff" font-size="11">one pot, clear records</text>
+<g fill="none" stroke="#a3e635" stroke-width="2.5"><path class="dash" d="M462 165C520 165 540 46 620 46"/><path class="dash" d="M462 165C520 165 540 121 620 121"/><path class="dash" d="M462 165C520 165 540 196 620 196"/><path class="dash" d="M462 165C520 165 540 271 620 271"/></g>
+<g fill="#4d7c0f"><rect x="620" y="20" width="170" height="52" rx="14"/><rect x="620" y="95" width="170" height="52" rx="14"/><rect x="620" y="170" width="170" height="52" rx="14"/><rect x="620" y="245" width="170" height="52" rx="14"/></g>
+<g fill="#fff" font-weight="700"><text x="705" y="51">Community programmes</text><text x="705" y="126">Platform &amp; security</text><text x="705" y="201">Tutors &amp; professionals</text><text x="705" y="276">Reserve &amp; growth</text></g></svg></div>
+
+<div class="ey rv" style="margin-top:70px">Diagram 3 · The reinvestment loop</div><h2 class="rv" style="font-size:2rem">Generate → Operate → Improve → Reinvest → Grow</h2>
+<svg class="loop rv" viewBox="0 0 760 250" font-family="Manrope" font-weight="800" font-size="15" text-anchor="middle" fill="#fff">
+<path class="dash" d="M95 125H665" stroke="#22d3ee" stroke-width="3" fill="none"/><path class="dash" d="M700 80C700 8 80 8 80 73" stroke="#a3e635" stroke-width="2" fill="none"/>
+<circle cx="80" cy="125" r="52" fill="#7b2cbf"/><text x="80" y="130">Generate</text><circle cx="240" cy="125" r="52" fill="#5a189a"/><text x="240" y="130">Operate</text><circle cx="400" cy="125" r="52" fill="#0891b2"/><text x="400" y="130">Improve</text><circle cx="560" cy="125" r="52" fill="#4d7c0f"/><text x="560" y="130">Reinvest</text><circle cx="700" cy="125" r="46" fill="#a3e635"/><text x="700" y="130" fill="#100c1c">Grow</text></svg>
+</div></section>
+
+<section id="forecast"><div class="w"><div class="ey rv">Diagram 4 · Try it yourself</div><h2 class="rv">Interactive 3-year forecast</h2><p class="lead rv">Move the sliders and the chart redraws instantly.</p>
+<div class="calc"><div class="panel ctl rv">
+<label>Members after year 1 <em id="v1"></em></label><input type="range" id="m" min="500" max="20000" step="500" value="3000">
+<label>Members who pay for something <em id="v2"></em></label><input type="range" id="p" min="2" max="30" value="8">
+<label>Average yearly spend per payer <em id="v3"></em></label><input type="range" id="s" min="10" max="200" step="5" value="45">
+<label>Sponsors by year 3 <em id="v4"></em></label><input type="range" id="sp" min="1" max="12" value="4">
+<label>Average sponsorship <em id="v5"></em></label><input type="range" id="sa" min="2000" max="50000" step="1000" value="10000"></div>
+<div class="panel rv"><svg id="ch" viewBox="0 0 560 300" width="100%"></svg>
+<div class="leg"><span><i style="background:#7b2cbf"></i>Paid services</span><span><i style="background:#0891b2"></i>Sponsorship</span><span><i style="background:#8ac926"></i>Orgs &amp; market</span></div>
+<div class="tot"><div><b id="t1"></b><span>Year 1</span></div><div><b id="t2"></b><span>Year 2</span></div><div><b id="t3"></b><span>Year 3</span></div></div></div></div>
+<div class="note rv"><b>Illustrative only.</b> Not a promise, offer or investment prospectus. Real figures come from a documented business plan, actual costs and written agreements.</div>
+<div class="road"><div class="ph rv"><span class="num">PHASE 1</span><h3>Establish</h3><p class="lead" style="font-size:.93rem">Validate the platform, find partners, test user journeys.</p></div><div class="ph rv"><span class="num">PHASE 2</span><h3>Develop</h3><p class="lead" style="font-size:.93rem">Grow paid services, sponsored programmes and technology.</p></div><div class="ph rv"><span class="num">PHASE 3</span><h3>Sustain</h3><p class="lead" style="font-size:.93rem">Diversify income and expand responsibly.</p></div></div></div></section>
+
+<section id="sponsor" class="dk"><div class="w"><div class="ey rv">For companies</div><h2 class="rv">Become our main platform sponsor</h2><p class="lead rv">Back the whole ecosystem, not one event. Benefits are set in a formal partnership agreement.</p>
+<div class="g4"><div class="card rv"><span class="ic">🏅</span><h3>Recognition</h3><p>Official sponsor status and approved logo placement.</p></div><div class="card rv"><span class="ic">📊</span><h3>Impact reports</h3><p>Regular reports on agreed outcomes.</p></div><div class="card rv"><span class="ic">🤲</span><h3>Employee involvement</h3><p>Volunteering, mentoring, knowledge sharing.</p></div><div class="card rv"><span class="ic">🧪</span><h3>Innovation</h3><p>Co-develop programmes and responsible AI.</p></div></div>
+<div class="pills rv"><span style="background:#19132a;border-color:#2f2752">Learning Hub Sponsor</span><span style="background:#19132a;border-color:#2f2752">Hope Programme</span><span style="background:#19132a;border-color:#2f2752">Technology</span><span style="background:#19132a;border-color:#2f2752">AI &amp; Digital</span><span style="background:#19132a;border-color:#2f2752">Youth Development</span><span style="background:#19132a;border-color:#2f2752">Global Growth</span></div>
+<h3 class="rv" style="margin-top:44px;font-size:1.6rem">Trust, built in</h3>
+<div class="g3"><div class="card rv"><span class="ic">🧾</span><h3>Separate records</h3><p>Income, sponsorship and costs tracked separately.</p></div><div class="card rv"><span class="ic">📑</span><h3>Clear fund rules</h3><p>Restricted funds agreed before they are accepted.</p></div><div class="card rv"><span class="ic">🔒</span><h3>Privacy first</h3><p>Only aggregated, authorised data is shared.</p></div></div></div></section>
+
+<section id="feedback"><div class="w fb"><div class="rv"><div class="ey">Public consultation</div><h2>Help shape LDF</h2><p class="lead">Learner, volunteer, tutor, company or potential UK host organisation, your voice guides our governance and pilot. It takes one minute.</p></div>
+<form id="f" class="rv"><label>I am a…</label><select id="role"><option>Individual / learner</option><option>Company / sponsor</option><option>Tutor / professional</option><option>Volunteer</option><option>Organisation / UK host</option></select>
+<label>How clear is our idea?</label><div class="stars" id="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+<label>What would you most like to see?</label><textarea id="msg" rows="4" required placeholder="Ideas, concerns or questions"></textarea>
+<label>Name &amp; contact (optional)</label><input id="who" placeholder="So we can reply">
+<button class="btn b1" style="margin-top:18px;width:100%" type="submit">Send feedback</button>
+<div class="ok" id="ok"><div style="font-size:2.6rem">💜</div><h3>Thank you!</h3><p class="lead" style="margin:auto">Your feedback was sent.</p></div></form></div></section>
+
+<footer><div class="w"><div><strong>Life Development Foundation (LDF)</strong><p>Learn Together. Support Each Other. Grow with Purpose.</p></div><div style="max-width:520px"><p>© 2019–2026 Life Development Foundation. This page is a development proposal, not a financial offer or investment prospectus. All terms are subject to due diligence and written agreements.</p></div></div></footer>
+<button class="top" id="top" aria-label="Back to top">↑</button>
+
+<script>
+/* ===== EDIT ME ===== */
+var FORM_ENDPOINT="";            // paste your Formspree URL, e.g. https://formspree.io/f/xxxxxx
+var CONTACT_EMAIL="info@example.org"; // used if FORM_ENDPOINT is empty
+var GOALS=[                      // your targets: icon, label, number, suffix
+ {i:"🎓",l:"Learners reached",n:5000,s:"+"},{i:"🍲",l:"Meals & support packs",n:10000,s:"+"},
+ {i:"🧑‍🏫",l:"Verified tutors",n:150,s:"+"},{i:"🌍",l:"Languages supported",n:3,s:""}];
+/* ==================== */
+function $(i){return document.getElementById(i)}
+$('mb').onclick=function(){$('nl').classList.toggle('open')};$('nl').onclick=function(){$('nl').classList.remove('open')};
+$('top').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+$('goals').innerHTML=GOALS.map(function(g){return '<div class="card k rv"><div class="ic">'+g.i+'</div><div class="big" data-n="'+g.n+'" data-s="'+g.s+'">0</div><p>'+g.l+'</p><div class="prog"><i></i></div><p style="font-size:.75rem;margin-top:6px">Target</p></div>'}).join('');
+function count(el){var n=+el.dataset.n,s=el.dataset.s,t=0,st=n/60;var iv=setInterval(function(){t+=st;if(t>=n){t=n;clearInterval(iv)}el.textContent=Math.round(t).toLocaleString()+s},25)}
+var inc=[["Paid services",30,"#7b2cbf"],["Main platform sponsor",25,"#00b4d8"],["Programme sponsors",20,"#8ac926"],["Organisation plans",10,"#94a3b8"],["Marketplace commission",10,"#f59e0b"],["Technology partners",5,"#ec4899"]];
+var C=2*Math.PI*70,off=0;$('donut').innerHTML=inc.map(function(r,i){var d='<circle cx="100" cy="100" r="70" fill="none" stroke="'+r[2]+'" stroke-width="34" data-len="'+(r[1]/100*C)+'" stroke-dasharray="0 '+C+'" stroke-dashoffset="'+(-off)+'"/>';off+=r[1]/100*C;return d}).join('');
+$('legend').innerHTML=inc.map(function(r){return '<li><i style="background:'+r[2]+'"></i>'+r[0]+'<b>'+r[1]+'%</b></li>'}).join('');
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(!x.isIntersecting)return;var t=x.target;t.classList.add('vis');
+ t.querySelectorAll('[data-n]').forEach(count);t.querySelectorAll('.prog i').forEach(function(p){p.style.width=(60+Math.random()*30)+'%'});
+ if(t.querySelector('#donut'))document.querySelectorAll('#donut circle').forEach(function(c){c.setAttribute('stroke-dasharray',c.dataset.len+' '+C)});io.unobserve(t)})},{threshold:.15});
+document.querySelectorAll('.rv,.step').forEach(function(e){io.observe(e)});
+function gbp(n){return n>=1e6?'£'+(n/1e6).toFixed(2)+'m':n>=1e3?'£'+Math.round(n/1e3)+'k':'£'+Math.round(n)}
+function draw(){var m=+$('m').value,p=+$('p').value/100,s=+$('s').value,sp=+$('sp').value,sa=+$('sa').value;
+$('v1').textContent=m.toLocaleString();$('v2').textContent=Math.round(p*100)+'%';$('v3').textContent='£'+s;$('v4').textContent=sp;$('v5').textContent='£'+sa.toLocaleString();
+var mem=[m,m*2.2,m*4.5],sn=[Math.max(1,Math.round(sp*.3)),Math.max(1,Math.round(sp*.65)),sp],d=[];
+for(var y=0;y<3;y++){var a=mem[y]*p*s,b=sn[y]*sa,c=(a+b)*(.08+y*.06);d.push([a,b,c,a+b+c])}
+var mx=Math.max.apply(null,d.map(function(x){return x[3]}))*1.1,H=240,o='',cl=['#7b2cbf','#0891b2','#8ac926'];
+for(var g=0;g<=4;g++){var yy=20+H-g*H/4;o+='<line x1="52" x2="545" y1="'+yy+'" y2="'+yy+'" stroke="#999" opacity=".25"/><text x="46" y="'+(yy+4)+'" font-size="10" text-anchor="end" fill="#777">'+gbp(mx*g/4)+'</text>'}
+d.forEach(function(r,i){var x=90+i*160,b=20+H;for(var k=0;k<3;k++){var h=r[k]/mx*H;b-=h;o+='<rect class="bar" x="'+x+'" y="'+b+'" width="90" height="'+h+'" rx="4" fill="'+cl[k]+'"/>'}o+='<text x="'+(x+45)+'" y="280" text-anchor="middle" font-size="12" fill="#555">Year '+(i+1)+'</text>'});
+$('ch').innerHTML=o;$('t1').textContent=gbp(d[0][3]);$('t2').textContent=gbp(d[1][3]);$('t3').textContent=gbp(d[2][3])}
+['m','p','s','sp','sa'].forEach(function(i){$(i).oninput=draw});draw();
+var rate=0,sts=document.querySelectorAll('#stars span');sts.forEach(function(s,i){s.onclick=function(){rate=i+1;sts.forEach(function(x,j){x.classList.toggle('on',j<=i)})}});
+$('f').onsubmit=function(e){e.preventDefault();var d={audience:$('role').value,rating:rate,message:$('msg').value,contact:$('who').value};
+function done(){Array.prototype.forEach.call($('f').children,function(c){if(c.id!=='ok')c.style.display='none'});$('ok').classList.add('show')}
+if(FORM_ENDPOINT){fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(done).catch(function(){alert('Could not send. Please try again.')})}
+else{location.href='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('LDF feedback ('+d.audience+')')+'&body='+encodeURIComponent('Rating: '+d.rating+'/5\n\n'+d.message+'\n\nContact: '+d.contact);done()}};
+</script></body></html>
