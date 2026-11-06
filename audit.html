@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDF - Institutional Governance & Audit Framework</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ldf: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#0f172a',
+                        },
+                        emerald: {
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .gradient-border-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+        }
+        .gradient-border-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.2), rgba(16, 185, 129, 0.15));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 text-slate-800">
+
+    <!-- Container wrapper for integration into LDF portfolio -->
+    <div class="max-w-7xl mx-auto my-8">
+
+        <!-- MAIN GOVERNANCE SECTION START -->
+        <section id="institutional-governance" class="bg-white rounded-3xl p-6 sm:p-10 md:p-16 shadow-xl shadow-slate-200/60 border border-slate-100 overflow-hidden relative">
+            
+            <!-- Subtle Background Blur Shapes -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-ldf-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- 1. HEADER SECTION -->
+            <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 relative z-10">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ldf-50 border border-ldf-100 text-ldf-700 text-xs sm:text-sm font-semibold mb-4 tracking-wide uppercase">
+                    <svg class="w-4 h-4 text-ldf-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    Institutional Governance & Integrity
+                </div>
+                
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+                    Auditable Framework for <span class="bg-clip-text text-transparent bg-gradient-to-r from-ldf-600 to-emerald-600">Zero-Leakage</span> Aid
+                </h2>
+                
+                <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                    Designed specifically for institutional grantmakers, CSR partners, and international development agencies demanding total fiscal transparency, verified merchant supply chains, and itemized traceability.
+                </p>
+            </div>
+
+            <!-- 2. THREE-COLUMN ARCHITECTURE CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16 relative z-10">
+                
+                <!-- Pillar Card 1 -->
+                <div class="gradient-border-card rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-ldf-50 border border-ldf-100 flex items-center justify-center text-ldf-600 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Closed-Loop Receipt Engine</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Direct cash transfers are completely eliminated in favor of pre-negotiated merchant voucher fulfillment packages.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-700 font-medium">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Direct merchant account settlement
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Verified food & education packages
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar Card 2 -->
+                <div class="gradient-border-card rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-ldf-50 border border-ldf-100 flex items-center justify-center text-ldf-600 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">End-to-End Traceability</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Powered by the HOPE data architecture connecting beneficiary redemption logs directly with digital receipts.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-700 font-medium">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Itemized monthly audit logs
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Automated transaction matching
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar Card 3 -->
+                <div class="gradient-border-card rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-ldf-50 border border-ldf-100 flex items-center justify-center text-ldf-600 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Multi-Tiered Verification</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Beneficiary eligibility verified through a dual checks-and-balances network of local leads and administrative divisions.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-700 font-medium">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Separation of duties protocol
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Grama Sevaka zone alignment
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- 3. COMPLIANCE MATRIX (2x2 GRID) -->
+            <div class="mb-16 bg-slate-50/80 rounded-2xl p-6 sm:p-10 border border-slate-200/80">
+                <div class="mb-8 max-w-2xl">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Financial Compliance & Data Governance Standards</h3>
+                    <p class="text-sm text-slate-600">Strict structural policies implemented to meet international donor compliance and audit prerequisites.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Grid Item 1 -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4 hover:border-ldf-500/40 transition-colors">
+                        <div class="p-2 bg-ldf-50 rounded-lg text-ldf-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base mb-1">Restricted Fund Isolation</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Sponsor and grant funds are strictly ring-fenced into dedicated project sub-accounts. Zero cross-subsidization without explicit prior written authorization.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 2 -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4 hover:border-ldf-500/40 transition-colors">
+                        <div class="p-2 bg-ldf-50 rounded-lg text-ldf-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base mb-1">Auditable Systems Architecture</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Operating on an immutable database pipeline with clear audit trails, standardized ledger tracking, and automated reconciliation exports.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 3 -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4 hover:border-ldf-500/40 transition-colors">
+                        <div class="p-2 bg-ldf-50 rounded-lg text-ldf-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base mb-1">Privacy-Preserving Beneficiary Data</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Full compliance with data protection principles. Public dashboards and donor reports utilize anonymized tracking IDs to preserve dignity and safety.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 4 -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4 hover:border-ldf-500/40 transition-colors">
+                        <div class="p-2 bg-ldf-50 rounded-lg text-ldf-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base mb-1">Independent Verification Rights</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Open-book access for partner-appointed auditors, providing raw transaction logs, batch receipts, and direct merchant validation.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 4. INSTITUTIONAL CTA BANNER -->
+            <div class="bg-gradient-to-r from-slate-900 via-ldf-900 to-slate-900 text-white rounded-2xl p-8 sm:p-12 relative overflow-hidden shadow-xl">
+                <!-- Decorative background elements -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-ldf-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="max-w-2xl text-center lg:text-left">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">
+                            Partnering for Scalable Social Impact
+                        </h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            We invite international development agencies, grantmaking bodies, and corporate ESG teams to co-design auditable regional pilots under structured agreements.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto shrink-0">
+                        <button onclick="handlePilotRequest()" class="px-6 py-3.5 bg-gradient-to-r from-ldf-500 to-emerald-500 hover:from-ldf-600 hover:to-emerald-600 text-white font-semibold rounded-xl text-sm transition-all shadow-lg shadow-ldf-500/25 flex items-center justify-center gap-2">
+                            <span>Co-Design a Pilot</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                        
+                        <button onclick="handleSpecDownload()" class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-xl text-sm transition-all flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            <span>Governance Spec (PDF)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- MAIN GOVERNANCE SECTION END -->
+
+    </div>
+
+    <!-- Notification / Modal Message Container for interactive feedback -->
+    <div id="action-toast" class="fixed bottom-6 right-6 hidden bg-slate-900 text-white px-5 py-4 rounded-xl shadow-2xl border border-slate-800 flex items-center gap-3 z-50 text-sm">
+        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <span id="toast-message">Action processed successfully.</span>
+    </div>
+
+    <!-- Script for interaction logic -->
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById('action-toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        function handlePilotRequest() {
+            showToast("Redirecting to Institutional Partner Co-Design form...");
+            // Link to contact or pilot form
+            setTimeout(() => {
+                const contactSection = document.getElementById('contact');
+                if(contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 1000);
+        }
+
+        function handleSpecDownload() {
+            showToast("Downloading LDF Governance & Audit Specification Summary...");
+        }
+    </script>
+</body>
+</html>
