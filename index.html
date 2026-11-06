@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Life Development Foundation partnership portfolio and public consultation hub">
-<title>LDF | Partnership Portfolio & Public Consultation</title>
+<meta name="description" content="Life Development Foundation Interactive Presentation Deck & Public Consultation">
+<title>LDF | Interactive Slide Deck & Consultation</title>
 <style>
 :root {
   --p: #6555d9;
@@ -16,471 +16,494 @@
   --muted: #66718a;
   --bg: #f4f6ff;
   --card-border: #e5e9f4;
-  --radius: 16px;
+  --radius: 20px;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: #fff; overflow-x: hidden; }
-.w { width: min(1080px, 92%); margin: auto; }
-
-/* Global Smooth Animations */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+body { 
+  margin: 0; 
+  font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+  color: var(--ink); 
+  background: #0d1527; 
+  overflow: hidden; 
+  height: 100vh;
+  width: 100vw;
 }
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.3s; }
-.delay-3 { animation-delay: 0.45s; }
 
-@keyframes fadeInUp {
-  to {
+/* Slide Deck Shell */
+.deck-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Progress Bar */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(13,21,39,0.85), transparent);
+}
+header b { color: #fff; font-size: 1.1rem; letter-spacing: -0.02em; }
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--p);
+  width: 0%;
+  transition: width 0.4s ease;
+  z-index: 11;
+}
+
+/* Individual Animated Slides */
+.slide {
+  position: absolute;
+  inset: 0;
+  padding: 100px 40px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px) scale(0.98);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  background: radial-gradient(circle at 85% 15%, #182848, #0d1527);
+  color: #fff;
+}
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Text Stagger Reveal Animations */
+.slide.active .reveal-text {
+  animation: textRevealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s !important; }
+.delay-2 { animation-delay: 0.2s !important; }
+.delay-3 { animation-delay: 0.3s !important; }
+.delay-4 { animation-delay: 0.4s !important; }
+
+@keyframes textRevealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(4px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
 }
 
-/* Navigation */
-header { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
-header b { color: var(--p); font-size: 1.1rem; letter-spacing: -0.02em; }
-nav a { margin-left: 18px; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
-nav a:hover { color: var(--p); }
-
-/* Animated Hero Header */
-.hero { 
-  padding: 85px 0; 
-  background: radial-gradient(circle at 85% 15%, #d8fff7, transparent 35%), linear-gradient(130deg, #f1efff, #f8fbff);
-  background-size: 140% 140%;
-  animation: gradientShift 12s ease infinite alternate;
+.reveal-text {
+  opacity: 0; /* Hidden until slide becomes active */
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+.slide-content {
+  width: min(1080px, 92%);
+  margin: auto;
 }
 
-.tag { font-size: .78rem; letter-spacing: .15em; text-transform: uppercase; color: var(--p); font-weight: 800; }
-h1 { font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1.04; letter-spacing: -.05em; margin: 16px 0; max-width: 850px; }
-.lead { font-size: 1.2rem; color: #4e5b76; max-width: 740px; }
+/* Typography & Visual Elements */
+.tag { font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; color: var(--t); font-weight: 800; }
+h1 { font-size: clamp(2.8rem, 6vw, 4.8rem); line-height: 1.05; letter-spacing: -.04em; margin: 16px 0; max-width: 900px; color: #fff; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -.03em; margin: 8px 0 16px; color: #fff; }
+.lead { font-size: 1.25rem; color: #a5b4fc; max-width: 780px; margin-bottom: 24px; }
+.muted { color: #94a3b8; }
 
-/* Interactive Hover Buttons */
+/* Grid Cards */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+
+.card { 
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: var(--radius); 
+  padding: 28px; 
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--p);
+}
+.card h3 { margin: 12px 0 8px; color: #fff; font-size: 1.25rem; }
+.card p { margin: 0; color: #cbd5e1; font-size: 0.95rem; }
+
+.ico { 
+  width: 46px; 
+  height: 46px; 
+  border-radius: 14px; 
+  background: var(--p); 
+  color: #fff; 
+  display: grid; 
+  place-items: center; 
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+/* Interactive Buttons */
 .btn { 
   display: inline-flex; 
   align-items: center; 
   gap: 8px; 
   background: var(--p); 
   color: white; 
-  padding: 12px 24px; 
+  padding: 14px 28px; 
   border-radius: 30px; 
   text-decoration: none; 
   font-weight: 700; 
-  margin: 10px 8px 0 0; 
   border: none; 
   cursor: pointer; 
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(101, 85, 215, 0.25);
+  transition: all 0.3s ease;
 }
-.btn:hover { 
-  background: var(--p-dark); 
-  transform: translateY(-3px) scale(1.02); 
-  box-shadow: 0 8px 22px rgba(101, 85, 215, 0.35);
-}
-.btn.alt { background: white; color: var(--p); border: 1px solid #ddd; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04); }
-.btn.alt:hover { background: #f8f9fc; border-color: var(--p); }
-.facts { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 30px; color: var(--muted); }
+.btn:hover { background: var(--p-dark); transform: translateY(-2px); }
+.btn.alt { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.btn.alt:hover { background: rgba(255,255,255,0.2); }
 
-/* Layout & Animated Cards */
-section { padding: 65px 0; }
-.pale { background: var(--bg); }
-h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.15; letter-spacing: -.03em; margin: 8px 0 12px; }
-.muted { color: var(--muted); }
-.intro { max-width: 740px; margin-bottom: 28px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-
-.card { 
-  background: white; 
-  border: 1px solid var(--card-border); 
-  border-radius: var(--radius); 
-  padding: 24px; 
-  box-shadow: 0 8px 28px #1c2a5308;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(23, 33, 59, 0.09);
-  border-color: #d2d8eb;
-}
-.card h3 { margin: 8px 0; }
-.card p { margin: 0; color: var(--muted); }
-
-.ico { 
-  width: 40px; 
-  height: 40px; 
-  border-radius: 12px; 
-  background: var(--p-light); 
-  color: var(--p); 
-  display: grid; 
-  place-items: center; 
-  font-weight: 900;
-  transition: transform 0.3s ease;
-}
-.card:hover .ico {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
-.steps { display: flex; gap: 9px; flex-wrap: wrap; }
-.steps span, .pill { 
-  background: white; 
-  border: 1px solid #e3e7f1; 
-  border-radius: 12px; 
-  padding: 12px 15px; 
-  transition: all 0.2s ease;
-}
-.steps span:hover, .pill:hover {
-  border-color: var(--p);
-  color: var(--p);
-  transform: translateY(-2px);
-}
-.call { background: #182440; color: white; padding: 36px; border-radius: 22px; }
-.call p { color: #d7deef; }
-.call h2 { color: white; }
-.note { background: #f8f9fc; border-left: 3px solid var(--t); padding: 13px; color: #68738a; font-size: .9rem; border-radius: 0 8px 8px 0; }
-
-/* Interactive Form Section */
+/* Form Slide Styling */
 .form-card { 
-  background: white; 
-  border: 1px solid var(--card-border); 
+  background: #fff; 
+  color: var(--ink); 
   border-radius: 20px; 
   padding: 32px; 
-  box-shadow: 0 12px 36px #1c2a530a; 
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
 }
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.92rem; color: var(--ink); }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.88rem; color: var(--ink); }
 .form-control { 
   width: 100%; 
-  padding: 12px 16px; 
+  padding: 10px 14px; 
   border: 1px solid #dcdfe8; 
-  border-radius: 10px; 
+  border-radius: 8px; 
   font-family: inherit; 
-  font-size: 0.95rem; 
+  font-size: 0.9rem; 
   background: #fafbfc; 
-  transition: all 0.25s ease; 
 }
-.form-control:focus { 
-  outline: none; 
-  border-color: var(--p); 
-  background: #fff; 
-  box-shadow: 0 0 0 4px rgba(101, 85, 215, 0.15); 
-  transform: translateY(-1px);
-}
-textarea.form-control { resize: vertical; min-height: 110px; }
+.form-control:focus { outline: none; border-color: var(--p); background: #fff; }
+textarea.form-control { resize: vertical; min-height: 80px; }
 
-/* Category Selector Pills */
-.category-selector { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+.category-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
 .cat-btn { 
   background: #f0f2f8; 
   border: 1px solid #dcdfe8; 
   color: var(--muted); 
-  padding: 9px 16px; 
-  border-radius: 20px; 
+  padding: 7px 14px; 
+  border-radius: 16px; 
   cursor: pointer; 
-  font-size: 0.88rem; 
+  font-size: 0.82rem; 
   font-weight: 600; 
-  transition: all 0.25s ease; 
 }
-.cat-btn.active, .cat-btn:hover { 
-  background: var(--p-light); 
-  color: var(--p); 
-  border-color: var(--p); 
-  transform: scale(1.03);
+.cat-btn.active { background: var(--p-light); color: var(--p); border-color: var(--p); }
+
+.rating-group { display: flex; gap: 6px; font-size: 1.4rem; cursor: pointer; }
+.star { color: #cbd5e1; }
+.star.active { color: #f59e0b; }
+
+#form-success { display: none; text-align: center; padding: 30px 10px; color: var(--ink); }
+
+/* Slide Navigation Controls */
+.controls {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
 }
-
-/* Animated Rating Stars */
-.rating-group { display: flex; gap: 8px; font-size: 1.6rem; cursor: pointer; margin-top: 4px; }
-.star { color: #d1d5db; transition: transform 0.2s ease, color 0.2s ease; }
-.star.active, .star:hover { color: #f59e0b; transform: scale(1.2); }
-
-/* Success State Animation */
-#form-success { display: none; text-align: center; padding: 40px 20px; animation: fadeInUp 0.5s ease forwards; }
-#form-success .ico-check { 
-  width: 64px; 
-  height: 64px; 
-  background: var(--t-light); 
-  color: var(--t); 
-  border-radius: 50%; 
-  display: grid; 
-  place-items: center; 
-  margin: 0 auto 16px; 
-  font-size: 2rem; 
-  font-weight: bold;
-  animation: pulseCheck 1s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
+.slide-counter { color: #94a3b8; font-weight: 600; font-size: 0.9rem; }
+.nav-btns { display: flex; gap: 12px; }
+.nav-btn {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
 }
+.nav-btn:hover { background: var(--p); border-color: var(--p); }
 
-@keyframes pulseCheck {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(32, 183, 166, 0.4); }
-  100% { transform: scale(1.05); box-shadow: 0 0 0 14px rgba(32, 183, 166, 0); }
+@media(max-width:850px){
+  .grid, .cols { grid-template-columns: 1fr; gap: 16px; }
+  .slide { padding: 80px 20px 80px; overflow-y: auto; }
 }
-
-footer { background: #121c34; color: #dce4f2; padding: 32px 0; margin-top: 40px; }
-footer small { color: #aebbd1; }
-
-@media(max-width:700px){ nav{display:none} .grid{grid-template-columns:1fr 1fr} .cols{grid-template-columns:1fr} .hero{padding:55px 0} }
-@media(max-width:460px){ .grid{grid-template-columns:1fr} .facts{display:grid;gap:8px} .form-card{padding:20px} }
 </style>
 </head>
 <body>
 
-<header class="w fade-in">
-  <b>LDF | LIFE DEVELOPMENT FOUNDATION</b>
-  <nav>
-    <a href="#vision">Vision</a>
-    <a href="#platform">Platform</a>
-    <a href="#partner">Partnership</a>
-    <a href="#consultation">Consultation</a>
-  </nav>
-</header>
+<div class="deck-container">
+  <div class="progress-bar" id="progress"></div>
 
-<div class="hero">
-  <div class="w fade-in delay-1">
-    <div class="tag">Partnership portfolio · Founded 2019</div>
-    <h1>One connected community.<br><span style="color:var(--p)">More ways to grow.</span></h1>
-    <p class="lead">Life Development Foundation (LDF) is developing an integrated digital community where people and organisations can learn, support one another, volunteer, share expertise and create opportunities together.</p>
-    <a class="btn" href="#partner">Explore a partnership</a>
-    <a class="btn alt" href="https://ldf-platform.vercel.app/#/home" target="_blank">View existing platform ↗</a>
-    <div class="facts">
-      <span><b>Since 2019</b> · Ongoing initiative</span>
-      <span><b>Existing platform</b> · Available online</span>
-      <span><b>Next stage</b> · Pilots and partnerships</span>
+  <header>
+    <b>LDF | LIFE DEVELOPMENT FOUNDATION</b>
+    <span class="tag">Partnership & Consultation Deck</span>
+  </header>
+
+  <!-- SLIDE 1: Title / Hero -->
+  <div class="slide active" id="slide-1">
+    <div class="slide-content">
+      <div class="tag reveal-text">Founded 2019 · Strategic Vision</div>
+      <h1 class="reveal-text delay-1">One connected community.<br><span style="color:var(--t)">More ways to grow.</span></h1>
+      <p class="lead reveal-text delay-2">An integrated digital community ecosystem connecting education, volunteering, support distribution, and professional growth in one platform.</p>
+      <div style="display:flex; gap:16px;" class="reveal-text delay-3">
+        <button class="btn" onclick="nextSlide()">Explore Presentation ➔</button>
+        <a href="https://ldf-platform.vercel.app/#/home" target="_blank" class="btn alt">View Platform Demo ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: The Core Vision -->
+  <div class="slide" id="slide-2">
+    <div class="slide-content">
+      <div class="tag reveal-text">01 / The Core Vision</div>
+      <h2 class="reveal-text delay-1">People should give, learn and grow — not just receive.</h2>
+      <p class="muted reveal-text delay-2">LDF connects individuals, tutors, volunteers, and organisations into a continuous development cycle.</p>
+      <div class="grid">
+        <div class="card reveal-text delay-3">
+          <div class="ico">♡</div>
+          <h3>Human Dignity</h3>
+          <p>Dignified support systems that avoid pity-based narratives and respect individual agency.</p>
+        </div>
+        <div class="card reveal-text delay-3">
+          <div class="ico">↗</div>
+          <h3>Connected Pathways</h3>
+          <p>Move seamlessly from a learner to a volunteer, project leader, or service provider.</p>
+        </div>
+        <div class="card reveal-text delay-3">
+          <div class="ico">◇</div>
+          <h3>Transparent Trust</h3>
+          <p>Audit-ready project verification and evidence-backed community impact tracking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Platform Ecosystem -->
+  <div class="slide" id="slide-3">
+    <div class="slide-content">
+      <div class="tag reveal-text">02 / Platform Architecture</div>
+      <h2 class="reveal-text delay-1">Integrated Modules & Services</h2>
+      <div class="grid">
+        <div class="card reveal-text delay-2">
+          <div class="ico">♡</div>
+          <h3>LDF Hope</h3>
+          <p>Transparent food security & community project assistance with verified receipt distribution.</p>
+        </div>
+        <div class="card reveal-text delay-2">
+          <div class="ico">✦</div>
+          <h3>Learning Hub</h3>
+          <p>Courses, multi-lingual workshops (English/Sinhala/Tamil), and verified tutoring hubs.</p>
+        </div>
+        <div class="card reveal-text delay-2">
+          <div class="ico">⌖</div>
+          <h3>Pathfinder</h3>
+          <p>Guided navigation connecting users to community resources, legal, or health services.</p>
+        </div>
+        <div class="card reveal-text delay-3">
+          <div class="ico">♧</div>
+          <h3>Volunteers & Leaders</h3>
+          <p>Organised volunteer coordination, project management, and team leadership pipelines.</p>
+        </div>
+        <div class="card reveal-text delay-3">
+          <div class="ico">▦</div>
+          <h3>Organisations & Market</h3>
+          <p>Enterprise partnership profiles and local business marketplace connections.</p>
+        </div>
+        <div class="card reveal-text delay-3">
+          <div class="ico">◉</div>
+          <h3>Professional Services</h3>
+          <p>Expert profiles, service bookings, and skill-sharing mentorship networks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Strategic UK Partnership Model -->
+  <div class="slide" id="slide-4">
+    <div class="slide-content">
+      <div class="tag reveal-text">03 / UK Collaboration Model</div>
+      <h2 class="reveal-text delay-1">Dual Employment & Pilot Framework</h2>
+      <div class="cols">
+        <div>
+          <p class="lead reveal-text delay-2" style="color:#fff;">We are seeking an established UK host organisation (e.g., SCVO, Nesta, SAMH, Volunteering Matters) for a collaborative partnership.</p>
+          <div class="card reveal-text delay-3" style="margin-top:16px;">
+            <h3>What LDF Brings</h3>
+            <p>A ready-to-test web platform (Next.js/Supabase), technical leadership, and a long-term social vision.</p>
+          </div>
+        </div>
+        <div>
+          <div class="card reveal-text delay-2" style="border-left: 4px solid var(--t);">
+            <h3>1. Sponsored Employment</h3>
+            <p>Full-time internal role fulfilling the host's digital/technical deliverables (Skilled Worker compliant under pre-April 2024 transitional salary rates).</p>
+          </div>
+          <div class="card reveal-text delay-3" style="border-left: 4px solid var(--p); margin-top:14px;">
+            <h3>2. Zero-Cost 3-Year Software License</h3>
+            <p>Host receives a free platform license to run community pilots while underlying pre-existing IP remains with the LDF founder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: Interactive Feedback & Consultation Form -->
+  <div class="slide" id="slide-5">
+    <div class="slide-content">
+      <div class="cols">
+        <div>
+          <div class="tag reveal-text">04 / Public Consultation</div>
+          <h2 class="reveal-text delay-1">Help Shape the Next Stage</h2>
+          <p class="muted reveal-text delay-2">Provide your feedback, express interest in a strategic pilot, or connect regarding software collaboration.</p>
+          <div style="margin-top:20px;" class="reveal-text delay-3">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQ4zQ1XFkXm2P7g5Y6K-l8V_example/viewform" target="_blank" class="btn alt" style="font-size:0.85rem;">Open Full Google Form ↗</a>
+          </div>
+        </div>
+
+        <div class="form-card reveal-text delay-2">
+          <form id="ldf-slide-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label>Consultation Type</label>
+              <div class="category-selector">
+                <button type="button" class="cat-btn active" onclick="setCategory(this, 'Strategic Partnership')">Partnership</button>
+                <button type="button" class="cat-btn" onclick="setCategory(this, 'General Feedback')">Feedback</button>
+                <button type="button" class="cat-btn" onclick="setCategory(this, 'Volunteering')">Volunteering</button>
+              </div>
+              <input type="hidden" id="form-category" value="Strategic Partnership">
+            </div>
+
+            <div class="form-group">
+              <label>Name / Organisation</label>
+              <input type="text" id="full-name" class="form-control" placeholder="e.g. Jane Doe / SCVO" required>
+            </div>
+
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="email-address" class="form-control" placeholder="name@domain.org" required>
+            </div>
+
+            <div class="form-group">
+              <label>Comments / Partnership Ideas</label>
+              <textarea id="feedback-message" class="form-control" placeholder="Share your suggestions or pilot interest..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Rate LDF Ecosystem Concept</label>
+              <div class="rating-group" id="rating-stars">
+                <span class="star" onclick="setRating(1)">★</span>
+                <span class="star" onclick="setRating(2)">★</span>
+                <span class="star" onclick="setRating(3)">★</span>
+                <span class="star" onclick="setRating(4)">★</span>
+                <span class="star" onclick="setRating(5)">★</span>
+              </div>
+              <input type="hidden" id="concept-rating" value="5">
+            </div>
+
+            <button type="submit" class="btn" style="width:100%; justify-content:center; margin-top:6px;">Submit Consultation ➔</button>
+          </form>
+
+          <div id="form-success">
+            <h3 style="color:var(--t);">✓ Thank You!</h3>
+            <p>Your consultation feedback has been recorded successfully.</p>
+            <button class="btn alt" onclick="resetForm()" style="margin-top:14px; color:var(--ink);">Submit Another Response</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide Deck Navigation Bar -->
+  <div class="controls">
+    <div class="slide-counter" id="counter">Slide 1 of 5</div>
+    <div class="nav-btns">
+      <button class="nav-btn" onclick="prevSlide()">‹</button>
+      <button class="nav-btn" onclick="nextSlide()">›</button>
     </div>
   </div>
 </div>
 
-<section id="vision" class="w">
-  <div class="intro fade-in">
-    <div class="tag">The idea</div>
-    <h2>People should be able to give, learn and grow — not just receive.</h2>
-    <p class="muted">LDF connects people, skills and organisations through a shared digital environment. Someone may join to learn, later volunteer, then lead a project or share their expertise. Organisations can find people, publish opportunities and collaborate.</p>
-  </div>
-  <div class="grid">
-    <article class="card fade-in delay-1"><div class="ico">♡</div><h3>Human dignity</h3><p>Support that respects people, avoids pity-based messaging and recognises everyone's value.</p></article>
-    <article class="card fade-in delay-2"><div class="ico">↗</div><h3>Connected opportunity</h3><p>Learning, volunteering, services and community projects connected instead of isolated.</p></article>
-    <article class="card fade-in delay-3"><div class="ico">◇</div><h3>Trust and evidence</h3><p>Clear project information, responsible ownership, progress updates and evidence of outcomes.</p></article>
-  </div>
-</section>
-
-<section id="platform" class="pale">
-  <div class="w">
-    <div class="intro fade-in">
-      <div class="tag">The LDF ecosystem</div>
-      <h2>One platform. Connected services.</h2>
-      <p class="muted">Profiles, projects and opportunities connect the different parts of the community.</p>
-    </div>
-    <div class="grid">
-      <article class="card fade-in delay-1"><div class="ico">♡</div><h3>Hope</h3><p>Community support and projects, with clear needs, updates, contributions and evidence.</p></article>
-      <article class="card fade-in delay-2"><div class="ico">✦</div><h3>Learning Hub</h3><p>Courses, tutors, learning resources, workshops and practical skill development.</p></article>
-      <article class="card fade-in delay-3"><div class="ico">⌖</div><h3>Pathfinder</h3><p>Helps people understand challenges and find relevant next steps and support.</p></article>
-      <article class="card fade-in delay-1"><div class="ico">◉</div><h3>Tutors & professionals</h3><p>Profiles to discover expertise, services and learning support.</p></article>
-      <article class="card fade-in delay-2"><div class="ico">♧</div><h3>Volunteers & leaders</h3><p>Project participation, team coordination, workshops and ways to contribute.</p></article>
-      <article class="card fade-in delay-3"><div class="ico">▦</div><h3>Organisations & Market</h3><p>Organisation profiles, project publishing, partnerships and a developing marketplace.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="w">
-  <div class="cols">
-    <div class="fade-in">
-      <div class="tag">A connected journey</div>
-      <h2>From learning to contribution.</h2>
-      <p class="muted">People can move between roles as their confidence, skills and circumstances develop.</p>
-    </div>
-    <div class="steps fade-in delay-1"><span>Learn</span><span>Practise</span><span>Apply</span><span>Reflect</span><span>Grow</span></div>
-  </div>
-</section>
-
-<section class="pale">
-  <div class="w cols">
-    <div class="fade-in">
-      <div class="tag">Current stage</div>
-      <h2>Built to move forward carefully.</h2>
-      <p class="muted">LDF has an existing web platform and a developed concept. The next stage is to validate user journeys, review security and governance, test with real users and run focused pilot projects.</p>
-    </div>
-    <div class="fade-in delay-1">
-      <h3>Development priorities</h3>
-      <p>✓ Review and improve existing features</p>
-      <p>✓ Test user, volunteer and organisation journeys</p>
-      <p>✓ Establish safeguarding, privacy and data governance</p>
-      <p>✓ Define project finance and reporting controls</p>
-      <p>✓ Run measurable pilots before wider expansion</p>
-    </div>
-  </div>
-</section>
-
-<section id="partner" class="w">
-  <div class="call fade-in">
-    <div class="tag" style="color:#8fe8dc">Invitation to collaborate</div>
-    <h2>Looking for a strategic UK partner.</h2>
-    <p>LDF is seeking an established organisation with experience in community development, education, volunteering, social innovation or digital services. A partner could help review the model, strengthen governance, connect with communities, identify suitable funding routes and co-design a focused pilot.</p>
-    <p><b>What LDF brings:</b> an existing initiative, a developed digital platform, a connected service vision and a long-term commitment to social value.</p>
-    <p><b>What we hope to build together:</b> a practical, accountable pilot with clear outcomes, shared responsibilities and a realistic development plan.</p>
-  </div>
-</section>
-
-<!-- ANIMATED PUBLIC FEEDBACK & CONSULTATION FORM -->
-<section id="consultation" class="pale">
-  <div class="w cols">
-    <div class="fade-in">
-      <div class="tag">Public Consultation & Feedback</div>
-      <h2>Help Shape the Future of LDF</h2>
-      <p class="muted">Whether you are an individual user, potential partner organisation, tutor, or volunteer, your insight helps us strengthen platform governance, design better pilots, and improve community impact.</p>
-      
-      <div style="margin-top:24px;">
-        <div class="card" style="margin-bottom:12px;">
-          <h3>🔒 Data & Governance Commitment</h3>
-          <p>Consultation submissions are strictly used for pilot design and operational improvements. Your details will never be sold or shared.</p>
-        </div>
-        <div class="card" style="margin-bottom:12px; border-left: 3px solid var(--p);">
-          <h3>🌐 External Form Access</h3>
-          <p>Prefer to open in Google Forms? Access the standalone consultation form here:</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQ4zQ1XFkXm2P7g5Y6K-l8V_example/viewform" target="_blank" class="btn alt" style="margin-top:10px; font-size:0.85rem; padding:8px 16px;">Open LDF Public Feedback & Consultation Form ↗</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="fade-in delay-1">
-      <div class="form-card">
-        <form id="ldf-consultation-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeQ4zQ1XFkXm2P7g5Y6K-l8V_example/formResponse" method="POST" target="hidden_iframe" onsubmit="handleFormSubmit(event)">
-          
-          <!-- Category Selection -->
-          <div class="form-group">
-            <label>Select Consultation Type</label>
-            <div class="category-selector">
-              <button type="button" class="cat-btn active" onclick="setCategory(this, 'Strategic Partnership & Pilot')">Partnership / Pilot</button>
-              <button type="button" class="cat-btn" onclick="setCategory(this, 'General Feedback')">General Feedback</button>
-              <button type="button" class="cat-btn" onclick="setCategory(this, 'Volunteering & Community')">Volunteering</button>
-              <button type="button" class="cat-btn" onclick="setCategory(this, 'Platform Feature Suggestion')">Feature Idea</button>
-            </div>
-            <input type="hidden" name="entry.1000001" id="form-category" value="Strategic Partnership & Pilot">
-          </div>
-
-          <!-- Contact Inputs -->
-          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 0;">
-            <div class="form-group">
-              <label for="full-name">Your Name / Organisation</label>
-              <input type="text" name="entry.1000002" id="full-name" class="form-control" placeholder="e.g. Jane Doe / SCVO" required>
-            </div>
-            <div class="form-group">
-              <label for="email-address">Email Address</label>
-              <input type="email" name="entry.1000003" id="email-address" class="form-control" placeholder="name@domain.org" required>
-            </div>
-          </div>
-
-          <!-- Role / Stakeholder Dropdown -->
-          <div class="form-group">
-            <label for="user-role">I am engaging as a:</label>
-            <select name="entry.1000004" id="user-role" class="form-control" required>
-              <option value="" disabled selected>Select your background...</option>
-              <option value="UK Charity / Non-Profit Lead">UK Charity / Non-Profit Lead</option>
-              <option value="Community Member / Learner">Community Member / Learner</option>
-              <option value="Tutor or Educator">Tutor or Educator</option>
-              <option value="Volunteer / Community Leader">Volunteer / Community Leader</option>
-              <option value="Digital Innovation Specialist">Digital Innovation Specialist</option>
-              <option value="Other Stakeholder">Other Stakeholder</option>
-            </select>
-          </div>
-
-          <!-- Detailed Feedback / Message -->
-          <div class="form-group">
-            <label for="feedback-message">Feedback & Proposal Details</label>
-            <textarea name="entry.1000005" id="feedback-message" class="form-control" placeholder="Share your suggestions, partnership ideas, pilot interest, or questions regarding LDF..." required></textarea>
-          </div>
-
-          <!-- Concept Rating -->
-          <div class="form-group">
-            <label>How relevant is the LDF ecosystem model to your work/community?</label>
-            <div class="rating-group" id="rating-stars">
-              <span class="star" onclick="setRating(1)">★</span>
-              <span class="star" onclick="setRating(2)">★</span>
-              <span class="star" onclick="setRating(3)">★</span>
-              <span class="star" onclick="setRating(4)">★</span>
-              <span class="star" onclick="setRating(5)">★</span>
-            </div>
-            <input type="hidden" name="entry.1000006" id="concept-rating" value="5">
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit" class="btn" style="width:100%; justify-content:center; margin-top:8px;">
-            <span>Submit Consultation Form</span> <span>➔</span>
-          </button>
-        </form>
-
-        <!-- Hidden Iframe for Direct Submission Handling -->
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessState(); }"></iframe>
-
-        <!-- Form Success View State -->
-        <div id="form-success">
-          <div class="ico-check">✓</div>
-          <h3>Thank You for Your Feedback</h3>
-          <p class="muted">Your consultation response has been successfully logged. The LDF team will review your proposal and respond if a follow-up discussion is requested.</p>
-          <button class="btn alt" onclick="resetForm()" style="margin-top:20px;">Submit Another Response</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="w">
-    <b>LDF · Life Development Foundation</b><br>
-    <small>Learn together. Support each other. Grow with purpose. · Partnership portfolio & Consultation Hub</small>
-  </div>
-</footer>
-
 <script>
-let submitted = false;
+let currentSlide = 1;
+const totalSlides = 5;
 
-function setCategory(btn, categoryValue) {
+function updateDeck() {
+  document.querySelectorAll('.slide').forEach((slide, idx) => {
+    slide.classList.toggle('active', idx + 1 === currentSlide);
+  });
+  
+  // Update Progress Bar & Counter
+  const progressPercent = (currentSlide / totalSlides) * 100;
+  document.getElementById('progress').style.width = progressPercent + '%';
+  document.getElementById('counter').innerText = `Slide ${currentSlide} of ${totalSlides}`;
+}
+
+function nextSlide() {
+  if (currentSlide < totalSlides) {
+    currentSlide++;
+    updateDeck();
+  }
+}
+
+function prevSlide() {
+  if (currentSlide > 1) {
+    currentSlide--;
+    updateDeck();
+  }
+}
+
+// Keyboard Navigation (Arrow Keys)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+  if (e.key === 'ArrowLeft') prevSlide();
+});
+
+// Form Logic
+function setCategory(btn, cat) {
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('form-category').value = categoryValue;
+  document.getElementById('form-category').value = cat;
 }
 
 function setRating(rating) {
   document.getElementById('concept-rating').value = rating;
   const stars = document.querySelectorAll('#rating-stars .star');
-  stars.forEach((star, index) => {
-    if (index < rating) {
-      star.classList.add('active');
-    } else {
-      star.classList.remove('active');
-    }
-  });
+  stars.forEach((star, idx) => star.classList.toggle('active', idx < rating));
 }
 
 function handleFormSubmit(e) {
-  submitted = true;
-  // UI fallback in case iframe load trigger is delayed
-  setTimeout(showSuccessState, 600);
-}
-
-function showSuccessState() {
-  document.getElementById('ldf-consultation-form').style.display = 'none';
+  e.preventDefault();
+  document.getElementById('ldf-slide-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
 }
 
 function resetForm() {
-  submitted = false;
-  document.getElementById('ldf-consultation-form').reset();
-  document.getElementById('ldf-consultation-form').style.display = 'block';
+  document.getElementById('ldf-slide-form').reset();
+  document.getElementById('ldf-slide-form').style.display = 'block';
   document.getElementById('form-success').style.display = 'none';
   setRating(5);
 }
 
-// Initialize 5-star rating on load
 setRating(5);
+updateDeck();
 </script>
 
 </body>
